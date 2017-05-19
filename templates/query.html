@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+            <form method="POST" >
+            {{ form.hidden_tag() }}
+
+            <div class="query-group">
+
+
+
+            {{ form.studentno.label }}
+            {{ form.studentno() }}
+
+
+
+
+                <br><br>
+
+
+            {{ form.records.label }}
+            {{ form.records() }}
+
+            Interview question: Assume that distances that were used to determine the tree are additive. How would you determine the distance between A0A1A8AU08 and G3PS36 now that you know what their closest common ancestor is?
+
+
+
+
+            {{ form.submit(class="btn-primary") }}
+            {{ form.download(class="btn-primary") }}
+            {{ form.download2(class="btn-primary") }}
+
+
+            </div>
+
+            {%  if studentno %}
+                            <div class="query-group">
+
+
+                {{  records }}
+            {{ studentno }}
+                {% for item in result %}
+                    <li>{{ item.submissiontime }}</li>
+                    <li>{{ item.q1 }}</li>
+                    <li>{{ item.q2 }}</li>
+                    <li>{{ item.q3 }}</li>
+                    <br>
+                    <br>
+
+
+
+
+
+                {% endfor %}
+
+            {% endif %}
+                </div>
+
+            </form>
+
+
+{% endblock %}
