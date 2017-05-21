@@ -2,7 +2,7 @@ from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from models import db, User, Submission
 from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, SimpleQuiz
-from sqlalchemy import desc
+from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
 from io import BytesIO
@@ -11,7 +11,7 @@ import pytz
 import os
 application = Flask(__name__)
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///learningflask'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///quiz'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
@@ -60,22 +60,60 @@ def login():
     if 'studentno' in session:
         return ('landing')
     form = LoginForm()
-
     if request.method == "POST":
-        if form.validate() == False:
-            return render_template("login.html", form=form, url_for=url_for)
-        else:
-            studentno = form.studentno.data
-            password = form.password.data
+        try:
+            if form.validate_on_submit():
+                studentno = form.studentno.data
+                password = form.password.data
 
-            user = User.query.filter_by(studentno=studentno).first()
-            if user is not None and user.check_password(password):
-                session['studentno'] = form.studentno.data
-                return render_template("landing.html")
+                if studentno == "":
+                    return render_template('login.html', form=form, studentnoerror = "Student number cannot be blank")
+
+                if password == "":
+                    return render_template('login.html', form=form,
+                                           passworderror="Password cannot be blank")
+
+                if User.query.filter_by(studentno=studentno).first():
+                    user = User.query.filter_by(studentno=studentno).first()
+                    check_pass = user.check_password(password)
+                    if check_pass == True:
+                        session['studentno'] = form.studentno.data
+                        return render_template("landing.html")
+
+                    else:
+                        return render_template('login.html', form=form, passworderror="Password is incorrect")
+
+                else:
+                    return render_template("login.html", form=form, url_for=url_for, studentnoerror="No such student number is registered")
+
+
             else:
                 return render_template('login.html', form=form)
+
+        except DataError as e:
+            return render_template('login.html', form=form, studentnoerror="Please provide a valid student number (integer).")
+
+
+
     elif request.method == "GET":
         return render_template('login.html', form=form)
+
+
+    # if request.method == "POST":
+    #     if form.validate() == False:
+    #         return render_template("login.html", form=form, url_for=url_for, studentnoerror="No such student number is registered")
+    #     else:
+    #         studentno = form.studentno.data
+    #         password = form.password.data
+    #
+    #         user = User.query.filter_by(studentno=studentno).first()
+    #         if user is not None and user.check_password(password):
+    #             session['studentno'] = form.studentno.data
+    #             return render_template("landing.html")
+    #         else:
+    #             return render_template('login.html', form=form, passworderror=["Password is incorrect"])
+    # elif request.method == "GET":
+    #     return render_template('login.html', form=form)
 
 @application.route("/logout")
 def logout():

@@ -6,6 +6,7 @@ from wtforms.validators import DataRequired, Email, Length, ValidationError, Opt
 
 from static.python.phylo import *
 from static.python.sequence import Sequence
+from models import User
 
 
 class CorrectAnswer(object):
@@ -96,12 +97,22 @@ class CheckNewick(object):
             except:
                 raise ValidationError("This Newick string is not correct.")
 
+class Unique(object):
+    def __init__(self, model, field, message=u'This element already exists.'):
+        self.model = model
+        self.field = field
+        self.message = message
+
+    def __call__(self, form, field):
+        check = self.model.query.filter(self.field == field.data).first()
+        if check:
+            raise ValidationError(self.message)
 
 class SignupForm(FlaskForm):
   first_name = StringField('First name', validators=[DataRequired("Please enter your first name.")])
   last_name = StringField('Last name', validators=[DataRequired("Please enter your last name.")])
-  studentno = StringField('Student number', validators=[DataRequired("Please enter your student number.")])
-  email = StringField('Email', validators=[DataRequired("Please enter your email address."), Email("Please enter your email address.")])
+  studentno = StringField('Student number', validators=[DataRequired("Please enter your student number."), Unique(User, User.studentno, message="There is already an account with that student number.")])
+  email = StringField('Email', validators=[DataRequired("Please enter your email address."), Email("Please enter your email address."), Unique(User, User.email, message="There is already an account with that email.")])
   password = PasswordField('Password', validators=[DataRequired("Please enter a password."), Length(min=6, message="Passwords must be 6 characters or more.")])
   submit = SubmitField('Sign up')
 
