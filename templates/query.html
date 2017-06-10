@@ -1,34 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
+
+    {% block javascript %}
+    <SCRIPT SRC="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></SCRIPT>
+{% endblock %}
+
             <form method="POST" >
             {{ form.hidden_tag() }}
 
             <div class="query-group">
-
-
-
             {{ form.studentno.label }}
             {{ form.studentno() }}
-
-
-
-
                 <br><br>
-
-
             {{ form.records.label }}
             {{ form.records() }}
-
-            Interview question: Assume that distances that were used to determine the tree are additive. How would you determine the distance between A0A1A8AU08 and G3PS36 now that you know what their closest common ancestor is?
-
-
-
-
             {{ form.submit(class="btn-primary") }}
             {{ form.download(class="btn-primary") }}
-            {{ form.download2(class="btn-primary") }}
-
-
             </div>
 
             {%  if studentno %}
@@ -49,9 +36,20 @@
 
 
 
+
+
                 {% endfor %}
 
             {% endif %}
+                <div class="info">
+                    {% for item in code_output %}
+                        {{ item|safe }}
+                         -------------------------------------------------------------
+                    {%  endfor %}
+
+{#                        {{code_output|safe}}#}
+                </div>
+
                 </div>
 
             </form>

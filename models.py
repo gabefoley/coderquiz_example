@@ -36,15 +36,18 @@ class Submission(db.Model):
   q1 = db.Column(db.String(255))
   q2 = db.Column(db.String(255))
   q3 = db.Column(db.String(255))
+  file_upload = db.Column(db.LargeBinary)
 
 
 
-  def __init__(self, studentno, submissiontime, q1, q2, q3):
+
+  def __init__(self, studentno, submissiontime, q1, q2, q3, file_upload):
     self.studentno = studentno
     self.submissiontime = submissiontime
     self.q1 = q1
     self.q2 = q2
     self.q3 = q3
+    self.file_upload = file_upload
 
 
 

@@ -82,13 +82,27 @@
               {% endif %}
               {% endif %}
 
-            </div>
-
-
             <br>
+            {{ form.file_upload.label }}
+            {{ form.file_upload() }}
+
+              {% if form.file_upload.errors %}
+                {% for error in form.file_upload.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                  {% elif form.check.data %}
+                  {% if form.file_upload.data %}
+                  <p class="error-message"> Please attach your code for Question 2. </p>
+                {% endif %}
+              {% endif %}
+
             
+            <br>
+                                    </div>
+
 
             <div class>
+
             {{ form.check (class ="btn-primary")  }}
       
            

@@ -1,7 +1,7 @@
 from random import randrange
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, RadioField
+from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
 
 from static.python.phylo import *
@@ -131,6 +131,10 @@ class SimpleQuiz(FlaskForm):
             'Question 1: Type the word "dragon"',
             validators=[CorrectAnswer('dragon'), Optional("Not completed")],
             filters=[lambda v: None if v == '' else v])
+
+        file_upload = FileField(
+            'Upload your Python code',
+            validators=[DataRequired("Please upload your Python code.")])
 
         check = SubmitField("Check  answers")
 

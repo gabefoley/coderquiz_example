@@ -350,3 +350,8 @@ textarea {
 .query-group {
   margin: 25px;
 }
+
+.successText {
+  font-size: 24px;
+  text-align: center;
+}
