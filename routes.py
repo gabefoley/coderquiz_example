@@ -1,7 +1,7 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
 from models import db, User, Submission
-from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, SimpleQuiz
+from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1
 from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
@@ -133,7 +133,7 @@ def landing():
 def assessment1():
     if 'studentno' not in session:
         return ('login')
-    form = SimpleQuiz()
+    form = BIOL3014Quiz1()
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("assessment1.html", form=form)
@@ -150,11 +150,11 @@ def assessment1():
                 q1c = form.q1c.data
             else:
                 q1c = "INCORRECT"
-            if form.q2.data:
+            if form.q2a.data:
                 q2a = form.q2a.data
             else:
                 q2a = "INCORRECT"
-            if form.q2a.data:
+            if form.q2b.data:
                 q2b = form.q2b.data
             else:
                 q2b = "INCORRECT"
@@ -178,7 +178,7 @@ def assessment1():
             file = request.files['file_upload']
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = Submission(session['studentno'], dt, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c, file.read())
+            form_submission = Submission(session['studentno'], dt, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
@@ -201,13 +201,13 @@ def submissiondynamic():
         if form.records.data == 'Latest':
             results = [
                 Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
-            code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
+            # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
         else:
-            code_output = []
+            # code_output = []
             results = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
-            for result in results:
-                code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
-        return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=results, code_output = code_output)
+            # for result in results:
+                # code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
+        return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=results)
 
     if 'studentno' not in session:
         return ('login')
