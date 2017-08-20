@@ -1,0 +1,3036 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+nodename: bioinf
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+machine: x86_64
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+clock source: unix
+nodename: bioinf
+pcre jit disabled
+machine: x86_64
+detected number of CPU cores: 12
+clock source: unix
+current working directory: /etc/uwsgi/sites_python3-enabled
+pcre jit disabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+your processes number limit is 257311
+detected max file descriptor number: 1024
+your memory page size is 4096 bytes
+VirtualHosting mode enabled.
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+thunder lock: disabled (you can enable it with --thunder-lock)
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+bind(): Address already in use [core/socket.c line 230]
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+setgid() to 33
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+lock engine: pthread robust mutexes
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+set additional group 1003 (share)
+machine: x86_64
+setuid() to 33
+clock source: unix
+pcre jit disabled
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+setgid() to 33
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+set additional group 1003 (share)
+setuid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+your processes number limit is 257311
+nodename: bioinf
+your memory page size is 4096 bytes
+machine: x86_64
+detected max file descriptor number: 1024
+clock source: unix
+VirtualHosting mode enabled.
+pcre jit disabled
+lock engine: pthread robust mutexes
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+your processes number limit is 257311
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+your memory page size is 4096 bytes
+nodename: bioinf
+detected max file descriptor number: 1024
+machine: x86_64
+VirtualHosting mode enabled.
+clock source: unix
+lock engine: pthread robust mutexes
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+thunder lock: disabled (you can enable it with --thunder-lock)
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+setgid() to 33
+setgid() to 33
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+set additional group 1003 (share)
+your processes number limit is 257311
+setuid() to 33
+your memory page size is 4096 bytes
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+your processes number limit is 257311
+lock engine: pthread robust mutexes
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+thunder lock: disabled (you can enable it with --thunder-lock)
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+your processes number limit is 257311
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+your memory page size is 4096 bytes
+nodename: bioinf
+detected max file descriptor number: 1024
+machine: x86_64
+VirtualHosting mode enabled.
+clock source: unix
+lock engine: pthread robust mutexes
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+thunder lock: disabled (you can enable it with --thunder-lock)
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+setgid() to 33
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+set additional group 1003 (share)
+setuid() to 33
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your processes number limit is 257311
+your memory page size is 4096 bytes
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+bind(): Address already in use [core/socket.c line 230]
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+setgid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+setgid() to 33
+your processes number limit is 257311
+set additional group 1003 (share)
+your memory page size is 4096 bytes
+setuid() to 33
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+lock engine: pthread robust mutexes
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+bind(): Address already in use [core/socket.c line 230]
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+thunder lock: disabled (you can enable it with --thunder-lock)
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+set additional group 1003 (share)
+setuid() to 33
+setgid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+thunder lock: disabled (you can enable it with --thunder-lock)
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+setgid() to 33
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+setgid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+setgid() to 33
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+thunder lock: disabled (you can enable it with --thunder-lock)
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+clock source: unix
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+pcre jit disabled
+detected number of CPU cores: 12
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+current working directory: /etc/uwsgi/sites_python3-enabled
+nodename: bioinf
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+your processes number limit is 257311
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+your memory page size is 4096 bytes
+nodename: bioinf
+detected max file descriptor number: 1024
+machine: x86_64
+VirtualHosting mode enabled.
+clock source: unix
+lock engine: pthread robust mutexes
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+thunder lock: disabled (you can enable it with --thunder-lock)
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+set additional group 1003 (share)
+setgid() to 33
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+thunder lock: disabled (you can enable it with --thunder-lock)
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7b0600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:09 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1fb9600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x266d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+bind(): Address already in use [core/socket.c line 230]
+bind(): Address already in use [core/socket.c line 230]
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+bind(): Address already in use [core/socket.c line 230]
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20ca600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1826600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x172c600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1532600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x10ef600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1dbe600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x245a600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8ce600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x159a600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2506600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1032600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1937600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b14600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x18da600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2087600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x188e600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1566600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15f9600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb41600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x122a600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x125d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1619600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21e0600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x160d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x216e600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x14de600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1903600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1bbe600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x198c600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xeb1600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1ebf600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2070600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd9c600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15bc600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x14a2600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xf50600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x17a4600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25d1600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1eb5600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xaa3600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x22ee600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x183b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1a97600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x250c600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+mapped 145520 bytes (142 KB) for 1 cores
+Python main interpreter initialized at 0x2044600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x767600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2598600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+mapped 145520 bytes (142 KB) for 1 cores
+Python main interpreter initialized at 0xc1d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1aac600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19f9600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1967600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1729600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d5c600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c13600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xcb1600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1399600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xebb600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1cdd600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1e9b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x217d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc1f600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2312600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd44600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xb23600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x158a600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe25600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1fae600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c4b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x134b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26d3600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26c9600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d3d600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x13cf600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2665600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe56600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa79600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+setgid() to 33
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:12 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1aa6600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x22ac600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20a4600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1929600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25a1600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfca600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 7 seconds on interpreter 0x160d600 pid: 7507 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7507)
+spawned uWSGI worker 1 (pid: 8544, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x266d600 pid: 7545 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7545)
+spawned uWSGI worker 1 (pid: 8547, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1fb9600 pid: 7499 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7499)
+spawned uWSGI worker 1 (pid: 8548, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x188e600 pid: 7527 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7527)
+spawned uWSGI worker 1 (pid: 8549, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1bbe600 pid: 7538 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7538)
+spawned uWSGI worker 1 (pid: 8551, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x159a600 pid: 7526 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7526)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xeb1600 pid: 7520 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7520)
+spawned uWSGI worker 1 (pid: 8563, cores: 1)
+spawned uWSGI worker 1 (pid: 8564, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2598600 pid: 7562 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7562)
+spawned uWSGI worker 1 (pid: 8565, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x767600 pid: 7508 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7508)
+spawned uWSGI worker 1 (pid: 8566, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2506600 pid: 7492 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7492)
+spawned uWSGI worker 1 (pid: 8567, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xcb1600 pid: 7532 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7532)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1ebf600 pid: 7550 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7550)
+spawned uWSGI worker 1 (pid: 8568, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1a97600 pid: 7534 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7534)
+spawned uWSGI worker 1 (pid: 8569, cores: 1)
+spawned uWSGI worker 1 (pid: 8570, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xe25600 pid: 7531 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7531)
+spawned uWSGI worker 1 (pid: 8571, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1566600 pid: 7491 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7491)
+spawned uWSGI worker 1 (pid: 8572, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2070600 pid: 7525 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7525)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x245a600 pid: 7493 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7493)
+spawned uWSGI worker 1 (pid: 8573, cores: 1)
+spawned uWSGI worker 1 (pid: 8574, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1032600 pid: 7484 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7484)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xf50600 pid: 7549 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7549)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2087600 pid: 7524 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7524)
+spawned uWSGI worker 1 (pid: 8575, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1d3d600 pid: 7559 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7559)
+spawned uWSGI worker 1 (pid: 8576, cores: 1)
+spawned uWSGI worker 1 (pid: 8577, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1903600 pid: 7551 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7551)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x21e0600 pid: 7490 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7490)
+spawned uWSGI worker 1 (pid: 8578, cores: 1)
+spawned uWSGI worker 1 (pid: 8580, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x10ef600 pid: 7517 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7517)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xd9c600 pid: 7488 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7488)
+spawned uWSGI worker 1 (pid: 8581, cores: 1)
+spawned uWSGI worker 1 (pid: 8582, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1b14600 pid: 7555 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7555)
+spawned uWSGI worker 1 (pid: 8583, cores: 1)
+spawned uWSGI worker 1 (pid: 8584, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x15bc600 pid: 7494 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7494)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x14de600 pid: 7496 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7496)
+spawned uWSGI worker 1 (pid: 8585, cores: 1)
+spawned uWSGI worker 1 (pid: 8586, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x25d1600 pid: 7513 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7513)
+spawned uWSGI worker 1 (pid: 8587, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1eb5600 pid: 7523 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7523)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xa79600 pid: 7541 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7541)
+spawned uWSGI worker 1 (pid: 8588, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x8ce600 pid: 7510 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7510)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x134b600 pid: 7568 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7568)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x22ee600 pid: 7528 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7528)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x26d3600 pid: 7503 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7503)
+spawned uWSGI worker 1 (pid: 8589, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x18da600 pid: 7495 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7495)
+spawned uWSGI worker 1 (pid: 8590, cores: 1)
+spawned uWSGI worker 1 (pid: 8591, cores: 1)
+spawned uWSGI worker 1 (pid: 8592, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1d5c600 pid: 7546 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7546)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1729600 pid: 7500 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7500)
+spawned uWSGI worker 1 (pid: 8593, cores: 1)
+spawned uWSGI worker 1 (pid: 8594, cores: 1)
+spawned uWSGI worker 1 (pid: 8596, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1967600 pid: 7529 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7529)
+spawned uWSGI worker 1 (pid: 8597, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x26c9600 pid: 7556 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7556)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1e9b600 pid: 7498 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7498)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x198c600 pid: 7566 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7566)
+spawned uWSGI worker 1 (pid: 8598, cores: 1)
+spawned uWSGI worker 1 (pid: 8599, cores: 1)
+spawned uWSGI worker 1 (pid: 8600, cores: 1)
+spawned uWSGI worker 1 (pid: 8601, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x20ca600 pid: 7483 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7483)
+spawned uWSGI worker 1 (pid: 8602, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x250c600 pid: 7547 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7547)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x7b0600 pid: 7542 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7542)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1532600 pid: 7486 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7486)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1619600 pid: 7501 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7501)
+spawned uWSGI worker 1 (pid: 8603, cores: 1)
+spawned uWSGI worker 1 (pid: 8604, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xb41600 pid: 7485 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7485)
+spawned uWSGI worker 1 (pid: 8605, cores: 1)
+spawned uWSGI worker 1 (pid: 8606, cores: 1)
+spawned uWSGI worker 1 (pid: 8608, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1c13600 pid: 7535 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7535)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1cdd600 pid: 7504 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7504)
+spawned uWSGI worker 1 (pid: 8609, cores: 1)
+spawned uWSGI worker 1 (pid: 8610, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x125d600 pid: 7554 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7554)
+spawned uWSGI worker 1 (pid: 8611, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x14a2600 pid: 7502 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7502)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xb23600 pid: 7567 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7567)
+spawned uWSGI worker 1 (pid: 8612, cores: 1)
+spawned uWSGI worker 1 (pid: 8613, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x15f9600 pid: 7489 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7489)
+spawned uWSGI worker 1 (pid: 8614, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x172c600 pid: 7505 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7505)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xebb600 pid: 7540 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7540)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1aac600 pid: 7565 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7565)
+spawned uWSGI worker 1 (pid: 8615, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x17a4600 pid: 7497 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7497)
+spawned uWSGI worker 1 (pid: 8616, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xc1f600 pid: 7561 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7561)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x122a600 pid: 7506 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7506)
+spawned uWSGI worker 1 (pid: 8617, cores: 1)
+spawned uWSGI worker 1 (pid: 8618, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1dbe600 pid: 7482 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7482)
+spawned uWSGI worker 1 (pid: 8619, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x216e600 pid: 7519 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7519)
+spawned uWSGI worker 1 (pid: 8620, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1c4b600 pid: 7552 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7552)
+spawned uWSGI worker 1 (pid: 8621, cores: 1)
+spawned uWSGI worker 1 (pid: 8622, cores: 1)
+spawned uWSGI worker 1 (pid: 8623, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2665600 pid: 7558 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7558)
+spawned uWSGI worker 1 (pid: 8624, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2312600 pid: 7544 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7544)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x2044600 pid: 7537 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7537)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1937600 pid: 7509 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7509)
+spawned uWSGI worker 1 (pid: 8625, cores: 1)
+spawned uWSGI worker 1 (pid: 8626, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x19f9600 pid: 7543 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7543)
+spawned uWSGI worker 1 (pid: 8627, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x158a600 pid: 7563 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7563)
+spawned uWSGI worker 1 (pid: 8628, cores: 1)
+spawned uWSGI worker 1 (pid: 8629, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1fae600 pid: 7553 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7553)
+spawned uWSGI worker 1 (pid: 8630, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xe56600 pid: 7533 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7533)
+spawned uWSGI worker 1 (pid: 8631, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xaa3600 pid: 7564 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7564)
+spawned uWSGI worker 1 (pid: 8632, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x217d600 pid: 7481 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7481)
+spawned uWSGI worker 1 (pid: 8633, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x183b600 pid: 7530 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7530)
+spawned uWSGI worker 1 (pid: 8634, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1399600 pid: 7522 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7522)
+spawned uWSGI worker 1 (pid: 8635, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x1826600 pid: 7487 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7487)
+spawned uWSGI worker 1 (pid: 8636, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xc1d600 pid: 7539 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7539)
+spawned uWSGI worker 1 (pid: 8637, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0xd44600 pid: 7536 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7536)
+spawned uWSGI worker 1 (pid: 8638, cores: 1)
+WSGI app 0 (mountpoint='') ready in 8 seconds on interpreter 0x13cf600 pid: 7557 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7557)
+spawned uWSGI worker 1 (pid: 8672, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0x1929600 pid: 7574 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7574)
+spawned uWSGI worker 1 (pid: 8706, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0x22ac600 pid: 7569 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7569)
+spawned uWSGI worker 1 (pid: 8707, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0x20a4600 pid: 7571 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7571)
+spawned uWSGI worker 1 (pid: 8708, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0xfca600 pid: 7572 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7572)
+spawned uWSGI worker 1 (pid: 8709, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0x1aa6600 pid: 7570 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7570)
+spawned uWSGI worker 1 (pid: 8710, cores: 1)
+WSGI app 0 (mountpoint='') ready in 6 seconds on interpreter 0x25a1600 pid: 7573 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7573)
+spawned uWSGI worker 1 (pid: 8711, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:43:47 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x245a600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x245a600 pid: 8863 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8863)
+spawned uWSGI worker 1 (pid: 8971, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:45:18 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26c5600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26c5600 pid: 9289 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9289)
+spawned uWSGI worker 1 (pid: 9405, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 9405|app: 0|req: 1/1] 1.121.129.153 () {44 vars in 1059 bytes} [Sun Aug 20 21:45:37 2017] GET /BIOL3014 => generated 233 bytes in 22 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+bioinf.scmb.uq.edu.au:81 [pid: 9405|app: 0|req: 2/2] 1.121.129.153 () {44 vars in 1059 bytes} [Sun Aug 20 21:48:33 2017] GET /BIOL3014 => generated 233 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun Aug 20 21:52:30 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x229b600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x229b600 pid: 9744 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9744)
+spawned uWSGI worker 1 (pid: 9854, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 9854|app: 0|req: 1/1] 1.121.129.153 () {46 vars in 1090 bytes} [Sun Aug 20 21:52:45 2017] GET /BIOL3014 => generated 233 bytes in 29 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+bioinf.scmb.uq.edu.au:81 [pid: 9854|app: 0|req: 2/2] 1.121.129.153 () {44 vars in 1061 bytes} [Sun Aug 20 21:52:54 2017] GET /BIOL3014/ => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
