@@ -24,7 +24,7 @@ db.init_app(app)
 
 app.secret_key = 'development-key'
 
-BASE_ROUTE = '/SCIE2100'
+BASE_ROUTE = '/BIOL3014'
 
 admin = ['40880084', '43558898', '123456789']
 
@@ -138,23 +138,47 @@ def assessment1():
         if form.check.data and form.validate() == True:
             return render_template("assessment1.html", form=form)
         elif form.submit.data and form.validate() == True:
-            if form.q1.data:
-                q1 = form.q1.data
+            if form.q1a.data:
+                q1a = form.q1a.data
             else:
-                q1 = "INCORRECT"
+                q1a = "INCORRECT"
+            if form.q1b.data:
+                q1b = form.q1b.data
+            else:
+                q1b = "INCORRECT"
+            if form.q1c.data:
+                q1c = form.q1c.data
+            else:
+                q1c = "INCORRECT"
             if form.q2.data:
-                q2 = form.q2.data
+                q2a = form.q2a.data
             else:
-                q2 = "INCORRECT"
-            if  form.q3.data:
-                q3 = form.q3.data
+                q2a = "INCORRECT"
+            if form.q2a.data:
+                q2b = form.q2b.data
             else:
-                q3 = "INCORRECT"
+                q2b = "INCORRECT"
+            if form.q2c.data:
+                q2c = form.q2c.data
+            else:
+                q2c = "INCORRECT"
+            if  form.q3a.data:
+                q3a = form.q3a.data
+            else:
+                q3a = "INCORRECT"
+            if  form.q3b.data:
+                q3b = form.q3b.data
+            else:
+                q3b = "INCORRECT"
+            if  form.q3c.data:
+                q3c = form.q3c.data
+            else:
+                q3c = "INCORRECT"
 
             file = request.files['file_upload']
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = Submission(session['studentno'], dt, q1, q2, q3, file.read())
+            form_submission = Submission(session['studentno'], dt, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c, file.read())
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()

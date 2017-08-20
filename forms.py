@@ -97,6 +97,70 @@ class CheckNewick(object):
             except:
                 raise ValidationError("This Newick string is not correct.")
 
+class CheckThreshold(object):
+    def __init__(self, answer, incorrect):
+        self.answer = answer
+        self.incorrect = incorrect
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            if field.data.split('.')[1].size() < 3:
+                raise ValidationError("Your answer is not to three decimal places?")
+            try:
+                if field.data == self.answer:
+                    return
+                elif field.data == self.incorrect:
+                    raise ValidationError("It looks like you've taken the maximum and minimum scores and divided by two."
+                                          "This isn't correct (Once you have a sorted list you don't need to extract the"
+                                          "values for minimum or maximum).")
+            except:
+                raise ValidationError("That isn't the correct threshold")
+
+class CheckMotifMatches(object):
+    def __init__(self, answer, incorrect):
+        self.answer = answer
+        self.incorrect = incorrect
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            if field.data == self.correct:
+                return
+            elif field.data == self.incorrect:
+                raise ValidationError("This answer is incorrect. You only considered one strand")
+            else:
+                raise ValidationError("This answer is incorrect")
+
+
+class CheckAccuracyScore(object):
+    def __init__(self, sens, spec, accur, wanted):
+        scores_dict = {}
+        scores_dict[sens] = 'Sensitivity'
+        scores_dict[spec] = 'Specificity'
+        scores_dict[accur] = 'Accuracy'
+        self.scores_dict = scores_dict
+        self.wanted = wanted
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            if field.data.split('.')[1].size() < 3:
+                raise ValidationError("Your answer is not to three decimal places?")
+            try:
+
+                for score in self.scores_dict.keys():
+                    if field.data == score:
+                        if self.scores_dict[field.data] == self.wanted:
+                            return
+                        else:
+                            raise ValidationError('You need to provide the {} score but you have provided the {} score'.format(self.wanted, self.scores_dict[field.data]))
+
+            except:
+                raise ValidationError('This score is not correct')
+
+
+
+
 class Unique(object):
     def __init__(self, model, field, message=u'This element already exists.'):
         self.model = model
@@ -108,6 +172,9 @@ class Unique(object):
         if check:
             raise ValidationError(self.message)
 
+
+
+
 class SignupForm(FlaskForm):
   first_name = StringField('First name', validators=[DataRequired("Please enter your first name.")])
   last_name = StringField('Last name', validators=[DataRequired("Please enter your last name.")])
@@ -116,6 +183,31 @@ class SignupForm(FlaskForm):
   password = PasswordField('Password', validators=[DataRequired("Please enter a password."), Length(min=6, message="Passwords must be 6 characters or more.")])
   submit = SubmitField('Sign up')
 
+
+class BIOL3014Quiz1(FlaskForm):
+    q1a = StringField('Enter the threshold for the motif with the window size of 10 (Enter to three decimal places - if your answer is 4.89367 enter 4.894',
+                      validators=[CheckThreshold('4.936', '2.218'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q1b = StringField('Enter the threshold for the motif with the window size of 11 (Enter to three decimal places - if your answer is 4.89367 enter 4.894',
+                      validators=[CheckThreshold('4.752', '2.641'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q1c = StringField('Enter the threshold for the motif with the window size of 12 (Enter to three decimal places - if your answer is 4.89367 enter 4.894',
+                      validators=[CheckThreshold('5.587', '3.387'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+
+    q2a = StringField('Enter the number of motif matches found for the motif with the window size of 10',
+                      validators=[CheckMotifMatches('333', '149'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q2b = StringField('Enter the number of motif matches found for the motif with the window size of 11',
+                      validators=[CheckMotifMatches('1176', '545'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q2c = StringField('Enter the number of motif matches found for the motif with the window size of 12',
+                      validators=[CheckMotifMatches('593', '296'), Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+
+    q3a = StringField('Enter the sensitivity for the motif with the window size of 10 (Enter to three decimal places - if your answer is 4.89367 enter 4.894)',
+                      validators=[CheckAccuracyScore('0.756', '0.543', '0.717', 'Sensitivity'),
+                                  Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q3b = StringField('Enter the specificity for the motif with the window size of 11 (Enter to three decimal places - if your answer is 4.89367 enter 4.894)',
+                      validators=[CheckAccuracyScore('0.985', '0.891', '0.968', 'Specificity'),
+                                  Optional("Not completed")], filters =[lambda v: None if v == '' else v])
+    q3c = StringField('Enter the sensitivity for the motif with the window size of 12 (Enter to three decimal places - if your answer is 4.89367 enter 4.894)',
+                      validators=[CheckAccuracyScore('0.786', '0.087', '0.656', 'Accuracy'),
+                                  Optional("Not completed")], filters =[lambda v: None if v == '' else v])
 
 class SimpleQuiz(FlaskForm):
         q1 = StringField(

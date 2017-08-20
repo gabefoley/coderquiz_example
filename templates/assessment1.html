@@ -9,7 +9,7 @@
       <div class="section-map">
         <div class="nav">
 
-       <p class="error-message"> Question 1 is worth 2 marks, Question 2 is worth 2 marks, <br> Question 3 is worth 3 marks.</class>
+       <p class="error-message"> Question 1 is worth 2 marks, Question 2 is worth 2 marks, <br> Question 3 is worth 3 marks.</p>
 
           <form method="POST" enctype = "multipart/form-data" >
             {{ form.hidden_tag() }}
@@ -30,75 +30,159 @@
 
 
 
-            {{ form.q1.label }}
+            {{ form.q1a.label }}
 
-            {{ form.q1() }}
+            {{ form.q1a() }}
 
 
-              {% if form.q1.errors %}
-                {% for error in form.q1.errors %}
+              {% if form.q1a.errors %}
+                {% for error in form.q1a.errors %}
                   <p class="error-message">{{ error }}</p>
                 {% endfor %}
               {% elif form.check.data %}
-			{% if form.q1.data is not none %}
-				{% if form.q1.errors %}
-					{% for error in form.q1.errors %}
+			{% if form.q1a.data is not none %}
+				{% if form.q1a.errors %}
+					{% for error in form.q1a.errors %}
 						<p class = "error-message">{{ error }}</p>
 					{% endfor %}
 
 				{% else %}
 
-             			 	<p class="correct-message"> Correct - the Sequence class wouldn't be able to work out that alphabet </p>
+             			 	<p class="correct-message"> Correct </p>
+				{% endif %}
+			{% endif %}
+              {% endif %}
+
+                    {{ form.q1b.label }}
+
+            {{ form.q1b() }}
+
+
+              {% if form.q1b.errors %}
+                {% for error in form.q1b.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              {% elif form.check.data %}
+			{% if form.q1b.data is not none %}
+				{% if form.q1b.errors %}
+					{% for error in form.q1b.errors %}
+						<p class = "error-message">{{ error }}</p>
+					{% endfor %}
+
+				{% else %}
+
+             			 	<p class="correct-message"> Correct </p>
+				{% endif %}
+			{% endif %}
+              {% endif %}
+
+                    {{ form.q1c.label }}
+
+            {{ form.q1c() }}
+
+
+              {% if form.q1c.errors %}
+                {% for error in form.q1c.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              {% elif form.check.data %}
+			{% if form.q1c.data is not none %}
+				{% if form.q1c.errors %}
+					{% for error in form.q1c.errors %}
+						<p class = "error-message">{{ error }}</p>
+					{% endfor %}
+
+				{% else %}
+
+             			 	<p class="correct-message"> Correct </p>
 				{% endif %}
 			{% endif %}
               {% endif %}
 
 
-            {{ form.q2.label }}
-            {{ form.q2() }}
+            {{ form.q2a.label }}
+            {{ form.q2a() }}
 
-              {% if form.q2.errors %}
-                {% for error in form.q2.errors %}
+              {% if form.q2a.errors %}
+                {% for error in form.q2a.errors %}
                   <p class="error-message">{{ error }}</p>
                 {% endfor %}
                 {% elif form.check.data  %}
-			{% if form.q2.data is not none %}
-                		<p class="correct-message"> Submitted </p>
+			{% if form.q2a.data is not none %}
+                		<p class="correct-message"> Correct </p>
+             		{% endif %}
+		 {% endif %}
+
+                    {{ form.q2b.label }}
+            {{ form.q2b() }}
+
+              {% if form.q2b.errors %}
+                {% for error in form.q2b.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% elif form.check.data  %}
+			{% if form.q2b.data is not none %}
+                		<p class="correct-message"> Correct </p>
+             		{% endif %}
+		 {% endif %}
+
+                    {{ form.q2c.label }}
+            {{ form.q2c() }}
+
+              {% if form.q2c.errors %}
+                {% for error in form.q2c.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% elif form.check.data  %}
+			{% if form.q2c.data is not none %}
+                		<p class="correct-message"> Correct </p>
              		{% endif %}
 		 {% endif %}
 
 
 
-            {{ form.q3.label }}
-            {{ form.q3() }}
+            {{ form.q3a.label }}
+            {{ form.q3a() }}
 
-              {% if form.q3.errors %}
-                {% for error in form.q3.errors %}
+              {% if form.q3a.errors %}
+                {% for error in form.q3a.errors %}
                   <p class="error-message">{{ error }}</p>
                 {% endfor %}
                 {% elif form.check.data %}
-                {% if form.q3.data is not none %}
+                {% if form.q3a.data is not none %}
                 <p class="correct-message"> Correct </p>
               {% endif %}
               {% endif %}
 
-            <br>
-            {{ form.file_upload.label }}
-            {{ form.file_upload() }}
 
-              {% if form.file_upload.errors %}
-                {% for error in form.file_upload.errors %}
+                    {{ form.q3b.label }}
+            {{ form.q3b() }}
+
+              {% if form.q3b.errors %}
+                {% for error in form.q3b.errors %}
                   <p class="error-message">{{ error }}</p>
                 {% endfor %}
-                  {% elif form.check.data %}
-                  {% if form.file_upload.data %}
-                  <p class="error-message"> Please attach your code for Question 2. </p>
-                {% endif %}
+                {% elif form.check.data %}
+                {% if form.q3b.data is not none %}
+                <p class="correct-message"> Correct </p>
+              {% endif %}
               {% endif %}
 
-            
-            <br>
-                                    </div>
+                    {{ form.q3c.label }}
+            {{ form.q3c() }}
+
+              {% if form.q3c.errors %}
+                {% for error in form.q3c.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+                {% elif form.check.data %}
+                {% if form.q3c.data is not none %}
+                <p class="correct-message"> Correct </p>
+              {% endif %}
+              {% endif %}
+
+        <br>
+
 
 
             <div class>
