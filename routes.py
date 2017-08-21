@@ -28,14 +28,43 @@ BASE_ROUTE = '/BIOL3014'
 
 admin = ['40880084', '43558898', '123456789']
 
-@application.route("/")
+class SCIE2100_Exception(Exception):
+    pass
+
+def local(route: str) -> str:
+    print ('here is the route sucka')
+    print (route)
+    if BASE_ROUTE == '/':
+        return route
+    else:
+        return join(BASE_ROUTE, route[1:])
+
+def local_url_for(*args, **kwargs) -> str:
+    new_url = local(url_for(*args, **kwargs))
+    if new_url.count(BASE_ROUTE[1:]) == 1:
+        fixed_url = new_url
+        return new_url
+    else:
+        fixed_url = '/'.join(new_url.split('/')[2:])
+    assert fixed_url.count(BASE_ROUTE[1:]) == 1, fixed_url
+    return fixed_url
+
+def url_for_static(filename):
+    root = application.config.get('STATIC_ROOT', '')
+    print (root)
+    print (filename)
+
+def local_redirect(*args, **kwargs) -> Any:
+    return redirect(local_url_for(*args, **kwargs))
+
+@application.route(local("/"))
 def index():
     if 'studentno' in session:
         return render_template('landing.html', url_for=url_for)
     else:
         return render_template("index.html", url_for=url_for)
 
-@application.route("/signup", methods=['GET', 'POST'])
+@application.route(local("/signup"), methods=['GET', 'POST'])
 def signup():
     if 'studentno' in session:
         return render_template('landing', url_for=url_for)
@@ -60,7 +89,7 @@ def signup():
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
 
-@application.route("/login", methods=["GET", "POST"])
+@application.route(local("/login"), methods=["GET", "POST"])
 def login():
     if 'studentno' in session:
         return ('landing')
@@ -120,16 +149,16 @@ def login():
     # elif request.method == "GET":
     #     return render_template('login.html', form=form)
 
-@application.route("/logout")
+@application.route(local("/logout"))
 def logout():
     session.pop('studentno', None)
     return render_template('index.html')
 
-@application.route("/landing")
+@application.route(local("/landing"))
 def landing():
     return render_template("landing.html")
 
-@application.route("/assessment1", methods=["GET", "POST"])
+@application.route(local("/assessment1"), methods=["GET", "POST"])
 def assessment1():
     if 'studentno' not in session:
         return ('login')
@@ -192,7 +221,7 @@ def assessment1():
         return render_template("assessment1.html", form=form)
 
 
-@application.route("/submissiondynamic", methods=["GET", "POST"])
+@application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
@@ -214,7 +243,7 @@ def submissiondynamic():
     else:
         return render_template("submissiondynamic.html", form=form)
 
-@application.route("/query", methods=["GET", "POST"])
+@application.route(local("/query"), methods=["GET", "POST"])
 def query():
     if str(session['studentno'])  not in admin:
         return ('index')
