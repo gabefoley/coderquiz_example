@@ -3034,3 +3034,1479 @@ spawned uWSGI worker 1 (pid: 9854, cores: 1)
 bioinf.scmb.uq.edu.au:81 [pid: 9854|app: 0|req: 1/1] 1.121.129.153 () {46 vars in 1090 bytes} [Sun Aug 20 21:52:45 2017] GET /BIOL3014 => generated 233 bytes in 29 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
 announcing my loyalty to the Emperor...
 bioinf.scmb.uq.edu.au:81 [pid: 9854|app: 0|req: 2/2] 1.121.129.153 () {44 vars in 1061 bytes} [Sun Aug 20 21:52:54 2017] GET /BIOL3014/ => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 06:17:54 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/PythonApps/coderquiz/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/PythonApps/coderquiz/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2578600
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2578600 pid: 19028 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19028)
+spawned uWSGI worker 1 (pid: 19136, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 1/1] 1.121.129.153 () {46 vars in 1092 bytes} [Mon Aug 21 06:18:02 2017] GET /BIOL3014/ => generated 233 bytes in 30 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 2/2] 1.121.129.153 () {46 vars in 1092 bytes} [Mon Aug 21 06:20:13 2017] GET /BIOL3014/ => generated 233 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 3/3] 1.121.129.153 () {46 vars in 1092 bytes} [Mon Aug 21 06:46:10 2017] GET /BIOL3014/ => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 4/4] 1.121.129.153 () {46 vars in 1090 bytes} [Mon Aug 21 06:46:13 2017] GET /BIOL3014 => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 5/5] 10.184.5.48 () {44 vars in 1057 bytes} [Mon Aug 21 12:54:19 2017] GET /BIOL3014 => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 6/6] 10.184.5.48 () {46 vars in 1088 bytes} [Mon Aug 21 12:55:09 2017] GET /BIOL3014 => generated 233 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 19136|app: 0|req: 7/7] 10.184.5.48 () {46 vars in 1088 bytes} [Mon Aug 21 12:55:13 2017] GET /BIOL3014 => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:08:53 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x11a5510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x11a5510 pid: 31658 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 31658)
+spawned uWSGI worker 1 (pid: 31760, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 31760|app: 0|req: 1/1] 10.184.5.48 () {46 vars in 1088 bytes} [Mon Aug 21 13:08:56 2017] GET /BIOL3014 => generated 233 bytes in 27 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:11:26 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c2c510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c2c510 pid: 32042 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 32042)
+spawned uWSGI worker 1 (pid: 32139, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:12:31 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d12510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1d12510 pid: 32445 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 32445)
+spawned uWSGI worker 1 (pid: 32547, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 32547|app: 0|req: 1/1] 10.184.5.48 () {46 vars in 1088 bytes} [Mon Aug 21 13:12:35 2017] GET /BIOL3014 => generated 233 bytes in 26 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:15:08 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xd17510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0xd17510 pid: 1951 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1951)
+spawned uWSGI worker 1 (pid: 2263, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 2263|app: 0|req: 1/1] 10.184.5.48 () {46 vars in 1084 bytes} [Mon Aug 21 13:15:12 2017] GET /BIOL3014 => generated 233 bytes in 21 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+bioinf.scmb.uq.edu.au:81 [pid: 2263|app: 0|req: 2/2] 10.184.5.48 () {48 vars in 1106 bytes} [Mon Aug 21 13:27:13 2017] GET /BIOL3014 => generated 233 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+bioinf.scmb.uq.edu.au:81 [pid: 2263|app: 0|req: 3/3] 10.184.5.48 () {48 vars in 1106 bytes} [Mon Aug 21 13:27:18 2017] GET /BIOL3014 => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:34:20 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x22b0510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x22b0510 pid: 3491 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3491)
+spawned uWSGI worker 1 (pid: 3615, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 13:35:15 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b99510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b99510 pid: 3872 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3872)
+spawned uWSGI worker 1 (pid: 3980, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:10:33 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x88c510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x88c510 pid: 6577 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6577)
+spawned uWSGI worker 1 (pid: 6686, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:16:28 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x130a510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x130a510 pid: 7175 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7175)
+spawned uWSGI worker 1 (pid: 7299, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:19:38 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa1d510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xa1d510 pid: 7623 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 7623)
+spawned uWSGI worker 1 (pid: 7738, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:20:51 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1cbe510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1cbe510 pid: 8003 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8003)
+spawned uWSGI worker 1 (pid: 8111, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:23:02 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2538510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x2538510 pid: 8372 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8372)
+spawned uWSGI worker 1 (pid: 8482, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 8482|app: 0|req: 1/1] 10.184.5.48 () {48 vars in 1110 bytes} [Mon Aug 21 15:29:51 2017] GET /BIOL3014/ => generated 233 bytes in 22 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:32:41 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1769510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x1769510 pid: 8868 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8868)
+spawned uWSGI worker 1 (pid: 8981, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 8981|app: 0|req: 1/1] 10.184.5.48 () {48 vars in 1110 bytes} [Mon Aug 21 15:32:49 2017] GET /BIOL3014/ => generated 233 bytes in 29 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 15:34:48 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc7d510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc7d510 pid: 9243 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 9243)
+spawned uWSGI worker 1 (pid: 9365, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 9365|app: 0|req: 1/1] 1.121.129.153 () {44 vars in 1059 bytes} [Mon Aug 21 18:54:40 2017] GET /BIOL3014/ => generated 233 bytes in 31 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 19:54:39 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x136f510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x136f510 pid: 15713 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 15713)
+spawned uWSGI worker 1 (pid: 15824, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 19:58:06 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1e37510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1e37510 pid: 16135 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16135)
+spawned uWSGI worker 1 (pid: 16243, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 19:59:50 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x7d7510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7d7510 pid: 16488 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16488)
+spawned uWSGI worker 1 (pid: 16598, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:00:47 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x2493510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2493510 pid: 16855 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 16855)
+spawned uWSGI worker 1 (pid: 16965, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:31:20 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1c9f510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x1c9f510 pid: 17843 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17843)
+spawned uWSGI worker 1 (pid: 17952, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:53:20 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1267510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1267510 pid: 19027 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19027)
+spawned uWSGI worker 1 (pid: 19143, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:54:39 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xef0510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xef0510 pid: 19408 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19408)
+spawned uWSGI worker 1 (pid: 19517, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:57:34 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xc39510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc39510 pid: 19771 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 19771)
+spawned uWSGI worker 1 (pid: 19879, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:59:02 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1d8c510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1d8c510 pid: 20166 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20166)
+spawned uWSGI worker 1 (pid: 20276, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 20:59:56 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f18510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x1f18510 pid: 20521 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20521)
+spawned uWSGI worker 1 (pid: 20631, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:01:37 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1da0510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1da0510 pid: 20911 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20911)
+spawned uWSGI worker 1 (pid: 21018, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:06:11 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x16e6510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x16e6510 pid: 21300 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21300)
+spawned uWSGI worker 1 (pid: 21411, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:07:52 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1057510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0x1057510 pid: 21634 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 21634)
+spawned uWSGI worker 1 (pid: 21742, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:12:15 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8b2510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8b2510 pid: 22198 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22198)
+spawned uWSGI worker 1 (pid: 22331, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:13:28 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfc3510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 2 seconds on interpreter 0xfc3510 pid: 22612 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22612)
+spawned uWSGI worker 1 (pid: 22732, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:14:29 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1f0c510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1f0c510 pid: 22932 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22932)
+spawned uWSGI worker 1 (pid: 23060, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:15:06 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1860510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1860510 pid: 23347 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23347)
+spawned uWSGI worker 1 (pid: 23460, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:22:24 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xf90510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xf90510 pid: 23842 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 23842)
+spawned uWSGI worker 1 (pid: 23947, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:22:51 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1151510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1151510 pid: 24158 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24158)
+spawned uWSGI worker 1 (pid: 24271, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:23:07 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1b9f510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1b9f510 pid: 24454 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24454)
+spawned uWSGI worker 1 (pid: 24557, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:23:59 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26e3510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26e3510 pid: 24789 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 24789)
+spawned uWSGI worker 1 (pid: 24896, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:27:42 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x13d0510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x13d0510 pid: 25189 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25189)
+spawned uWSGI worker 1 (pid: 25302, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:28:14 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1393510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1393510 pid: 25477 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25477)
+spawned uWSGI worker 1 (pid: 25601, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:28:47 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xac0510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xac0510 pid: 25789 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 25789)
+spawned uWSGI worker 1 (pid: 25897, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:29:30 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xeab510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xeab510 pid: 26108 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 26108)
+spawned uWSGI worker 1 (pid: 26247, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:44:14 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1582510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1582510 pid: 26733 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 26733)
+spawned uWSGI worker 1 (pid: 26848, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:45:48 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x26bc510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x26bc510 pid: 27107 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27107)
+spawned uWSGI worker 1 (pid: 27254, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:47:44 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xee4510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xee4510 pid: 27485 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27485)
+spawned uWSGI worker 1 (pid: 27600, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:50:34 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x262a510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x262a510 pid: 27809 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 27809)
+spawned uWSGI worker 1 (pid: 27928, cores: 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Aug 21 21:51:06 2017] ***
+compiled with version: 5.4.0 20160609 on 26 May 2017 23:30:05
+os: Linux-4.4.0-36-generic #55-Ubuntu SMP Thu Aug 11 18:01:55 UTC 2016
+nodename: bioinf
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /etc/uwsgi/sites_python3-enabled
+detected binary path: /var/www/python3uwsgi/.env/bin/uwsgi
+setgid() to 33
+set additional group 1003 (share)
+setuid() to 33
+chdir() to /var/www/BIOL3014
+your processes number limit is 257311
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+VirtualHosting mode enabled.
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/coderquiz-biol3014.sock fd 3
+Python version: 3.5.2 (default, Nov 17 2016, 17:05:23)  [GCC 5.4.0 20160609]
+Set PythonHome to /var/www/BIOL3014/.env
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe1c510
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xe1c510 pid: 28154 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28154)
+spawned uWSGI worker 1 (pid: 28266, cores: 1)
+bioinf.scmb.uq.edu.au:81 [pid: 28266|app: 0|req: 1/1] 1.121.129.153 () {44 vars in 1059 bytes} [Mon Aug 21 22:50:08 2017] GET /BIOL3014/ => generated 233 bytes in 32 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+announcing my loyalty to the Emperor...
