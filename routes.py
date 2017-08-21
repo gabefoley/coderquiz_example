@@ -14,28 +14,28 @@ from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///quiz'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///quiz'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
-db.init_app(app)
+db.init_app(application)
 
-app.secret_key = 'development-key'
+application.secret_key = 'development-key'
 
 BASE_ROUTE = '/BIOL3014'
 
 admin = ['40880084', '43558898', '123456789']
 
-@app.route("/")
+@application.route("/")
 def index():
     if 'studentno' in session:
         return render_template('landing.html', url_for=url_for)
     else:
         return render_template("index.html", url_for=url_for)
 
-@app.route("/signup", methods=['GET', 'POST'])
+@application.route("/signup", methods=['GET', 'POST'])
 def signup():
     if 'studentno' in session:
         return render_template('landing', url_for=url_for)
@@ -60,7 +60,7 @@ def signup():
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
 
-@app.route("/login", methods=["GET", "POST"])
+@application.route("/login", methods=["GET", "POST"])
 def login():
     if 'studentno' in session:
         return ('landing')
@@ -120,16 +120,16 @@ def login():
     # elif request.method == "GET":
     #     return render_template('login.html', form=form)
 
-@app.route("/logout")
+@application.route("/logout")
 def logout():
     session.pop('studentno', None)
     return render_template('index.html')
 
-@app.route("/landing")
+@application.route("/landing")
 def landing():
     return render_template("landing.html")
 
-@app.route("/assessment1", methods=["GET", "POST"])
+@application.route("/assessment1", methods=["GET", "POST"])
 def assessment1():
     if 'studentno' not in session:
         return ('login')
@@ -192,7 +192,7 @@ def assessment1():
         return render_template("assessment1.html", form=form)
 
 
-@app.route("/submissiondynamic", methods=["GET", "POST"])
+@application.route("/submissiondynamic", methods=["GET", "POST"])
 def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
@@ -214,7 +214,7 @@ def submissiondynamic():
     else:
         return render_template("submissiondynamic.html", form=form)
 
-@app.route("/query", methods=["GET", "POST"])
+@application.route("/query", methods=["GET", "POST"])
 def query():
     if str(session['studentno'])  not in admin:
         return ('index')
@@ -267,4 +267,4 @@ def query():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0')
+    application.run(debug=True, host='0.0.0.0')
