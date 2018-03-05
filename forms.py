@@ -38,8 +38,6 @@ class CorrectAnswer(object):
 
 class CheckNumberRange(object):
 
-     
-
     def __init__(self, lower, upper):
       self.lower = lower
       self.upper = upper
@@ -47,9 +45,7 @@ class CheckNumberRange(object):
     def __call__(self, form, field):
 
       if field.data is not None:
-
-
-        if not( self.lower <= int(field.data)  <= self.upper):
+        if not( self.lower <= float(field.data)  <= self.upper):
           raise ValidationError("Not in correct range")
 
 
@@ -115,8 +111,7 @@ class CheckThreshold(object):
             if field.data == self.answer:
                 return
             elif field.data == self.incorrect:
-                print ('yep')
-                raise ValidationError("It looks like you've taken the maximum and minimum scores and divided by two. This isn't correct (Once you have a sorted list you don't need to extract the values for minimum or maximum).")
+                raise ValidationError("It looks like you've taken the maximum and minimum scores and divided by two. This isn't correct.")
             else:
                 raise ValidationError("That isn't the correct threshold")
                 # else:
@@ -135,7 +130,7 @@ class CheckMotifMatches(object):
             if field.data == self.answer:
                 return
             elif field.data == self.incorrect:
-                raise ValidationError("This answer is incorrect. You only considered one strand")
+                raise ValidationError("This answer is incorrect. It looks like you only considered one strand")
             else:
                 raise ValidationError("This answer is incorrect")
 
@@ -147,7 +142,6 @@ class CheckAccuracyScore(object):
         scores_dict[spec] = 'Specificity'
         scores_dict[accur] = 'Accuracy'
         self.scores_dict = scores_dict
-        print (self.scores_dict)
         self.wanted = wanted
 
     def __call__(self, form, field):
@@ -161,12 +155,7 @@ class CheckAccuracyScore(object):
                 raise ValidationError("Your answer is not to three decimal places")
 
             for score in self.scores_dict.keys():
-                print (self.scores_dict)
-                print (self.wanted)
-                print (score)
-                print (field.data)
                 if field.data == score:
-                    print ('matched one of the scores')
                     if self.scores_dict[field.data] == self.wanted:
                         return
                     else:
@@ -231,6 +220,14 @@ class BIOL3014Quiz1(FlaskForm):
 
     submit = SubmitField("Submit answers")
 
+class BIOL3014Quiz2(FlaskForm):
+	q1 = StringField('Q1) Which of Approach A or B would give you an answer to the scientific enquiry? Enter "A" or "B" ', validators=[CorrectAnswer('B'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+ 
+	q2a = StringField('Q2a) What number of DHS sites overlap with at least one Atoh1 peak and overlap with at least one Gli2 peak?', validators=[CorrectAnswer('3697'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+	q2b = StringField('Q2b) For the DHS sites where both Atoh1 and Gli2 putatively bind, what is the average centre-to-centre distance between the Atoh1 and Gli2 peaks?', validators=[CheckNumberRange(80, 100), Optional("Not completed")], filters=[lambda v: None if v == '' else v]) 
+	check = SubmitField("Check answers")
+	submit = SubmitField("Submit answers")
+
 class SimpleQuiz(FlaskForm):
         q1 = StringField(
             'Question 1: Type the word "horse"',
@@ -267,8 +264,8 @@ class QueryForm(FlaskForm):
     studentno = StringField("Enter student number")
     records = RadioField('Do you want the latest submission or all submissions?', choices=[('Latest','Latest'),('All','All')])
     submit = SubmitField("Get student's submission")
-    download = SubmitField("Download Question 2 code")
-    download2 = SubmitField("Download Question 3 code")
+    #download = SubmitField("Download Question 2 code")
+   # download2 = SubmitField("Download Question 3 code")
 
 class SubmissionForm(FlaskForm):
 	records = RadioField('Do you want your latest submission or all submissions?', choices=[('Latest','Latest'),('All','All')])

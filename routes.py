@@ -1,7 +1,7 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
-from models import db, User, Submission
-from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1
+from models import db, User, Submission, SubmissionBIOL3014_2
+from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1, BIOL3014Quiz2
 from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
@@ -14,9 +14,10 @@ from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 
 
-application = Flask(__name__)
+print ('in here')
+application = Flask(__name__, static_url_path="")
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///quiz'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz2018'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 
@@ -24,7 +25,7 @@ db.init_app(application)
 
 application.secret_key = 'development-key'
 
-BASE_ROUTE = '/BIOL3014'
+BASE_ROUTE = '/coderquiz'
 
 admin = ['40880084', '43558898', '123456789']
 
@@ -32,12 +33,12 @@ class SCIE2100_Exception(Exception):
     pass
 
 def local(route: str) -> str:
-    print ('here is the route sucka')
-    print (route)
-    if BASE_ROUTE == '/':
-        return route
-    else:
-        return join(BASE_ROUTE, route[1:])
+	print ('base route', BASE_ROUTE)
+	print (route)
+	if BASE_ROUTE == '/':
+		return route
+	else:
+		return join(BASE_ROUTE, route[1:])
 
 def local_url_for(*args, **kwargs) -> str:
     new_url = local(url_for(*args, **kwargs))
@@ -70,21 +71,22 @@ def signup():
         return render_template('landing', url_for=url_for)
 
     form = SignupForm()
-    if request.method == 'POST':
-        if form.validate() == False:
-            return render_template("signup.html", form=form, url_for=url_for, errors=[])
-        else:
-            newuser = User(form.first_name.data, form.last_name.data, form.studentno.data, form.email.data, form.password.data)
-            db.session.add(newuser)
-            try:
-                db.session.commit()
-            except IntegrityError as e:
-                return render_template("signup.html", form=form, url_for=url_for, errors=['This email is already taken.'])
-            except DataError as e:
-                return render_template("signup.html", form=form, url_for=url_for, errors=['Please provide a valid student number (integer).'])
-            session['studentno'] = newuser.studentno
 
-            return render_template('landing.html', url_for=url_for)
+    if request.method == 'POST':
+        try:
+            if form.validate() == False:
+                return render_template("signup.html", form=form, url_for=url_for, errors=[])
+            else:
+                newuser = User(form.first_name.data, form.last_name.data, form.studentno.data, form.email.data, form.password.data)
+                db.session.add(newuser)
+                db.session.commit()
+        except IntegrityError as e:
+            return render_template("signup.html", form=form, url_for=url_for, errors=['This email is already taken.'])
+        except DataError as e:
+            return render_template("signup.html", form=form, url_for=url_for, errors=['Please provide a valid student number (integer).'])
+        session['studentno'] = newuser.studentno
+
+        return render_template('landing.html', url_for=url_for)
 
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
@@ -158,6 +160,7 @@ def logout():
 def landing():
     return render_template("landing.html")
 
+
 @application.route(local("/assessment1"), methods=["GET", "POST"])
 def assessment1():
     if 'studentno' not in session:
@@ -204,8 +207,6 @@ def assessment1():
             else:
                 q3c = "INCORRECT"
 
-            file = request.files['file_upload']
-
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
             form_submission = Submission(session['studentno'], dt, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c)
             # form.populate_obj(form_submission)
@@ -220,6 +221,41 @@ def assessment1():
     elif request.method == "GET":
         return render_template("assessment1.html", form=form)
 
+@application.route(local("/assessment2"), methods=["GET", "POST"])
+def assessment2():
+    if 'studentno' not in session:
+        return ('login')
+    form = BIOL3014Quiz2()
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("assessment2.html", form=form)
+        elif form.submit.data and form.validate() == True:
+            if form.q1.data:
+                q1 = form.q1.data
+            else:
+                q1 = "INCORRECT"
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+            if  form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+
+            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+            form_submission = SubmissionBIOL3014_2(session['studentno'], dt, q1, q2a, q2b)
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for)
+
+        else:
+            return render_template("assessment2.html", form=form)
+
+    elif request.method == "GET":
+        return render_template("assessment2.html", form=form)
+
 
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():
@@ -229,11 +265,11 @@ def submissiondynamic():
         records = form.records.data
         if form.records.data == 'Latest':
             results = [
-                Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
+                SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
             # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
         else:
             # code_output = []
-            results = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
+            results = SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
             # for result in results:
                 # code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
         return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=results)
@@ -262,16 +298,16 @@ def query():
             # code_output = Markup(highlight(code, PythonLexer(), HtmlFormatter()))
 
             if form.records.data == 'Latest':
-                results = [Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
-                code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
+                results = [SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
+               # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
 
             else:
-                code_output = []
-                results = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
-                for result in results:
-                    code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
+                #code_output = []
+                results = SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
+                #for result in results:
+                 #   code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
 
-            return render_template("query.html", form=form, studentno=studentno, records=records, result=results, code_output=code_output)
+            return render_template("query.html", form=form, studentno=studentno, records=records, result=results)
 
 
 
@@ -296,4 +332,4 @@ def query():
 
 
 if __name__ == "__main__":
-    application.run(debug=True, host='0.0.0.0')
+    application.run(debug=True)

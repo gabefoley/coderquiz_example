@@ -42,12 +42,11 @@ class Submission(db.Model):
   q3a = db.Column(db.String(255))
   q3b = db.Column(db.String(255))
   q3c = db.Column(db.String(255))
-  file_upload = db.Column(db.LargeBinary)
 
 
 
 
-  def __init__(self, studentno, submissiontime, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c, file_upload):
+  def __init__(self, studentno, submissiontime, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c):
     self.studentno = studentno
     self.submissiontime = submissiontime
     self.q1a = q1a
@@ -60,7 +59,21 @@ class Submission(db.Model):
     self.q3b = q3b
     self.q3c = q3c
 
-    self.file_upload = file_upload
+class SubmissionBIOL3014_2 (db.Model):
+	__tablename__ = "submissions2"
+	submissionid = db.Column(db.Integer, primary_key = True)
+	studentno = db.Column(db.Integer)
+	submissiontime = db.Column(db.DateTime(timezone=True))
+	q1 = db.Column(db.String(255))
+	q2a = db.Column(db.String(255))
+	q2b = db.Column(db.String(255))
 
+	def __init__(self, studentno, submissiontime, q1, q2a, q2b):
+		self.studentno = studentno
+		self.submissiontime = submissiontime
+		self.q1 = q1
+		self.q2a = q2a
+		self.q2b = q2b
+ 
 
 
