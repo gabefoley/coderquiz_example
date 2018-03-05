@@ -14,7 +14,6 @@ from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 
 
-print ('in here')
 application = Flask(__name__, static_url_path="")
 
 application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz2018'
@@ -33,8 +32,6 @@ class SCIE2100_Exception(Exception):
     pass
 
 def local(route: str) -> str:
-	print ('base route', BASE_ROUTE)
-	print (route)
 	if BASE_ROUTE == '/':
 		return route
 	else:
