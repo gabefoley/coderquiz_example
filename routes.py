@@ -1,7 +1,7 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
 from models import db, User, Submission, SubmissionBIOL3014_2
-from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1, BIOL3014Quiz2
+from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1, BIOL3014Quiz2, SCIE2100Practical1
 from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
@@ -157,55 +157,22 @@ def logout():
 def landing():
     return render_template("landing.html")
 
-
-@application.route(local("/assessment1"), methods=["GET", "POST"])
-def assessment1():
+@application.route(local("/scie2100_practical1"), methods=["GET", "POST"])
+def scie2100_practical1():
     if 'studentno' not in session:
         return ('login')
-    form = BIOL3014Quiz1()
+    form = SCIE2100Practical1()
     if request.method == "POST":
         if form.check.data and form.validate() == True:
-            return render_template("assessment1.html", form=form)
+            return render_template("scie2100practical1.html", form=form)
         elif form.submit.data and form.validate() == True:
-            if form.q1a.data:
-                q1a = form.q1a.data
+            if form.q1.data:
+                q1 = form.q1.data
             else:
-                q1a = "INCORRECT"
-            if form.q1b.data:
-                q1b = form.q1b.data
-            else:
-                q1b = "INCORRECT"
-            if form.q1c.data:
-                q1c = form.q1c.data
-            else:
-                q1c = "INCORRECT"
-            if form.q2a.data:
-                q2a = form.q2a.data
-            else:
-                q2a = "INCORRECT"
-            if form.q2b.data:
-                q2b = form.q2b.data
-            else:
-                q2b = "INCORRECT"
-            if form.q2c.data:
-                q2c = form.q2c.data
-            else:
-                q2c = "INCORRECT"
-            if  form.q3a.data:
-                q3a = form.q3a.data
-            else:
-                q3a = "INCORRECT"
-            if  form.q3b.data:
-                q3b = form.q3b.data
-            else:
-                q3b = "INCORRECT"
-            if  form.q3c.data:
-                q3c = form.q3c.data
-            else:
-                q3c = "INCORRECT"
+                q1 = "INCORRECT"
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = Submission(session['studentno'], dt, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c)
+            form_submission = Submission(session['studentno'], dt, q1)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
@@ -213,10 +180,10 @@ def assessment1():
             return render_template('success.html', url_for=url_for)
 
         else:
-            return render_template("assessment1.html", form=form)
+            return render_template("scie2100practical1.html", form=form)
 
     elif request.method == "GET":
-        return render_template("assessment1.html", form=form)
+        return render_template("scie2100practical1.html", form=form)
 
 @application.route(local("/assessment2"), methods=["GET", "POST"])
 def assessment2():
@@ -252,8 +219,6 @@ def assessment2():
 
     elif request.method == "GET":
         return render_template("assessment2.html", form=form)
-
-
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():
     form = SubmissionForm()
