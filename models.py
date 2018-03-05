@@ -26,6 +26,49 @@ class User(db.Model):
   def check_password(self, password):
     return check_password_hash(self.pwdhash, password)
 
+class SubmissionSCI2100Practical1(db.Model):
+    __tablename__ = "scie2100practical1"
+
+    submissionid = db.Column(db.Integer, primary_key=True)
+    studentno = db.Column(db.Integer)
+    submissiontime = db.Column(db.DateTime(timezone=True))
+
+    q1a = db.Column(db.String(255))
+    q2a = db.Column(db.String(255))
+    q2b = db.Column(db.String(255))
+    q3a = db.Column(db.String(255))
+    q3b = db.Column(db.String(255))
+    q4a = db.Column(db.String(255))
+    q4b = db.Column(db.String(255))
+    q4_code = db.Column(db.LargeBinary)
+    q5 = db.Column(db.String(255))
+    q5_code = db.Column(db.LargeBinary)
+    q6a = db.Column(db.String(255))
+    q6b = db.Column(db.String(255))
+    q6c = db.Column(db.LargeBinary)
+    q6d = db.Column(db.String(255))
+
+    def __init__(self, studentno, submissiontime, q1a,  q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d):
+        self.studentno = studentno
+        self.submissiontime = submissiontime
+        self.q1a = q1a
+        self.q2a = q2a
+        self.q2b = q2b
+        self.q3a = q3a
+        self.q3b = q3b
+        self.q4a = q4a
+        self.q4b = q4b
+        self.q4_code = q4_code
+        self.q5 = q5
+        self.q5_code = q5_code
+        self.q6a = q6a
+        self.q6b = q6b
+        self.q6c = q6c
+        self.q6d = q6d
+
+
+
+
 class Submission(db.Model):
 
   __tablename__ = "submissions"

@@ -27,30 +27,33 @@
                   {% endif %}
                 {% endwith %}
 
-            Question 1
+            {% for question in questions %}
 
-            {{ form.q1.label }}
+            {{ form[question].label}}
 
-            {{ form.q1() }}
+            {{ form[question] }}
 
 
-              {% if form.q1.errors %}
-                {% for error in form.q1.errors %}
+              {% if form[question].errors %}
+                {% for error in form[question].errors %}
                   <p class="error-message">{{ error }}</p>
                 {% endfor %}
               {% elif form.check.data %}
-			{% if form.q1.data is not none %}
-				{% if form.q1.errors %}
-					{% for error in form.q1.errors %}
+			{% if form[question].data is not none %}
+				{% if form[question].errors %}
+					{% for error in form[question].errors %}
 						<p class = "error-message">{{ error }}</p>
 					{% endfor %}
 
 				{% else %}
 
-             			 	<p class="correct-message"> Correct </p>
+             			 	<p class="correct-message"> Answer accepted </p>
 				{% endif %}
 			{% endif %}
               {% endif %}
+            {%  endfor %}
+
+
 
 	</div>
 

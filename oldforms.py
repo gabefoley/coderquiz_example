@@ -152,69 +152,7 @@ class AddressForm(FlaskForm):
     address = StringField('Address', validators=[DataRequired("Please enter an address")])
     submit = SubmitField("Search")
 
-class PracticalAssessmentForm(FlaskForm):
-    q1 = StringField('Question 1: Give one example of a sequence which is composed of uppercase letters and does not contain B,J,Z, or O for which the Sequence class could not work out what the alphabet is.', validators=[CheckAlphabet(), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
-    q2a = StringField('Question 2A: Which sequence has the greater number of valines? Type either P53_EQUAS or P53_HUMAN.', validators=[CorrectAnswer('P53_HUMAN'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-
-    q2b = StringField('Question 2B: Which sequence has the greater number of valines as a proportion of the total protein length? Type either P53_EQUAS or P53_HUMAN.', validators=[CorrectAnswer('P53_EQUAS'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-    
-    q2c = StringField('Question 2C: What percentage of the P53_EQUAS was valine? Enter a percentage to three decimal places (do not include the % sign)', validators=[CorrectAnswer('5.797'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-
-    q3 = StringField('Question 3: How many of the sequences in Staphylococcus.fasta have the RAFKPS target sequence?', validators=[CorrectAnswer('17'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-
-    q4a = StringField("Question 4A: Paste the aligned mystery_seq1 here (Include only protein symbols and gap characters)", validators=[CorrectAnswer('KFLKVSSLFVATLT-TATLVSSPAANALSSKAMDNHPQQ-SQS-SKQ-QTPKIQKGGNLKPLEQREHAN-V-ILPNNDRHQITDTTNGHY-A--P-VT-YI-Q--VE---APTGTFIASGVVVG-KDTLLTNKHVVDATHG-DPHAL-K---A--F--PS-AINQDNY-PNGGFTAEQ-ITKYSGEGDLAIVKFSPNEQ-NKHIGEVVKPATMSNNAETQV-N-QN-ITVTGYPGDKPVATMWESKGKITY-L-KGEAMQY-DLSTTGGNS-GSPVFNEKNEVIGIHWGGVPNEFNGAVFINE'), Optional()], filters=[lambda v: None if v == '' else v])
-
-    q4b = StringField("Question 4B: Paste the aligned mystery_seq2 here (Include only protein symbols and gap characters)", validators=[CorrectAnswer('EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE'), Optional()], filters=[lambda v: None if v == '' else v])
-    
-   # q4c = FileField('Question 4C: Upload your alignLocal function')
-
-    check = SubmitField("Check  answers")
-
-    submit = SubmitField("Submit answers")
-
-
-class PracticalAssessment2Form(FlaskForm):
-    q1 = StringField(
-        'Question 1 [2 Marks]: What is the Newick string that would represent the above phylogenetic tree, including distances?',
-    validators=[CheckNewick('(((A:0.1,B:0.2):0.2,C:0.1):0.2,(D:0.3,(E:0.2,F:0.1):0.4):0.3)'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-
-    q2 = StringField(
-        'Question 2 [3 Marks]: What is the Gamma distance between the two sequences in eh.aln? Your submitted answer should be rounded to three decimal places, e.g. 1.241525 would be 1.242',
-        validators=[CorrectAnswer('1.507'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
-
-    q3 = StringField('Question 3 [5 Marks]: What is the node label for the closest common ancestor for nodes A0A1A8AU08 and G3PS36?',
-                     validators=[CorrectAnswer('N_6X5OCZ'), Optional("Not completed")],
-                     filters=[lambda v: None if v == '' else v])
-
-
-    file_upload = FileField('Upload the code for the extended version of calcDistances that you wrote for Question 2', validators=[DataRequired("Please attach your code for Question 2.")])
-
-    file_upload2 = FileField('Upload the code for identifying the common ancestor that you wrote for Question 3', validators=[DataRequired("Please attach your code for Question 3.")])
-
-    check = SubmitField("Check answers")
-
-    submit = SubmitField("Submit answers")
-
-class PracticalAssessment3Form(FlaskForm):
-    q1 = StringField('Question 1 [4 Marks]: Submit your predicted secondary structure.', validators=[CorrectAnswer('CCCEEEEEHCHEEEEHCEHCECEEECEEEHCHHEHCECCCECEECHEECECCCHHHEEHCHHHEEHCECHHECEEECHHEHEHECE')], filters=[lambda v: None if v == '' else v])
-
-    q2a = StringField('Question 2A [1 Marks]: Submit the sensitivity of class E to two decimal places.', validators=[
-        CorrectAnswer('0.58')],
-                     filters=[lambda v: None if v == '' else v])
-
-    q2b = StringField('Question 2B [1 Marks]: Submit the specificity of class E to two decimal places.', validators=[
-        CorrectAnswer('0.64')],
-                     filters=[lambda v: None if v == '' else v])
-
-    q2_code = FileField('Question 2 Code [2 Marks]: Submit the code you wrote to calculate sensitivity and specificity.', validators=[DataRequired("Please attach your code for Question 2.")],
-                     filters=[lambda v: None if v == '' else v])
-
-    q3 = StringField('Question 3 [2 Marks]: Please submit your regular expression. You only need to provide your regular expression, e.g. only paste in something in this format - [AC]C[AT]AT.[AT] ', validators=[CheckRegex()], filters=[lambda v: None if v == '' else v])
-
-    check = SubmitField("Check answers")
-
-    submit = SubmitField("Submit answers")
 
 class QueryForm(FlaskForm):
     studentno = StringField("Enter student number")

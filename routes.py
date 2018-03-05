@@ -1,7 +1,8 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
-from models import db, User, Submission, SubmissionBIOL3014_2
-from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm, BIOL3014Quiz1, BIOL3014Quiz2, SCIE2100Practical1
+from models import db, User, SubmissionSCI2100Practical1
+from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm
+from forms_scie2100 import SCIE2100Practical1
 from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
@@ -78,7 +79,11 @@ def signup():
                 db.session.add(newuser)
                 db.session.commit()
         except IntegrityError as e:
-            return render_template("signup.html", form=form, url_for=url_for, errors=['This email is already taken.'])
+            if len(form.studentno.data) < 8:
+                return render_template("signup.html", form=form, url_for=url_for, errors=['Please use all 8 digits for you student number'])
+            else:
+                return render_template("signup.html", form=form, url_for=url_for, errors=['This email is already taken.'])
+
         except DataError as e:
             return render_template("signup.html", form=form, url_for=url_for, errors=['Please provide a valid student number (integer).'])
         session['studentno'] = newuser.studentno
@@ -162,17 +167,84 @@ def scie2100_practical1():
     if 'studentno' not in session:
         return ('login')
     form = SCIE2100Practical1()
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d' ]
     if request.method == "POST":
         if form.check.data and form.validate() == True:
-            return render_template("scie2100practical1.html", form=form)
+            return render_template("scie2100practical1.html", questions = questions, form=form)
         elif form.submit.data and form.validate() == True:
+
             if form.q1.data:
                 q1 = form.q1.data
             else:
                 q1 = "INCORRECT"
 
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+
+            if form.q3a.data:
+                q3a = form.q3a.data
+            else:
+                q3a = "INCORRECT"
+
+            if form.q3b.data:
+                q3b = form.q3b.data
+            else:
+                q3b = "INCORRECT"
+
+            if form.q4a.data:
+                q4a = form.q4a.data
+            else:
+                q4a = "INCORRECT"
+
+            if form.q4b.data:
+                q4b = form.q4b.data
+            else:
+                q4b = "INCORRECT"
+
+            if form.q4_code.data:
+                q4_code = form.q4_code.data
+            else:
+                q4_code = "INCORRECT"
+
+            if form.q5.data:
+                q5 = form.q5.data
+            else:
+                q5 = "INCORRECT"
+
+            if form.q5_code.data:
+                q5_code = form.q5_code.data
+            else:
+                q5_code = "INCORRECT"
+
+            if form.q6a.data:
+                q6a = form.q6a.data
+            else:
+                q6a = "INCORRECT"
+
+            if form.q6b.data:
+                q6b = form.q6b.data
+            else:
+                q6b = "INCORRECT"
+
+            if form.q6c.data:
+                q6c = form.q6c.data
+            else:
+                q6c = "INCORRECT"
+
+            if form.q6d.data:
+                q6d = form.q6d.data
+            else:
+                q6d = "INCORRECT"
+
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = Submission(session['studentno'], dt, q1)
+            form_submission = SubmissionSCI2100Practical1(session['studentno'], dt, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
@@ -180,45 +252,11 @@ def scie2100_practical1():
             return render_template('success.html', url_for=url_for)
 
         else:
-            return render_template("scie2100practical1.html", form=form)
+            return render_template("scie2100practical1.html", questions=questions, form=form)
 
     elif request.method == "GET":
-        return render_template("scie2100practical1.html", form=form)
+        return render_template("scie2100practical1.html", questions=questions, form=form)
 
-@application.route(local("/assessment2"), methods=["GET", "POST"])
-def assessment2():
-    if 'studentno' not in session:
-        return ('login')
-    form = BIOL3014Quiz2()
-    if request.method == "POST":
-        if form.check.data and form.validate() == True:
-            return render_template("assessment2.html", form=form)
-        elif form.submit.data and form.validate() == True:
-            if form.q1.data:
-                q1 = form.q1.data
-            else:
-                q1 = "INCORRECT"
-            if form.q2a.data:
-                q2a = form.q2a.data
-            else:
-                q2a = "INCORRECT"
-            if  form.q2b.data:
-                q2b = form.q2b.data
-            else:
-                q2b = "INCORRECT"
-
-            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = SubmissionBIOL3014_2(session['studentno'], dt, q1, q2a, q2b)
-            db.session.add(form_submission)
-            db.session.commit()
-
-            return render_template('success.html', url_for=url_for)
-
-        else:
-            return render_template("assessment2.html", form=form)
-
-    elif request.method == "GET":
-        return render_template("assessment2.html", form=form)
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():
     form = SubmissionForm()
