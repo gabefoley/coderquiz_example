@@ -233,6 +233,10 @@ header {
   color: #2ECC40;
 }
 
+notice-text {
+  font-size:20px;
+}
+
 textarea {
      /*width: 400px;*/
   width: 100%;

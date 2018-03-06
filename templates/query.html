@@ -1,58 +1,53 @@
 {% extends "layout.html" %}
 {% block content %}
+<form method="POST" >
+    {{ form.hidden_tag() }}
+    <div class="query-group"><br><br>
+        {{ form.studentno.label }}
+        {{ form.studentno() }}<br><br>
+        {{ form.assessment_item.label }}
+        {{ form.assessment_item() }}<br><br>
+        {{ form.records.label }}
+        {{ form.records() }}
+        {{ form.submit(class="btn-primary") }}
+        <p class="error-message">{{ errors }}</p>
+    </div>
 
-    {% block javascript %}
-    <SCRIPT SRC="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></SCRIPT>
-{% endblock %}
-
-<div class = "landingText">
- Can you indicate which of the scenarios in this figure would not result in a miscount when using approach A? Explain why.
-</div>
-
-<img src = "http://imgur.com/FP7sU69"> 
-
-
-
-
-            <form method="POST" >
-            {{ form.hidden_tag() }}
-
-
-
-            <div class="query-group">
-            {{ form.studentno.label }}
-            {{ form.studentno() }}
-                <br><br>
-            {{ form.records.label }}
-            {{ form.records() }}
-            {{ form.submit(class="btn-primary") }}
-         
-            </div>
-
-            {%  if studentno %}
-                            <div class="query-group">
+    {%  if studentno %}
+        <div class="query-group">
+        {{  records }}
+        {{ studentno }}
 
 
-                {{  records }}
-            {{ studentno }}
-                {% for item in result %}
-                    <li>{{ item.submissiontime }}</li>
-                    <li>{{ item.q1 }}</li>
-                    <li>{{ item.q2a }}</li>
-                    <li>{{ item.q2b }}</li>
-                    <br>
-                    <br>
+        {% for result in results %} <br>
+            {{ result.submission_time }}
+                {% if result.correct == false %}
+                    <p class="error-message">This response contains incorrect answers</p>
 
+                {%  else %}
+                            <p class="correct-message"> This response has all correct answers</p>
+                {%  endif %}
 
+                {% for item in result.results %}
+                    <li>{{ item[0] + ":" + item[1] }}</li>
+                {% endfor %} <br><br>
 
+                Here is the submitted code
 
-
-
-
+                {% for item in result.code_list %}
+                    <li>{{ item[0] + ":" + item[1] |safe  }}</li>
                 {% endfor %}
 
-            {% endif %}
+                Here are the submitted images
 
-            </form>
+                {% for item in result.image_list %}
+
+                    <li>{{ item[0] + ":"   }}</li>
+                    <img src="{{ item[1] }}" alt="{{ item[0] + "_image" }}">
+                {% endfor %}
+        {%  endfor %}
+        </div>
+    {% endif %}
+
 
 {% endblock %}

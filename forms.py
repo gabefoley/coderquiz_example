@@ -70,8 +70,11 @@ class AddressForm(FlaskForm):
 
 class QueryForm(FlaskForm):
     studentno = StringField("Enter student number")
+    assessment_item = SelectField('Which assessment item do you want?',
+                                  choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1')],
+                                  validators = [DataRequired()])
     records = RadioField('Do you want the latest submission or all submissions?',
-                         choices=[('Latest', 'Latest'), ('All', 'All')])
+                         choices=[('Latest', 'Latest'), ('All', 'All')], default='Latest', validators = [DataRequired()])
     submit = SubmitField("Get student's submission")
     # download = SubmitField("Download Question 2 code")
     # download2 = SubmitField("Download Question 3 code")

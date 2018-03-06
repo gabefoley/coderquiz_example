@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
-from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange
+from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, CheckDomainBoundaries
 
 class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
@@ -76,7 +76,7 @@ class SCIE2100Practical1(FlaskForm):
 
     q6d = StringField(
         "Question 6D: Provide the rough boundaries of the fifth transmembrane domain. Enter your boundaries in the following format : 10 - 30",
-        validators=[DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        validators=[CheckDomainBoundaries(280,320), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")

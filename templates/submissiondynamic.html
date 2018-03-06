@@ -1,77 +1,52 @@
 {% extends "layout.html" %}
 {% block content %}
-            <form method="POST" >
-            {{ form.hidden_tag() }}
+<form method="POST" >
+    {{ form.hidden_tag() }}
+    <div class="query-group"><br><br>
+        {{ form.assessment_item.label }}
+        {{ form.assessment_item() }}<br><br>
+        {{ form.records.label }}
+        {{ form.records() }}
+        {{ form.submit(class="btn-primary") }}
+        <p class="error-message">{{ errors }}</p>
+    </div>
 
-            <div class="query-group">
-                <br><br>
-
-                {{ form.assessment_item.label }}
-                {{ form.assessment_item() }}
-
-                <br><br>
-
-            {{ form.records.label }}
-            {{ form.records() }}
-
-
-
-
-            {{ form.submit(class="btn-primary") }}
-                <p class="error-message">{{ errors }}</p>
-
-            </div>
+    {%  if studentno %}
+        <div class="query-group">
+        {{  records }}
+        {{ studentno }}
 
 
-            {%  if studentno %}
-                            <div class="query-group">
-
-
-
-                {{  records }}
-            {{ studentno }}
-                <br>
-                            {{ submission_time }}
-
-                {% if correct == false %}
-                                <p class="error-message">This response contains incorrect answers</p>
+        {% for result in results %} <br>
+            <p class="notice-text"> Result</p>
+            {{ result.submission_time }}
+                {% if result.correct == false %}
+                    <p class="error-message">This response contains incorrect answers</p>
 
                 {%  else %}
                             <p class="correct-message"> This response has all correct answers</p>
                 {%  endif %}
-                {% for item in result %}
+
+                {% for item in result.results %}
                     <li>{{ item[0] + ":" + item[1] }}</li>
-
-
-
-                {% endfor %}
-
-                <br>
-                <br>
+                {% endfor %} <br><br>
 
                 Here is the submitted code
 
-                {% for item in code_list %}
+                {% for item in result.code_list %}
                     <li>{{ item[0] + ":" + item[1] |safe  }}</li>
-
-
-
                 {% endfor %}
 
                 Here are the submitted images
 
-                {% for item in image_list %}
+                {% for item in result.image_list %}
 
                     <li>{{ item[0] + ":"   }}</li>
                     <img src="{{ item[1] }}" alt="{{ item[0] + "_image" }}">
-
-
-
-
                 {% endfor %}
-            {% endif %}
-                </div>
-
+        {%  endfor %}
+        </div>
+    {% endif %}
 
 
 {% endblock %}

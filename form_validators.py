@@ -17,8 +17,8 @@ class CheckRegex(object):
 
         if field.data is not None:
 
-            correctSeqs = {'chr7:130602946-130603045', 'chr15:5089967-5090066', 'chr19:23226975-23227074'}
-            userSeqs = set()
+            correct_seqs = {'chr7:130602946-130603045', 'chr15:5089967-5090066', 'chr19:23226975-23227074'}
+            user_seqs = set()
 
             regex = field.data
 
@@ -29,18 +29,17 @@ class CheckRegex(object):
                     seqstr = ''.join(seq.sequence)
                     m = tf.match(seqstr)
                     if m:
-                        userSeqs.add(seq.name)
+                        user_seqs.add(seq.name)
 
-                if correctSeqs == userSeqs:
+                if correct_seqs == user_seqs:
                     return
                 else:
 
-                    raise ValidationError('Incorrect. Returning %s sequences %s' % (len(userSeqs), "" if len(
-                        userSeqs) == 0 else "and they are " + str(userSeqs) if len(
-                        userSeqs) < 6 else " and there are too many to list here."))
+                    raise ValidationError('Incorrect. Returning %s sequences %s' % (len(user_seqs), "" if len(
+                        user_seqs) == 0 else "and they are " + str(user_seqs) if len(
+                        user_seqs) < 6 else " and there are too many to list here."))
             except sre_constants.error:
                 raise ValidationError("The provided regular expression is not valid. Try checking your brackets.")
-
 
 
 class CheckList(object):
@@ -62,20 +61,21 @@ class CheckList(object):
             check_set = set(check_list)
             correct_set = set(self.correct_list)
 
-            if (len(check_set) > len(correct_set)):
+            if len(check_set) > len(correct_set):
                 raise ValidationError("You have entered too many responses")
 
-            if (len(check_set) < len(correct_set)):
+            if len(check_set) < len(correct_set):
                 raise ValidationError("You haven't entered enough responses")
 
-            if (len(check_set - correct_set) > 0):
+            if len(check_set - correct_set) > 0:
                 # Get the original formatting of the response
                 incorrect_responses = []
                 for item in field.data.split(","):
-                    if (item.upper().strip() in check_set - correct_set):
+                    if item.upper().strip() in check_set - correct_set:
                         incorrect_responses.append(item.strip())
 
                 raise ValidationError('The following responses are not correct - {}'.format(', '.join([x for x in incorrect_responses])))
+
 
 class CorrectAnswer(object):
     """
@@ -138,10 +138,10 @@ class CheckAlphabet(object):
 
             try:
                 seq1 = Sequence(field.data.upper())
-                valid = True;
+                valid = True
             except:
                 pass
-            if (valid):
+            if valid:
                 raise ValidationError("Incorrect: This is a valid sequence")
 
 
@@ -231,9 +231,7 @@ class CheckAccuracyScore(object):
                         return
                     else:
                         raise ValidationError(
-                            'You need to provide the {} score but you have provided the {} score'.format(self.wanted,
-                                                                                                         self.scores_dict[
-                                                                                                             field.data]))
+                            'You need to provide the {} score but you have provided the {} score'.format(self.wanted,self.scores_dict[field.data]))
 
                 else:
                     continue
@@ -243,13 +241,46 @@ class CheckAccuracyScore(object):
 class CheckPalindrome(object):
     def __call__(self, form, field):
         if field.data is not None:
-            cleanedData = "".join(l for l in field.data.upper() if l not in string.punctuation)
-            cleanedData = cleanedData.replace(" ", "")
+            cleaned_data = "".join(l for l in field.data.upper() if l not in string.punctuation)
+            cleaned_data = cleaned_data.replace(" ", "")
 
-            if cleanedData == cleanedData[::-1]:
+            if cleaned_data == cleaned_data[::-1]:
                 return
             else:
                 raise ValidationError("That is not a palindrome")
+
+
+class CheckDomainBoundaries(object):
+
+    def __init__(self, lower, upper):
+        self.lower = lower
+        self.upper = upper
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            try:
+                check_lower = float(field.data.split("-")[0])
+                check_upper = float(field.data.split("-")[1])
+
+                if check_upper < check_lower:
+                    raise ValidationError("The upper boundary must be higher than the lower boundary")
+
+                if check_upper - check_lower < 15:
+                    raise ValidationError("That domain is too short")
+
+            except IndexError:
+                raise ValidationError("The format you've entered your answer in is incorrect")
+
+            except ValueError as e:
+                if str(e).startswith("could not convert string to float"):
+                    raise ValidationError("Make sure you're only entering numbers and the - symbol")
+                else:
+                    raise ValidationError(e)
+
+            if not (self.lower <= check_lower < check_upper <= self.upper):
+                raise ValidationError("These are not the correct domain boundaries")
+
 
 class Unique(object):
     def __init__(self, model, field, message=u'This element already exists.'):

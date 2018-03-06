@@ -1,10 +1,11 @@
 from typing import Any
-from flask import Flask, render_template, request, session, redirect, url_for, send_file
+from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+
 from models import db, User, SubmissionSCIE2100Practical1
-from forms import SignupForm, LoginForm, QueryForm, SubmissionForm
+from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm
 from forms_scie2100 import SCIE2100Practical1
-from sqlalchemy import desc
+from sqlalchemy import desc, exc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
 from io import BytesIO
@@ -14,6 +15,7 @@ import os
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
+from base64 import b64encode
 
 
 application = Flask(__name__, static_url_path="")
@@ -268,72 +270,72 @@ def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
         studentno = str(session['studentno'])
+        records = form.records.data
         item = form.assessment_item.data
         request_name = item[10:]
         questions = eval(request_name + '.questions')
         if form.records.data == 'Latest':
             results = eval('[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
-            if (results[0] == None):
-                return render_template("submissiondynamic.html", form=form,
-                                       errors="You haven't submitted this assessment item")
-
-            edited_results = build_results(results, questions)
-
-
-            return render_template("submissiondynamic.html", form=form, studentno=studentno, results=edited_results)
+            correct = results[0].correct
+            submission_time = str(results[0].submissiontime).split(".")[0]
 
         elif form.records.data == 'All':
+            # code_output = []
             results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
-            print (type(results))
-            if not results.count():
-                return render_template("submissiondynamic.html", form=form,
-                                       errors="You haven't submitted this assessment item")
+            edited_results = []
+            for result in results:
+                correct = result.correct
+                submission_time = str(result.submissiontime).split(".")[0]
 
-            edited_results = build_results(results, questions)
+                joined_list = []
+                code_list = []
+                image_list = []
+                for question in questions:
+                    answer = eval('result.' + question)
+                    if 'image' in question:
+                        filepath = answer
+                        image_list.append([question, filepath])
+                    elif type(answer) == str:
+                        joined_list.append([question, answer])
+                    elif 'code' in question:
+                        code_list.append([question, highlight(answer, PythonLexer(), HtmlFormatter())])
 
-            return render_template("submissiondynamic.html", form=form, studentno=studentno, results=edited_results)
 
+            return render_template("submissiondynamic.html", form=form, studentno=studentno,
+                                       submission_time=submission_time, records=records, correct=correct,
+                                       result=joined_list, code_list=code_list, image_list=image_list)
 
+                # for result in results:
+                # code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
         else:
             return render_template("submissiondynamic.html", form=form)
 
+        if (results[0] == None):
+            return render_template("submissiondynamic.html", form=form, errors = "You haven't submitted this assessment item")
 
+        joined_list = []
+        code_list = []
+        image_list = []
+        for result in range(0,len(results)):
+            for question in questions:
+                print (question)
+                answer = eval('results[result].' + question)
+                if 'image' in question:
+                    filepath = answer
+                    print (filepath)
+                    image_list.append([question, filepath ])
+                elif type(answer) == str:
+                    joined_list.append([question, answer])
+                elif 'code' in question:
+                    code_list.append([question, highlight(answer, PythonLexer(), HtmlFormatter())])
+        edited_results = {"results" : joined_list, "submission_time" : submission_time, "correct" : correct, "code_list" : code_list, "image_list" : image_list}
+
+        return render_template("submissiondynamic.html", form=form, studentno=studentno, submission_time=submission_time, records=records, correct= correct, result=joined_list, code_list= code_list, image_list = image_list)
 
     if 'studentno' not in session:
         return ('login')
     else:
         return render_template("submissiondynamic.html", form=form)
-
-def build_results(results, questions):
-    """
-    Take a list of submissions and return an edited list of dictionaries that seperates the different information
-    :param results: The list of submissions
-    :return: A list of dictionaries with the edited results
-    """
-    edited_results = []
-    for result in results:
-        print (result)
-        correct = result.correct
-        submission_time = str(result.submissiontime).split(".")[0]
-        joined_list = []
-        code_list = []
-        image_list = []
-        for question in questions:
-            answer = eval('result.' + question)
-            if 'image' in question:
-                filepath = answer
-                image_list.append([question, filepath])
-            elif type(answer) == str:
-                joined_list.append([question, answer])
-            elif 'code' in question:
-                code_list.append([question, highlight(answer, PythonLexer(), HtmlFormatter())])
-        edited_result = {"results": joined_list, "submission_time": submission_time, "correct": correct, "code_list": code_list,
-             "image_list": image_list}
-        edited_results.append(edited_result)
-
-    return edited_results
-
-
 
 @application.route(local("/query"), methods=["GET", "POST"])
 def query():
@@ -345,49 +347,38 @@ def query():
         return render_template("query.html", form=form)
 
     elif request.method == "POST" and form.submit.data:
+            studentno = form.studentno.data
+            records = form.records.data
+
+            # lexer = get_lexer_by_name("python", stripall=True)
+            # formatter = HtmlFormatter(linenos=True, cssclass="source")
+            # code = "def __init__(self, model, field, message=u'This element already exists.'):"
+            # code_output = Markup(highlight(code, PythonLexer(), HtmlFormatter()))
+
+            if form.records.data == 'Latest':
+                results = [SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
+               # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
+
+            else:
+                #code_output = []
+                results = SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
+                #for result in results:
+                 #   code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
+
+            return render_template("query.html", form=form, studentno=studentno, records=records, result=results)
+
+
+
+    elif request.method == "POST" and form.download.data:
         studentno = form.studentno.data
-        item = form.assessment_item.data
-        request_name = item[10:]
-        questions = eval(request_name + '.questions')
-        if form.records.data == 'Latest':
-            results = eval(
-                '[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
-            if (results[0] == None):
-                return render_template("query.html", form=form,
-                                       errors="This student hasn't submitted this assessment item")
-
-            edited_results = build_results(results, questions)
-
-            return render_template("query.html", form=form, studentno=studentno, results=edited_results)
-
-        elif form.records.data == 'All':
-            results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
-            print(type(results))
-            if not results.count():
-                return render_template("query.html", form=form,
-                                       errors="This student hasn't submitted this assessment item")
-
-            edited_results = build_results(results, questions)
-
-            return render_template("query.html", form=form, studentno=studentno, results=edited_results)
+        file_data = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()
+        return send_file(BytesIO(file_data.file_upload), attachment_filename=studentno + "_Q2.py", as_attachment=True)
 
 
-        else:
-            return render_template("query.html", form=form)
-
-
-
-    # ## BELOW WAS FOR DOWNLOADING FILES
-    # elif request.method == "POST" and form.download.data:
-    #     studentno = form.studentno.data
-    #     file_data = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()
-    #     return send_file(BytesIO(file_data.file_upload), attachment_filename=studentno + "_Q2.py", as_attachment=True)
-    #
-    #
-    # elif request.method == "POST" and form.download2.data:
-    #     studentno = form.studentno.data
-    #     file_data = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()
-    #     return send_file(BytesIO(file_data.file_upload), attachment_filename=studentno + "_Q3.py", as_attachment=True)
+    elif request.method == "POST" and form.download2.data:
+        studentno = form.studentno.data
+        file_data = Submission.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()
+        return send_file(BytesIO(file_data.file_upload), attachment_filename=studentno + "_Q3.py", as_attachment=True)
 
 
     if 'studentno' not in session:
