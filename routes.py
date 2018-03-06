@@ -177,6 +177,7 @@ def scie2100_practical1():
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions = questions, form=form)
         elif form.submit.data:
+            print ('here we go')
 
             # elif form.submit.data and form.validate() == True:
 
