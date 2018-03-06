@@ -241,6 +241,8 @@ def scie2100_practical1():
             q4_code = request.files['q4_code']
             q5_code = request.files['q5_code']
             q6c_image = request.files['q6c_image']
+
+            print ('got here')
             # q6c_filename = images.save(request.files['q6c_image'])
             q6c_filename = images.save(form.q6c_image.data)
             q6c_url = images.url(q6c_filename)
