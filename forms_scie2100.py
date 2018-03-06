@@ -51,7 +51,7 @@ class SCIE2100Practical1(FlaskForm):
 
     q5 = StringField(
         "Question 5: How many TAG lipases did you find?",
-        validators=[CheckNumberRange(70, 100),
+        validators=[CheckNumberRange(2, 10),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
