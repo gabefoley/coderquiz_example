@@ -103,7 +103,7 @@ def signup():
 @application.route(local("/login"), methods=["GET", "POST"])
 def login():
     if 'studentno' in session:
-        return ('landing')
+        return redirect(url_for('landing'))
     form = LoginForm()
     if request.method == "POST":
         try:
@@ -172,7 +172,7 @@ def landing():
 @application.route(local("/practice"), methods=["GET", "POST"])
 def practice():
     if 'studentno' not in session:
-        return ('login')
+        return redirect(url_for('login'))
     form = PracticeQuiz()
     questions = ['q1', 'q2', 'q3']
     if request.method == "POST":
@@ -218,7 +218,7 @@ def practice():
 @application.route(local("/scie2100_practical1"), methods=["GET", "POST"])
 def scie2100_practical1():
     if 'studentno' not in session:
-        return ('login')
+        return redirect(url_for('login'))
     form = SCIE2100Practical1()
     questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image', 'q6d']
     if request.method == "POST":
@@ -359,7 +359,7 @@ def submissiondynamic():
 
 
     if 'studentno' not in session:
-        return ('login')
+        return redirect(url_for('login'))
     else:
         return render_template("submissiondynamic.html", form=form)
 
@@ -396,8 +396,11 @@ def build_results(results, questions):
 
 @application.route(local("/query"), methods=["GET", "POST"])
 def query():
-    if str(session['studentno'])  not in admin:
-        return ('index')
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+
+    if str(session['studentno']) not in admin:
+        return redirect(url_for('landing'))
     form = QueryForm()
 
     if request.method == "POST" and not form.studentno.data:
@@ -449,7 +452,7 @@ def query():
 
 
     if 'studentno' not in session:
-        return ('login')
+        return redirect(url_for('login'))
     else:
         return render_template("query.html", form=form)
 
