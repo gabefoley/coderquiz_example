@@ -238,17 +238,22 @@ def scie2100_practical1():
             else:
                 q6d = "INCORRECT"
 
-            q4_code = request.files['q4_code']
-            q5_code = request.files['q5_code']
-            q6c_image = request.files['q6c_image']
+            if form.q4_code.data:
+                q4_code = request.files['q4_code']
+            else:
+                q4_code = ""
 
-            print ('got here')
-            # q6c_filename = images.save(request.files['q6c_image'])
-            q6c_filename = images.save(form.q6c_image.data)
-            q6c_url = images.url(q6c_filename)
+            if form.q4_code.data:
+                q5_code = request.files['q5_code']
+            else:
+                q5_code = ""
 
-            print (q6c_filename)
-            print (q6c_url)
+            if form.q6c_image.data:
+                q6c_filename = images.save(form.q6c_image.data)
+                q6c_url = images.url(q6c_filename)
+            else:
+                q6c_url = ""
+
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
 
