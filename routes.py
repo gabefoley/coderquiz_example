@@ -14,13 +14,15 @@ import os
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
+from werkzeug.datastructures import FileStorage
 
 
 application = Flask(__name__, static_url_path="")
 
 application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz2018'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-application.config['UPLOADED_IMAGES_DEST'] = os.getcwd() + "/uploads"
+application.config['UPLOADED_IMAGES_DEST'] = os.getcwd() + "/static/uploads"
+# application.config['UPLOADED_IMAGES_DEST'] =  "/static/uploads"
 
 images = UploadSet('images', IMAGES)
 configure_uploads(application, images)
@@ -241,18 +243,21 @@ def scie2100_practical1():
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
             else:
-                q4_code = ""
+                q4_code = FileStorage()
 
-            if form.q4_code.data:
+            if form.q5_code.data:
                 q5_code = request.files['q5_code']
+                print (type(q5_code))
             else:
-                q5_code = ""
+                q5_code = FileStorage()
 
             if form.q6c_image.data:
                 q6c_filename = images.save(form.q6c_image.data)
                 q6c_url = images.url(q6c_filename)
             else:
                 q6c_url = ""
+
+            print (q6c_url)
 
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
@@ -329,7 +334,8 @@ def build_results(results, questions):
         for question in questions:
             answer = eval('result.' + question)
             if 'image' in question:
-                filepath = answer
+                filepath = "/static/uploads/" + answer.split("/")[-1]
+                print (filepath)
                 image_list.append([question, filepath])
             elif type(answer) == str:
                 joined_list.append([question, answer])
