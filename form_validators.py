@@ -101,7 +101,7 @@ class CorrectAnswer(object):
 
         if field.data is not None:
 
-            if field.data != self.answer:
+            if field.data.strip().upper() != self.answer.strip().upper():
                 raise ValidationError(message)
 
 

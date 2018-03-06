@@ -1,0 +1,87 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      
+
+      <div class="section-map">
+        <div class="nav">
+
+
+          <form method="POST" enctype = "multipart/form-data" >
+            {{ form.hidden_tag() }}
+
+
+            
+            <div class="form-group">
+
+
+            <div class="intro-text">
+                This is a practice quiz to get you used to the Coder Quiz format.  <br> <br>
+                Try answering the questions below and at any time that you wish you can hit the "CHECK ANSWERS" button to
+                see how you're doing. When you're ready to submit hit the "SUBMIT ANSWERS" button and navigate to the
+                    'View Submissions' page to check your results. <br><br>
+
+                    Coder Quiz will let you submit an incomplete quiz, but if you try this out you will see that it is
+                allowed but flagged as containing incorrect answers on the 'View Submissions' page.
+            </div>
+            {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <ul>
+                    {% for message in messages %}
+                        <li>{{ message }} </li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
+
+            {% for question in questions %}
+
+            {{ form[question].label}}
+
+            {{ form[question] }}
+
+
+              {% if form[question].errors %}
+                {% for error in form[question].errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              {% elif form.check.data %}
+			{% if form[question].data is not none %}
+				{% if form[question].errors %}
+					{% for error in form[question].errors %}
+						<p class = "error-message">{{ error }}</p>
+					{% endfor %}
+
+				{% else %}
+
+             			 	<p class="correct-message"> Answer accepted </p>
+				{% endif %}
+			{% endif %}
+              {% endif %}
+            {%  endfor %}
+
+
+
+	</div>
+
+	<div>
+           
+
+            {{ form.check (class ="btn-primary")  }}
+      
+           
+            {{ form.submit (class = "btn-primary")  }}
+            </div>
+             </form>
+       
+      
+      <div class="clearfix"></div>
+    </div>
+  </main>
+
+
+{% endblock %}
+

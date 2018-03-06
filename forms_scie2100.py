@@ -70,7 +70,7 @@ class SCIE2100Practical1(FlaskForm):
         filters=[lambda v: None if v == '' else v])
 
     q6c_image = FileField(
-        "Question 6C: Upload an image (in .png format) of your GPCR alignment with updated 'hydrophobic' colour scheme",
+        "Question 6C: Upload an image of your GPCR alignment with updated 'hydrophobic' colour scheme",
         validators=[DataRequired("Please attach an image of your GPCR alignment")],
         filters=[lambda v: None if v == '' else v])
 

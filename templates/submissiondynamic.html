@@ -31,13 +31,21 @@
                     <li>{{ item[0] + ":" + item[1] }}</li>
                 {% endfor %} <br><br>
 
-                Here is the submitted code
+                {% if result.code_list %}
+
+                    Here is the submitted code
+
+                {%  endif %}
 
                 {% for item in result.code_list %}
                     <li>{{ item[0] + ":" + item[1] |safe  }}</li>
                 {% endfor %}
 
-                Here are the submitted images
+                {% if result.image_list %}
+
+
+                    Here are the submitted images
+                {%  endif %}
 
                 {% for item in result.image_list %}
 

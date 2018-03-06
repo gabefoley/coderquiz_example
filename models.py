@@ -69,7 +69,26 @@ class SubmissionSCIE2100Practical1(db.Model):
         self.q6d = q6d
 
 
+class SubmissionPracticeQuiz(db.Model):
 
+    __tablename__ = "practice"
+
+    submissionid = db.Column(db.Integer, primary_key=True)
+    studentno = db.Column(db.Integer)
+    submissiontime = db.Column(db.DateTime(timezone=True))
+    correct = db.Column(db.Boolean)
+
+    q1 = db.Column(db.String(255))
+    q2 = db.Column(db.String(255))
+    q3 = db.Column(db.String(255))
+
+    def __init__(self, studentno, submissiontime, correct, q1, q2, q3):
+        self.studentno = studentno
+        self.submissiontime = submissiontime
+        self.correct = correct
+        self.q1 = q1
+        self.q2 = q2
+        self.q3 = q3
 
 class Submission(db.Model):
 

@@ -1,8 +1,8 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
-from models import db, User, SubmissionSCIE2100Practical1
-from forms import SignupForm, LoginForm, QueryForm, SubmissionForm
+from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1
+from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz
 from forms_scie2100 import SCIE2100Practical1
 from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError, DataError
@@ -169,6 +169,52 @@ def logout():
 def landing():
     return render_template("landing.html")
 
+@application.route(local("/practice"), methods=["GET", "POST"])
+def practice():
+    if 'studentno' not in session:
+        return ('login')
+    form = PracticeQuiz()
+    questions = ['q1', 'q2', 'q3']
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("practice.html", questions = questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+
+            if form.q1.data:
+                q1 = form.q1.data
+            else:
+                q1 = "INCORRECT"
+
+            if form.q2.data:
+                q2 = form.q2.data
+            else:
+                q2 = "INCORRECT"
+
+            if form.q3.data:
+                q3 = form.q3.data
+            else:
+                q3 = "INCORRECT"
+
+            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+
+
+            form_submission = SubmissionPracticeQuiz(session['studentno'], dt, correct, q1, q2, q3)
+            # form.populate_obj(form_submission)
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for)
+
+        else:
+            return render_template("practice.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("practice.html", questions=questions, form=form)
+
 @application.route(local("/scie2100_practical1"), methods=["GET", "POST"])
 def scie2100_practical1():
     if 'studentno' not in session:
@@ -325,7 +371,6 @@ def build_results(results, questions):
     """
     edited_results = []
     for result in results:
-        print (result)
         correct = result.correct
         submission_time = str(result.submissiontime).split(".")[0]
         joined_list = []
@@ -376,7 +421,6 @@ def query():
 
         elif form.records.data == 'All':
             results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
-            print(type(results))
             if not results.count():
                 return render_template("query.html", form=form,
                                        errors="This student hasn't submitted this assessment item")
