@@ -32,6 +32,7 @@ class SubmissionSCIE2100Practical1(db.Model):
     submissionid = db.Column(db.Integer, primary_key=True)
     studentno = db.Column(db.Integer)
     submissiontime = db.Column(db.DateTime(timezone=True))
+    correct = db.Column(db.Boolean)
 
     q1 = db.Column(db.String(255))
     q2a = db.Column(db.String(255))
@@ -45,12 +46,13 @@ class SubmissionSCIE2100Practical1(db.Model):
     q5_code = db.Column(db.LargeBinary)
     q6a = db.Column(db.String(255))
     q6b = db.Column(db.String(255))
-    q6c = db.Column(db.LargeBinary)
+    q6c_image = db.Column(db.String(255))
     q6d = db.Column(db.String(255))
 
-    def __init__(self, studentno, submissiontime, q1,  q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d):
+    def __init__(self, studentno, submissiontime, correct, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c_image, q6d):
         self.studentno = studentno
         self.submissiontime = submissiontime
+        self.correct = correct
         self.q1 = q1
         self.q2a = q2a
         self.q2b = q2b
@@ -63,7 +65,7 @@ class SubmissionSCIE2100Practical1(db.Model):
         self.q5_code = q5_code
         self.q6a = q6a
         self.q6b = q6b
-        self.q6c = q6c
+        self.q6c_image = q6c_image
         self.q6d = q6d
 
 

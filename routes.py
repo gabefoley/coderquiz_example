@@ -1,5 +1,7 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+
 from models import db, User, SubmissionSCIE2100Practical1
 from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm
 from forms_scie2100 import SCIE2100Practical1
@@ -13,13 +15,18 @@ import os
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
+from base64 import b64encode
 
 
 application = Flask(__name__, static_url_path="")
 
 application.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///coderquiz2018'
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+application.config['UPLOADED_IMAGES_DEST'] = os.getcwd() + "/uploads"
 
+images = UploadSet('images', IMAGES)
+configure_uploads(application, images)
+patch_request_class(application)
 
 db.init_app(application)
 
@@ -167,11 +174,15 @@ def scie2100_practical1():
     if 'studentno' not in session:
         return ('login')
     form = SCIE2100Practical1()
-    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d']
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image', 'q6d']
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions = questions, form=form)
-        elif form.submit.data and form.validate() == True:
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
 
             if form.q1.data:
                 q1 = form.q1.data
@@ -230,11 +241,18 @@ def scie2100_practical1():
 
             q4_code = request.files['q4_code']
             q5_code = request.files['q5_code']
-            q6c = request.files['q6c']
+            q6c_image = request.files['q6c_image']
+            # q6c_filename = images.save(request.files['q6c_image'])
+            q6c_filename = images.save(form.q6c_image.data)
+            q6c_url = images.url(q6c_filename)
 
+            print (q6c_filename)
+            print (q6c_url)
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c.read(), q6d)
+
+
+            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, correct, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c_url, q6d)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
@@ -251,7 +269,6 @@ def scie2100_practical1():
 def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
-        results = ""
         studentno = str(session['studentno'])
         records = form.records.data
         item = form.assessment_item.data
@@ -259,10 +276,12 @@ def submissiondynamic():
         questions = eval(request_name + '.questions')
         if form.records.data == 'Latest':
             results = eval('[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
-            # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
+            correct = results[0].correct
+            submission_time = str(results[0].submissiontime).split(".")[0]
         elif form.records.data == 'All':
             # code_output = []
             results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
+            correct = results.correct
             # for result in results:
                 # code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
         else:
@@ -272,16 +291,23 @@ def submissiondynamic():
             return render_template("submissiondynamic.html", form=form, errors = "You haven't submitted this assessment item")
 
         joined_list = []
-        for question in questions:
-            print (question)
-            print(results[0])
-            print(eval('results[0].' +question))
-            joined_list.append(question)
-            joined_list.append(results[0].question)
-        print([result for result in results])
-        zip_results = zip(questions, results)
+        code_list = []
+        image_list = []
+        for result in range(0,len(results)):
+            for question in questions:
+                print (question)
+                answer = eval('results[result].' + question)
+                if 'image' in question:
+                    filepath = answer
+                    print (filepath)
+                    image_list.append([question, filepath ])
+                elif type(answer) == str:
+                    joined_list.append([question, answer])
+                elif 'code' in question:
+                    code_list.append([question, highlight(answer, PythonLexer(), HtmlFormatter())])
 
-        return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=zip_results)
+
+        return render_template("submissiondynamic.html", form=form, studentno=studentno, submission_time=submission_time, records=records, correct= correct, result=joined_list, code_list= code_list, image_list = image_list)
 
     if 'studentno' not in session:
         return ('login')

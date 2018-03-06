@@ -7,24 +7,24 @@ class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
         'Question 1: List the standard alphabets defined in sym.py (e.g. Bool_Alphabet). Please ensure your spelling is correct and your answers are separated by a comma (,). ',
         validators=[CheckList(
-            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet')],
+            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet'), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q2a = StringField(
         "Question 2A: List the 'special' functions (e.g.  __len__(self)) from the sequence class",
         validators=[CheckList(
             '__len__(self), __str__(self), __iter__(self), __contains__(self, item),__getitem__(self, ndx)'),
-                    Optional("Not completed")],
+            DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q2b = TextAreaField(
         "Question 2B: Provide an example of the use of each function from Question 2A",
-        validators=[Optional("Not completed")],
+        validators=[DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
     q3a = StringField(
         "Question 3A: How many different identifiers are assocated with the sequences in mystery2.fa? To answer this, submit the first two letters common to the identifiers.",
         validators=[CheckList('XP,NP'),
-                    Optional("Not completed")],
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q3b = StringField(
@@ -35,13 +35,13 @@ class SCIE2100Practical1(FlaskForm):
     q4a = StringField(
         "Question 4A: How many entries are in sigpep_at.fa?",
         validators=[CheckNumberRange(1000, 1500),
-                    Optional("Not completed")],
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q4b = StringField(
         "Question 4B: How many entries are in lipmet_at.fa?",
         validators=[CheckNumberRange(70, 100),
-                    Optional("Not completed")],
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q4_code = FileField(
@@ -52,7 +52,7 @@ class SCIE2100Practical1(FlaskForm):
     q5 = StringField(
         "Question 5: How many TAG lipases did you find?",
         validators=[CheckNumberRange(70, 100),
-                    Optional("Not completed")],
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q5_code = FileField(
@@ -62,28 +62,28 @@ class SCIE2100Practical1(FlaskForm):
 
     q6a = TextAreaField(
         "Question 6A: Describe the physico-chemical properties represented by each default colour used in the alignment (including the white/uncoloured amino acids).",
-        validators=[Optional("Not completed")],
+        validators=[DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
     q6b = TextAreaField(
         "Question 6B: Show your own 'hydrophobic' colour scheme (as a list of affected amino acids)",
-        validators=[Optional("Not completed")],
+        validators=[DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
-    q6c = FileField(
+    q6c_image = FileField(
         "Question 6C: Upload an image (in .png format) of your GPCR alignment with updated 'hydrophobic' colour scheme",
         validators=[DataRequired("Please attach an image of your GPCR alignment")],
         filters=[lambda v: None if v == '' else v])
 
     q6d = StringField(
         "Question 6D: Provide the rough boundaries of the fifth transmembrane domain. Enter your boundaries in the following format : 10 - 30",
-        validators=[Optional("Not completed")],
+        validators=[DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d']
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image', 'q6d']
 
 class PracticalAssessmentForm(FlaskForm):
     q1 = StringField(
