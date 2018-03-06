@@ -334,7 +334,7 @@ def build_results(results, questions):
         for question in questions:
             answer = eval('result.' + question)
             if 'image' in question:
-                filepath = "/static/uploads/" + answer.split("/")[-1]
+                filepath = "/uploads/" + answer.split("/")[-1]
                 print (filepath)
                 image_list.append([question, filepath])
             elif type(answer) == str:
