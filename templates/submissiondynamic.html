@@ -6,6 +6,10 @@
             <div class="query-group">
                 <br><br>
 
+                {{ form.assessment_item.label }}
+                {{ form.assessment_item() }}
+
+                <br><br>
 
             {{ form.records.label }}
             {{ form.records() }}
@@ -14,20 +18,20 @@
 
 
             {{ form.submit(class="btn-primary") }}
+                <p class="error-message">{{ errors }}</p>
 
             </div>
+            
 
             {%  if studentno %}
                             <div class="query-group">
 
 
+
                 {{  records }}
             {{ studentno }}
                 {% for item in result %}
-                    <li>{{ item.submissiontime }}</li>
-                    <li>{{ item.q1 }}</li>
-                    <li>{{ item.q2a }}</li>
-                    <li>{{ item.q2b }}</li>
+                    <li>{{ item }}</li>
                     <br>
                     <br>
 

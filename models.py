@@ -26,14 +26,14 @@ class User(db.Model):
   def check_password(self, password):
     return check_password_hash(self.pwdhash, password)
 
-class SubmissionSCI2100Practical1(db.Model):
+class SubmissionSCIE2100Practical1(db.Model):
     __tablename__ = "scie2100practical1"
 
     submissionid = db.Column(db.Integer, primary_key=True)
     studentno = db.Column(db.Integer)
     submissiontime = db.Column(db.DateTime(timezone=True))
 
-    q1a = db.Column(db.String(255))
+    q1 = db.Column(db.String(255))
     q2a = db.Column(db.String(255))
     q2b = db.Column(db.String(255))
     q3a = db.Column(db.String(255))
@@ -48,10 +48,10 @@ class SubmissionSCI2100Practical1(db.Model):
     q6c = db.Column(db.LargeBinary)
     q6d = db.Column(db.String(255))
 
-    def __init__(self, studentno, submissiontime, q1a,  q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d):
+    def __init__(self, studentno, submissiontime, q1,  q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d):
         self.studentno = studentno
         self.submissiontime = submissiontime
-        self.q1a = q1a
+        self.q1 = q1
         self.q2a = q2a
         self.q2b = q2b
         self.q3a = q3a

@@ -7,6 +7,8 @@ import re
 import sre_constants
 from static.python.sequence import *
 from static.python.phylo import *
+import string
+
 
 class CheckRegex(object):
 
@@ -237,6 +239,17 @@ class CheckAccuracyScore(object):
                     continue
             raise ValidationError('This score is not correct')
 
+
+class CheckPalindrome(object):
+    def __call__(self, form, field):
+        if field.data is not None:
+            cleanedData = "".join(l for l in field.data.upper() if l not in string.punctuation)
+            cleanedData = cleanedData.replace(" ", "")
+
+            if cleanedData == cleanedData[::-1]:
+                return
+            else:
+                raise ValidationError("That is not a palindrome")
 
 class Unique(object):
     def __init__(self, model, field, message=u'This element already exists.'):

@@ -7,8 +7,7 @@ class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
         'Question 1: List the standard alphabets defined in sym.py (e.g. Bool_Alphabet). Please ensure your spelling is correct and your answers are separated by a comma (,). ',
         validators=[CheckList(
-            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet'),
-                    Optional("Not completed")],
+            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet')],
         filters=[lambda v: None if v == '' else v])
 
     q2a = StringField(
@@ -80,10 +79,11 @@ class SCIE2100Practical1(FlaskForm):
         validators=[Optional("Not completed")],
         filters=[lambda v: None if v == '' else v])
 
-
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
+
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d']
 
 class PracticalAssessmentForm(FlaskForm):
     q1 = StringField(

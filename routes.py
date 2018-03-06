@@ -1,6 +1,6 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file, Markup
-from models import db, User, SubmissionSCI2100Practical1
+from models import db, User, SubmissionSCIE2100Practical1
 from forms import SignupForm, LoginForm, AddressForm, QueryForm, SubmissionForm
 from forms_scie2100 import SCIE2100Practical1
 from sqlalchemy import desc, exc
@@ -167,7 +167,7 @@ def scie2100_practical1():
     if 'studentno' not in session:
         return ('login')
     form = SCIE2100Practical1()
-    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d' ]
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c', 'q6d']
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions = questions, form=form)
@@ -208,20 +208,10 @@ def scie2100_practical1():
             else:
                 q4b = "INCORRECT"
 
-            if form.q4_code.data:
-                q4_code = form.q4_code.data
-            else:
-                q4_code = "INCORRECT"
-
             if form.q5.data:
                 q5 = form.q5.data
             else:
                 q5 = "INCORRECT"
-
-            if form.q5_code.data:
-                q5_code = form.q5_code.data
-            else:
-                q5_code = "INCORRECT"
 
             if form.q6a.data:
                 q6a = form.q6a.data
@@ -233,18 +223,18 @@ def scie2100_practical1():
             else:
                 q6b = "INCORRECT"
 
-            if form.q6c.data:
-                q6c = form.q6c.data
-            else:
-                q6c = "INCORRECT"
-
             if form.q6d.data:
                 q6d = form.q6d.data
             else:
                 q6d = "INCORRECT"
 
+            q4_code = request.files['q4_code']
+            q5_code = request.files['q5_code']
+            q6c = request.files['q6c']
+
+
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
-            form_submission = SubmissionSCI2100Practical1(session['studentno'], dt, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c, q6d)
+            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c.read(), q6d)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
@@ -261,18 +251,37 @@ def scie2100_practical1():
 def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
+        results = ""
         studentno = str(session['studentno'])
         records = form.records.data
+        item = form.assessment_item.data
+        request_name = item[10:]
+        questions = eval(request_name + '.questions')
         if form.records.data == 'Latest':
-            results = [
-                SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime')).limit(1).first()]
+            results = eval('[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
             # code_output = [highlight(results[0].file_upload, PythonLexer(), HtmlFormatter())]
-        else:
+        elif form.records.data == 'All':
             # code_output = []
-            results = SubmissionBIOL3014_2.query.filter_by(studentno=studentno).order_by(desc('submissiontime'))
+            results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
             # for result in results:
                 # code_output.append(highlight(result.file_upload, PythonLexer(), HtmlFormatter()))
-        return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=results)
+        else:
+            return render_template("submissiondynamic.html", form=form)
+
+        if (results[0] == None):
+            return render_template("submissiondynamic.html", form=form, errors = "You haven't submitted this assessment item")
+
+        joined_list = []
+        for question in questions:
+            print (question)
+            print(results[0])
+            print(eval('results[0].' +question))
+            joined_list.append(question)
+            joined_list.append(results[0].question)
+        print([result for result in results])
+        zip_results = zip(questions, results)
+
+        return render_template("submissiondynamic.html", form=form, studentno=studentno, records=records, result=zip_results)
 
     if 'studentno' not in session:
         return ('login')

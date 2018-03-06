@@ -1,8 +1,8 @@
 from random import randrange
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField
-from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
+from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, SelectField
+from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional, Required
 
 from static.python.phylo import *
 from static.python.sequence import Sequence
@@ -78,8 +78,11 @@ class QueryForm(FlaskForm):
 
 
 class SubmissionForm(FlaskForm):
+    assessment_item = SelectField('Which assessment item do you want?',
+                                  choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1')],
+                                  validators = [DataRequired()])
     records = RadioField('Do you want your latest submission or all submissions?',
-                         choices=[('Latest', 'Latest'), ('All', 'All')])
+                         choices=[('Latest', 'Latest'), ('All', 'All')], default='Latest', validators = [DataRequired()])
     submit = SubmitField("Get your submission")
 
 
