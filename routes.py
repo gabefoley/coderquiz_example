@@ -2,7 +2,7 @@ from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1
-from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz
+from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm
 from forms_scie2100 import SCIE2100Practical1
 from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError, DataError
@@ -15,7 +15,9 @@ from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
 from werkzeug.datastructures import FileStorage
-
+from itsdangerous import URLSafeTimedSerializer
+from flask import flash
+from flask_mail import Mail, Message
 
 application = Flask(__name__, static_url_path="")
 
@@ -29,6 +31,17 @@ configure_uploads(application, images)
 patch_request_class(application)
 
 db.init_app(application)
+
+application.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = 'coderquiz@gmail.com',
+    MAIL_PASSWORD = 'coderquiz2020',
+))
+mail = Mail(application)
 
 application.secret_key = 'development-key'
 
@@ -85,6 +98,7 @@ def signup():
                 newuser = User(form.first_name.data, form.last_name.data, form.studentno.data, form.email.data, form.password.data)
                 db.session.add(newuser)
                 db.session.commit()
+                send_confirmation_email(newuser.email)
         except IntegrityError as e:
             if len(form.studentno.data) < 8:
                 return render_template("signup.html", form=form, url_for=url_for, errors=['Please use all 8 digits for you student number'])
@@ -95,7 +109,8 @@ def signup():
             return render_template("signup.html", form=form, url_for=url_for, errors=['Please provide a valid student number (integer).'])
         session['studentno'] = newuser.studentno
 
-        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
+        print ('here')
+        return render_template("landing.html", studentno=session['studentno'], url_for=url_for, first_time=True)
 
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
@@ -489,7 +504,103 @@ def query():
         return render_template("query.html", form=form)
 
 
+def send_confirmation_email(user_email):
+    confirm_serializer = URLSafeTimedSerializer(application.config['SECRET_KEY'])
 
+    confirm_url = url_for(
+        'confirm_email',
+        token=confirm_serializer.dumps(user_email, salt='email-confirmation-salt'),
+        _external=True)
+
+    html = render_template(
+        'emailconfirmation.html',
+        confirm_url= confirm_url)
+
+    send_email('Confirm Your Email Address', [user_email], "", html)
+
+def send_email(subject, recipients, text_body, html_body):
+    msg = Message(subject, recipients=recipients)
+    msg.body = text_body
+    msg.html = html_body
+    msg.sender = "Coder Quiz"
+    mail.send(msg)
+
+
+@application.route(local('/confirm/<token>'))
+def confirm_email(token):
+    try:
+        confirm_serializer = URLSafeTimedSerializer(application.config['SECRET_KEY'])
+        email = confirm_serializer.loads(token, salt='email-confirmation-salt', max_age=3600)
+    except:
+        return render_template("confirmationerror.html", registration_message='The confirmation link is invalid or has expired.')
+
+    user = User.query.filter_by(email=email).first()
+
+    if user.email_confirmed:
+        return render_template("confirmation.html", registration_message='Account already confirmed.')
+    else:
+        user.email_confirmed = True
+        user.email_confirmed_on = datetime.datetime.now()
+        db.session.add(user)
+        db.session.commit()
+
+    return render_template("confirmation.html", registration_message = 'Thank you for confirming your email address!')
+
+
+def send_password_reset_email(user_email):
+    password_reset_serializer = URLSafeTimedSerializer(application.config['SECRET_KEY'])
+
+    password_reset_url = url_for(
+        'reset_with_token',
+        token=password_reset_serializer.dumps(user_email, salt='password-reset-salt'),
+        _external=True)
+
+    html = render_template(
+        'email_password_reset.html',
+        password_reset_url=password_reset_url)
+
+    send_email('Password Reset Requested', [user_email], "", html)
+
+
+@application.route(local('/reset'), methods=["GET", "POST"])
+def reset():
+    form = EmailForm()
+    if form.validate_on_submit():
+        try:
+            user = User.query.filter_by(email=form.email.data).first_or_404()
+        except:
+            return render_template('password_reset_email.html', form=form, error="Invalid email address")
+
+        if user.email_confirmed:
+            send_password_reset_email(user.email)
+            return render_template('password_reset_email.html', form=form, error="Please check your email for a password request")
+        else:
+            return render_template('password_reset_email.html', form=form, error="Your email address must be confirmed before attempting a password reset.")
+
+    return render_template('password_reset_email.html', form=form)
+
+
+@application.route(local('/reset/<token>'), methods=["GET", "POST"])
+def reset_with_token(token):
+    form = PasswordForm()
+
+    try:
+        password_reset_serializer = URLSafeTimedSerializer(application.config['SECRET_KEY'])
+        email = password_reset_serializer.loads(token, salt='password-reset-salt', max_age=3600)
+    except:
+        return render_template('reset_password_with_token.html', form=form, token=token, error="The password reset link is invalid or has expired'")
+    if form.validate_on_submit():
+        try:
+            user = User.query.filter_by(email=email).first_or_404()
+        except:
+            return render_template('reset_password_with_token.html', form=form, token=token,
+                                   error="Invalid email address'")
+        user.set_password(form.password.data)
+        db.session.commit()
+        return render_template('reset_password_with_token.html', form=form, token=token, error="Your password has been updated!'")
+
+
+    return render_template('reset_password_with_token.html', form=form, token=token, error="")
 
 if __name__ == "__main__":
     application.run(debug=True)

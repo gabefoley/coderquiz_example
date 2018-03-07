@@ -1,13 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="landingText" >
-    {% if first_time %}
-        Thanks for registering. Please check your email address and confirm your account. <br><br>
-    {%  endif %}
 
     {{ registration_message }} <br>
 
-    Logged in as {{  studentno }}<br>
     Click on the in class assessment you wish to complete <br><br>
 
     <a href="{{ url_for('practice') }}">Practice Quiz</a><br>

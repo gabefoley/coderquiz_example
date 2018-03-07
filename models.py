@@ -12,13 +12,19 @@ class User(db.Model):
   studentno = db.Column(db.Integer)
   email = db.Column(db.String(120), unique=True)
   pwdhash = db.Column(db.String(54))
+  email_confirmation_sent_on = db.Column(db.DateTime, nullable=True)
+  email_confirmed = db.Column(db.Boolean, nullable=True, default=False)
+  email_confirmed_on = db.Column(db.DateTime, nullable=True)
 
-  def __init__(self, firstname, lastname, studentno, email, password):
+  def __init__(self, firstname, lastname, studentno, email, password, email_confirmation_sent_on=None):
     self.firstname = firstname.title()
     self.lastname = lastname.title()
     self.studentno = studentno.title()
     self.email = email.lower()
     self.set_password(password)
+    self.email_confirmation_sent_on = email_confirmation_sent_on
+    self.email_confirmed = False
+    self.email_confirmed_on = None
      
   def set_password(self, password):
     self.pwdhash = generate_password_hash(password)

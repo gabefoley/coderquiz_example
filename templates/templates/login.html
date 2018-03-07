@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
+    {{ registration_message }} <br>
   <main class="container signup-section">
     <div class="section-content">
               {% if errors %}
@@ -49,9 +50,13 @@
           {% endif %}
         </div>
 
+      something
+
         {{ form.submit(class="btn-primary") }}
 
       </form>
+
+
     </div>
   </main>
 {% endblock %}

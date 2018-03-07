@@ -122,4 +122,8 @@ class SubmissionForm(FlaskForm):
     submit = SubmitField("Get your submission")
 
 
+class EmailForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
 
+class PasswordForm(FlaskForm):
+    password = PasswordField('Password', validators=[DataRequired()])
