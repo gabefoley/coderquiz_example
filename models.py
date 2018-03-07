@@ -35,20 +35,20 @@ class SubmissionSCIE2100Practical1(db.Model):
     correct = db.Column(db.Boolean)
     incomplete = db.Column(db.Boolean)
 
-    q1 = db.Column(db.String(255))
-    q2a = db.Column(db.String(255))
-    q2b = db.Column(db.String(255))
-    q3a = db.Column(db.String(255))
-    q3b = db.Column(db.String(255))
-    q4a = db.Column(db.String(255))
-    q4b = db.Column(db.String(255))
+    q1 = db.Column(db.String())
+    q2a = db.Column(db.String())
+    q2b = db.Column(db.String())
+    q3a = db.Column(db.String())
+    q3b = db.Column(db.String())
+    q4a = db.Column(db.String())
+    q4b = db.Column(db.String())
     q4_code = db.Column(db.LargeBinary)
-    q5 = db.Column(db.String(255))
+    q5 = db.Column(db.String())
     q5_code = db.Column(db.LargeBinary)
-    q6a = db.Column(db.String(255))
-    q6b = db.Column(db.String(255))
-    q6c_image = db.Column(db.String(255))
-    q6d = db.Column(db.String(255))
+    q6a = db.Column(db.String())
+    q6b = db.Column(db.String())
+    q6c_image = db.Column(db.String())
+    q6d = db.Column(db.String())
 
     def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code, q5, q5_code, q6a, q6b, q6c_image, q6d):
         self.studentno = studentno
@@ -81,9 +81,9 @@ class SubmissionPracticeQuiz(db.Model):
     correct = db.Column(db.Boolean)
     incomplete = db.Column(db.Boolean)
 
-    q1 = db.Column(db.String(255))
-    q2 = db.Column(db.String(255))
-    q3 = db.Column(db.String(255))
+    q1 = db.Column(db.String())
+    q2 = db.Column(db.String())
+    q3 = db.Column(db.String())
 
     def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2, q3):
         self.studentno = studentno
@@ -101,15 +101,15 @@ class Submission(db.Model):
   submissionid = db.Column(db.Integer, primary_key = True)
   studentno = db.Column(db.Integer)
   submissiontime = db.Column(db.DateTime(timezone=True))
-  q1a = db.Column(db.String(255))
-  q1b = db.Column(db.String(255))
-  q1c = db.Column(db.String(255))
-  q2a = db.Column(db.String(255))
-  q2b = db.Column(db.String(255))
-  q2c = db.Column(db.String(255))
-  q3a = db.Column(db.String(255))
-  q3b = db.Column(db.String(255))
-  q3c = db.Column(db.String(255))
+  q1a = db.Column(db.String())
+  q1b = db.Column(db.String())
+  q1c = db.Column(db.String())
+  q2a = db.Column(db.String())
+  q2b = db.Column(db.String())
+  q2c = db.Column(db.String())
+  q3a = db.Column(db.String())
+  q3b = db.Column(db.String())
+  q3c = db.Column(db.String())
 
 
 
@@ -132,9 +132,9 @@ class SubmissionBIOL3014_2 (db.Model):
 	submissionid = db.Column(db.Integer, primary_key = True)
 	studentno = db.Column(db.Integer)
 	submissiontime = db.Column(db.DateTime(timezone=True))
-	q1 = db.Column(db.String(255))
-	q2a = db.Column(db.String(255))
-	q2b = db.Column(db.String(255))
+	q1 = db.Column(db.String())
+	q2a = db.Column(db.String())
+	q2b = db.Column(db.String())
 
 	def __init__(self, studentno, submissiontime, q1, q2a, q2b):
 		self.studentno = studentno

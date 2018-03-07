@@ -66,7 +66,7 @@ def local_redirect(*args, **kwargs) -> Any:
 @application.route(local("/"))
 def index():
     if 'studentno' in session:
-        return render_template('landing.html', url_for=url_for)
+        return render_template('landing.html', studentno=session['studentno'], url_for=url_for)
     else:
         return render_template("index.html", url_for=url_for)
 
@@ -95,7 +95,7 @@ def signup():
             return render_template("signup.html", form=form, url_for=url_for, errors=['Please provide a valid student number (integer).'])
         session['studentno'] = newuser.studentno
 
-        return render_template('landing.html', url_for=url_for)
+        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
 
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
@@ -123,7 +123,7 @@ def login():
                     check_pass = user.check_password(password)
                     if check_pass == True:
                         session['studentno'] = form.studentno.data
-                        return render_template("landing.html")
+                        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
 
                     else:
                         return render_template('login.html', form=form, passworderror="Password is incorrect")
@@ -167,7 +167,9 @@ def logout():
 
 @application.route(local("/landing"))
 def landing():
-    return render_template("landing.html")
+    if 'studentno' in session:
+
+        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
 
 @application.route(local("/practice"), methods=["GET", "POST"])
 def practice():
