@@ -266,8 +266,11 @@ class CheckDomainBoundaries(object):
                 if check_upper < check_lower:
                     raise ValidationError("The upper boundary must be higher than the lower boundary")
 
-                if check_upper - check_lower < 15:
+                if check_upper - check_lower < 10:
                     raise ValidationError("That domain is too short")
+
+                if check_upper - check_lower > 30:
+                    raise ValidationError("That domain is too long")
 
             except IndexError:
                 raise ValidationError("The format you've entered your answer in is incorrect")
