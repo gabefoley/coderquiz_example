@@ -184,30 +184,37 @@ def practice():
 
             correct = form.validate()
 
+            incomplete = False
+
             if form.q1.data:
                 q1 = form.q1.data
             else:
                 q1 = "INCORRECT"
+                incomplete = True
 
             if form.q2.data:
                 q2 = form.q2.data
             else:
                 q2 = "INCORRECT"
+                incomplete = True
+
 
             if form.q3.data:
                 q3 = form.q3.data
             else:
                 q3 = "INCORRECT"
+                incomplete = True
+
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
 
 
-            form_submission = SubmissionPracticeQuiz(session['studentno'], dt, correct, q1, q2, q3)
+            form_submission = SubmissionPracticeQuiz(session['studentno'], dt, correct, incomplete, q1, q2, q3)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
 
-            return render_template('success.html', url_for=url_for)
+            return render_template('success.html', incomplete=incomplete, correct=correct, url_for=url_for)
 
         else:
             return render_template("practice.html", questions=questions, form=form)
@@ -230,61 +237,83 @@ def scie2100_practical1():
             # elif form.submit.data and form.validate() == True:
 
             correct = form.validate()
+            incomplete = False
 
             if form.q1.data:
                 q1 = form.q1.data
             else:
                 q1 = "INCORRECT"
+                incomplete = True
 
             if form.q2a.data:
                 q2a = form.q2a.data
             else:
                 q2a = "INCORRECT"
+                incomplete = True
+
 
             if form.q2b.data:
                 q2b = form.q2b.data
             else:
                 q2b = "INCORRECT"
+                incomplete = True
+
 
             if form.q3a.data:
                 q3a = form.q3a.data
             else:
                 q3a = "INCORRECT"
+                incomplete = True
+
 
             if form.q3b.data:
                 q3b = form.q3b.data
             else:
                 q3b = "INCORRECT"
+                incomplete = True
+
 
             if form.q4a.data:
                 q4a = form.q4a.data
             else:
                 q4a = "INCORRECT"
+                incomplete = True
+
 
             if form.q4b.data:
                 q4b = form.q4b.data
             else:
                 q4b = "INCORRECT"
+                incomplete = True
+
 
             if form.q5.data:
                 q5 = form.q5.data
             else:
                 q5 = "INCORRECT"
+                incomplete = True
+
 
             if form.q6a.data:
                 q6a = form.q6a.data
             else:
                 q6a = "INCORRECT"
+                incomplete = True
+
 
             if form.q6b.data:
                 q6b = form.q6b.data
             else:
                 q6b = "INCORRECT"
+                incomplete = True
+
 
             if form.q6d.data:
                 q6d = form.q6d.data
             else:
                 q6d = "INCORRECT"
+                incomplete = True
+
 
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
@@ -309,12 +338,12 @@ def scie2100_practical1():
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
 
 
-            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, correct, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c_url, q6d)
+            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, correct, incomplete, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c_url, q6d)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
 
-            return render_template('success.html', url_for=url_for)
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
 
         else:
             return render_template("scie2100practical1.html", questions=questions, form=form)
@@ -372,6 +401,7 @@ def build_results(results, questions):
     edited_results = []
     for result in results:
         correct = result.correct
+        incomplete = result.incomplete
         submission_time = str(result.submissiontime).split(".")[0]
         joined_list = []
         code_list = []
@@ -386,7 +416,7 @@ def build_results(results, questions):
                 joined_list.append([question, answer])
             elif 'code' in question:
                 code_list.append([question, highlight(answer, PythonLexer(), HtmlFormatter())])
-        edited_result = {"results": joined_list, "submission_time": submission_time, "correct": correct, "code_list": code_list,
+        edited_result = {"results": joined_list, "submission_time": submission_time, "correct": correct, "incomplete" : incomplete, "code_list": code_list,
              "image_list": image_list}
         edited_results.append(edited_result)
 

@@ -20,12 +20,15 @@
         {% for result in results %} <br>
             <p class="notice-text"> Result</p>
             {{ result.submission_time }}
-                {% if result.correct == false %}
-                    <p class="error-message">This response contains incorrect answers</p>
-
-                {%  else %}
-                            <p class="correct-message"> This response has all correct answers</p>
+            {% if result.correct == false %}
+                {% if result.incomplete == true %}
+                    <p class="error-message">This response is missing answers.</p>
+                {%  else  %}
+                    <p class="error-message">This response is not incorrect but all answers have been supplied.</p>
                 {%  endif %}
+                {%  else %}
+                    <p class="correct-message"> This response has all correct answers</p>
+            {%  endif %}
 
                 {% for item in result.results %}
                     <li>{{ item[0] + ":" + item[1] }}</li>
