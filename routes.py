@@ -249,7 +249,6 @@ def scie2100_practical1():
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions = questions, form=form)
         elif form.submit.data:
-            print ('here we go')
 
             # elif form.submit.data and form.validate() == True:
 
@@ -338,6 +337,7 @@ def scie2100_practical1():
                     return render_template("scie2100practical1.html", questions=questions, form=form, error="Your code upload should be a Python file ending in .py")
             else:
                 q4_code = FileStorage()
+                incomplete = True
 
             if form.q5_code.data:
                 q5_code = request.files['q5_code']
@@ -347,6 +347,7 @@ def scie2100_practical1():
 
             else:
                 q5_code = FileStorage()
+                incomplete = True
 
             if form.q6c_image.data:
                 try:
@@ -358,6 +359,7 @@ def scie2100_practical1():
 
             else:
                 q6c_url = ""
+                incomplete = True
 
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
