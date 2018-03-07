@@ -1,6 +1,6 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
-from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm
 from forms_scie2100 import SCIE2100Practical1
@@ -334,22 +334,30 @@ def scie2100_practical1():
 
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
+                if q4_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical1.html", questions=questions, form=form, error="Your code upload should be a Python file ending in .py")
             else:
                 q4_code = FileStorage()
 
             if form.q5_code.data:
                 q5_code = request.files['q5_code']
-                print (type(q5_code))
+                if q5_code.filename.split(".")[1] != 'py':
+                        return render_template("scie2100practical1.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+
             else:
                 q5_code = FileStorage()
 
             if form.q6c_image.data:
-                q6c_filename = images.save(form.q6c_image.data)
-                q6c_url = images.url(q6c_filename)
+                try:
+                    q6c_filename = images.save(form.q6c_image.data)
+                    q6c_url = images.url(q6c_filename)
+                except UploadNotAllowed:
+                    return render_template("scie2100practical1.html", questions=questions, form=form, error= "Your image upload is not an accepted image file")
+
+
             else:
                 q6c_url = ""
-
-            print (q6c_url)
 
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))

@@ -228,6 +228,11 @@ header {
 .error-message {
   color: #db4437;
 }
+.big-error-message{
+    color: #db4437;
+    font-size: 20px;
+
+}
 
 .correct-message {
   color: #2ECC40;
