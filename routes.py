@@ -333,7 +333,7 @@ def scie2100_practical1():
 
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
-                if q4_code.filename.split(".")[1] != 'py':
+                if not "." in q4_code.filename or q4_code.filename.split(".")[1] != 'py':
                     return render_template("scie2100practical1.html", questions=questions, form=form, error="Your code upload should be a Python file ending in .py")
             else:
                 q4_code = FileStorage()
@@ -341,7 +341,8 @@ def scie2100_practical1():
 
             if form.q5_code.data:
                 q5_code = request.files['q5_code']
-                if q5_code.filename.split(".")[1] != 'py':
+
+                if not "." in q5_code.filename or q5_code.filename.split(".")[1] != 'py':
                         return render_template("scie2100practical1.html", questions=questions, form=form,
                                            error="Your code upload should be a Python file ending in .py")
 

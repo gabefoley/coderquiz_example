@@ -7,7 +7,7 @@ class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
         'Question 1: List the standard alphabets defined in sym.py (e.g. Bool_Alphabet). Please ensure your spelling is correct and your answers are separated by a comma (,). ',
         validators=[CheckList(
-            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet'), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet, Protein_Alphabet_wSTOP, RNA_Alphabet_wN'), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q2a = StringField(
