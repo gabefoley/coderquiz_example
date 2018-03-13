@@ -1,9 +1,9 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
-from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1
+from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm
-from forms_scie2100 import SCIE2100Practical1
+from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2
 from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
@@ -378,6 +378,124 @@ def scie2100_practical1():
 
     elif request.method == "GET":
         return render_template("scie2100practical1.html", questions=questions, form=form)
+
+@application.route(local("/scie2100_practical2"), methods=["GET", "POST"])
+def scie2100_practical2():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100Practical2()
+    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c']
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("scie2100practical1.html", questions = questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q1a.data:
+                q1a = form.q1a.data
+            else:
+                q1a = "INCORRECT"
+                incomplete = True
+
+            if form.q1b.data:
+                q1b = form.q1b.data
+            else:
+                q1b = "INCORRECT"
+                incomplete = True
+
+            if form.q1c.data:
+                q1c = form.q1c.data
+            else:
+                q1c = "INCORRECT"
+                incomplete = True
+
+            if form.q1d.data:
+                q1d = form.q1d.data
+            else:
+                q1d = "INCORRECT"
+                incomplete = True
+
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+                incomplete = True
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+                incomplete = True
+
+            if form.q2c.data:
+                q2c = form.q2c.data
+            else:
+                q2c = "INCORRECT"
+                incomplete = True
+
+            if form.q2d.data:
+                q2d = form.q2d.data
+            else:
+                q2d = "INCORRECT"
+                incomplete = True
+
+            if form.q3b.data:
+                q3b = form.q3b.data
+            else:
+                q3b = "INCORRECT"
+                incomplete = True
+
+            if form.q3c.data:
+                q3c = form.q3c.data
+            else:
+                q3c = "INCORRECT"
+                incomplete = True
+
+            if form.q4a.data:
+                q4a = form.q4a.data
+            else:
+                q4a = "INCORRECT"
+                incomplete = True
+
+            if form.q4b.data:
+                q4b = form.q4b.data
+            else:
+                q4b = "INCORRECT"
+                incomplete = True
+
+            if form.q4c.data:
+                q4c = form.q4c.data
+            else:
+                q4c = "INCORRECT"
+                incomplete = True
+
+            if form.q3_code.data:
+                q3_code = request.files['q3_code']
+                if not "." in q3_code.filename or q3_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical2.html", questions=questions, form=form, error="Your code upload should be a Python file ending in .py")
+            else:
+                q3_code = FileStorage()
+                incomplete = True
+
+
+            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+
+            form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code, q3b, q3c, q4a, q4b )
+            # form.populate_obj(form_submission)
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+
+        else:
+            return render_template("scie2100practical2.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("scie2100practical2.html", questions=questions, form=form)
 
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():

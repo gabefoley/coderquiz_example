@@ -238,6 +238,92 @@ class CheckAccuracyScore(object):
             raise ValidationError('This score is not correct')
 
 
+class CheckSCIE2100Practical2SeqPairsCode(object):
+
+    def __init__(self, answer):
+        self.answer = answer
+
+    def __call__(self, form, field):
+        if field.data is not None:
+            numSeqs = 20
+            columns = 100
+            if "=" not in field.data or "seqPairs" not in field.data:
+                raise ValidationError("The format of your answer is incorrect. It should start with seqPairs =")
+            try:
+                seqPairs = eval(field.data.split("=")[1])
+                if seqPairs != self.answer:
+                    raise ValidationError("This answer is incorrect.")
+            except ValidationError:
+                raise ValidationError("This answer is incorrect.")
+            except NameError:
+                raise ValidationError("Make sure you have named your variables correctly")
+            except (ValueError, SyntaxError, TypeError) as e:
+                raise ValidationError( "There was an error in your code - " + repr(e))
+
+
+
+
+
+
+class CheckSCIE2100Practical2AAPairsCode(object):
+
+    def __init__(self, answer):
+        self.answer = answer
+
+    def __call__(self, form, field):
+        if field.data is not None:
+            seqPairs = 190
+            columns = 100
+            if "=" not in field.data or "aaPairs" not in field.data:
+                raise ValidationError("The format of your answer is incorrect. It should start with aaPairs = ")
+
+            try:
+                check = eval(field.data.split("=")[1])
+                if check != self.answer:
+                    raise ValidationError("This answer is incorrect.")
+            except ValidationError:
+                raise ValidationError("This answer is incorrect.")
+            except NameError:
+                raise ValidationError("Make sure you have named your variables correctly")
+            except (ValueError, SyntaxError, TypeError) as e:
+                raise ValidationError( "There was an error in your code - " + repr(e))
+
+class CheckSCIE2100Practical2ProbabilityCode(object):
+
+    def __init__(self, answer, identical):
+        self.answer = answer
+        self.identical = identical
+
+    def __call__(self, form, field):
+        if field.data is not None:
+            a = "A"
+            b = "L"
+            if self.identical:
+                p = {"A": 0.14, "L": 0.14}
+            else:
+                p = {"A": 0.14, "L": 0.22}
+
+
+
+            if "[" not in field.data:
+                raise ValidationError("Are you indexing correctly?")
+            elif "p" not in field.data or "b" not in field.data or "a" not in field.data:
+                raise ValidationError("Make sure you're using the correct variable names")
+
+            try:
+                check = eval(field.data.split("=")[1])
+                if check != self.answer:
+                    raise ValidationError("This answer is incorrect.")
+            except ValidationError:
+                raise ValidationError("This answer is incorrect.")
+            except NameError:
+                raise ValidationError("Make sure you have named your variables correctly")
+            except (ValueError, SyntaxError, TypeError) as e:
+                raise ValidationError( "There was an error in your code - " + repr(e))
+
+
+
+
 class CheckPalindrome(object):
     def __call__(self, form, field):
         if field.data is not None:
@@ -283,6 +369,7 @@ class CheckDomainBoundaries(object):
 
             if not (self.lower <= check_lower < check_upper <= self.upper):
                 raise ValidationError("These are not the correct domain boundaries")
+
 
 
 class Unique(object):

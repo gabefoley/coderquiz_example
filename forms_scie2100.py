@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
-from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, CheckDomainBoundaries
+from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
+    CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, CheckSCIE2100Practical2ProbabilityCode
 
 class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
@@ -84,6 +85,86 @@ class SCIE2100Practical1(FlaskForm):
     submit = SubmitField("Submit answers")
 
     questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image', 'q6d']
+
+class SCIE2100Practical2(FlaskForm):
+
+    q1a = StringField("Question 1A: Provide the calculation of eaa",
+                     validators=[CheckNumberRange(0.0195, 0.0197), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     filters=[lambda v: None if v == '' else v])
+
+    q1b = StringField("Question 1B: Provide the calculation of eab",
+                     validators=[CheckNumberRange(0.0615, 0.0617), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     filters=[lambda v: None if v == '' else v])
+
+    q1c = StringField("Question 1C: Provide the calculation of sab",
+                     validators=[CheckNumberRange(-0.0907, -0.0905), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     filters=[lambda v: None if v == '' else v])
+
+
+
+    q1d = TextAreaField("Question 1D: Provide an explanation for how the calculation of substitution scores works",
+                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                        filters = [lambda v: None if v == '' else v])
+
+
+    q2a = StringField("Question 2A: Enter your Python code for calculating seqPairs. This should be submitted to Coder Quiz in the format seqPairs = MY_ANSWER",
+                     validators=[CheckSCIE2100Practical2SeqPairsCode(190), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     filters=[lambda v: None if v == '' else v])
+
+    q2b = StringField("Question 2B: Enter your Python code for calculating aaPairs. This should be submitted to Coder Quiz in the format aaPairs = MY_ANSWER",
+                     validators=[CheckSCIE2100Practical2AAPairsCode(19000), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     filters=[lambda v: None if v == '' else v])
+
+    q2c = StringField(
+        "Question 2C: Enter your Python code for calculating eab  where a == b . This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
+        validators=[CheckSCIE2100Practical2ProbabilityCode(0.019600000000000003, identical=True),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q2d = StringField(
+        "Question 2D: Enter your Python code for calculating eab where a!= b. This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
+        validators=[CheckSCIE2100Practical2ProbabilityCode(0.06160000000000001, identical=False),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q3_code = FileField(
+        'Question 3 Code: Submit the code with additional comments describing the traceback process. Don’t submit the '
+        'entire functions, just the traceback sections (i.e., the part you completed.',
+        validators=[DataRequired("Please attach your code for Question 3.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q3b = StringField(
+        "Question 3B: Submit the alignment if the gap penalty is set to -8 . To differentiate the two rows of the "
+        "alignment separate them by a comma e.g. MADMAN,MAD-AM." ,
+        validators=[CheckList('THISLINE-,ISALIGNED'),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q3c = StringField(
+        "Question 3B: Submit the alignment if the gap penalty is set to -4 . To differentiate the two rows of the "
+        "alignment separate them by a comma e.g. MADMAN,MAD-AM.",
+        validators=[CheckList('THIS-LI-NE-,--ISALIGNED'),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q4a = TextAreaField("Question 4A: Explain why it took so long for the alignment to be computed",
+                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                        filters = [lambda v: None if v == '' else v])
+
+    q4b = TextAreaField("Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
+                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                        filters = [lambda v: None if v == '' else v])
+
+    q4c = TextAreaField("Question 4C: Where does the protein start (in each gene)?",
+                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                        filters = [lambda v: None if v == '' else v])
+
+
+    check = SubmitField("Check  answers")
+
+    submit = SubmitField("Submit answers")
+
+    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c']
 
 class PracticalAssessmentForm(FlaskForm):
     q1 = StringField(

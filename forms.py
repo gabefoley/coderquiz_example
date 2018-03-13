@@ -103,6 +103,7 @@ class QueryForm(FlaskForm):
     studentno = StringField("Enter student number")
     assessment_item = SelectField('Which assessment item do you want?',
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
+                                             ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
     records = RadioField('Do you want the latest submission or all submissions?',
@@ -115,7 +116,8 @@ class QueryForm(FlaskForm):
 class SubmissionForm(FlaskForm):
     assessment_item = SelectField('Which assessment item do you want?',
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
-                                             ('SubmissionPracticeQuiz', 'Practice Quiz')],
+                                             ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
+                                  ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
     records = RadioField('Do you want your latest submission or all submissions?',
                          choices=[('Latest', 'Latest'), ('All', 'All')], default='Latest', validators = [DataRequired()])
