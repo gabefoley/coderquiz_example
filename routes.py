@@ -384,7 +384,7 @@ def scie2100_practical2():
     if 'studentno' not in session:
         return redirect(url_for('login'))
     form = SCIE2100Practical2()
-    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c']
+    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c', 'q4d']
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions = questions, form=form)
@@ -473,6 +473,12 @@ def scie2100_practical2():
                 q4c = "INCORRECT"
                 incomplete = True
 
+            if form.q4d.data:
+                q4d = form.q4d.data
+            else:
+                q4d = "INCORRECT"
+                incomplete = True
+
             if form.q3_code.data:
                 q3_code = request.files['q3_code']
                 if not "." in q3_code.filename or q3_code.filename.split(".")[1] != 'py':
@@ -484,7 +490,7 @@ def scie2100_practical2():
 
             dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
 
-            form_submission = SubmissionSCIE2100Practical2(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code.read(), q3b, q3c, q4a, q4b, q4c )
+            form_submission = SubmissionSCIE2100Practical2(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code.read(), q3b, q3c, q4a, q4b, q4c, q4d )
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()

@@ -370,6 +370,20 @@ class CheckDomainBoundaries(object):
             if not (self.lower <= check_lower < check_upper <= self.upper):
                 raise ValidationError("These are not the correct domain boundaries")
 
+class CheckGapPenalty(object):
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            if "." in field.data:
+                field.data = field.data.split(".")[0]
+            check = int(field.data)
+            if check >= 0:
+                raise ValidationError("A score of zero or positive will lead to inaccurate, gappy alignments")
+            if check == -1 or check == -2:
+                raise ValidationError("A score this high would lead to an unusually high number of gaps")
+            if check <= -8:
+                raise ValidationError("A score this low will force a high number of mismatches in the alignment which is not ideal")
 
 
 class Unique(object):

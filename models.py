@@ -99,10 +99,11 @@ class SubmissionSCIE2100Practical2(db.Model):
     q4a = db.Column(db.String())
     q4b = db.Column(db.String())
     q4c = db.Column(db.String())
+    q4d = db.Column(db.String())
 
 
 
-    def __init__(self, studentno, submissiontime, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code, q3b, q3c, q4a, q4b, q4c):
+    def __init__(self, studentno, submissiontime, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code, q3b, q3c, q4a, q4b, q4c, q4d):
         self.studentno = studentno
         self.submissiontime = submissiontime
         self.correct = correct
@@ -121,6 +122,7 @@ class SubmissionSCIE2100Practical2(db.Model):
         self.q4a = q4a
         self.q4b =q4b
         self.q4c = q4c
+        self.q4d = q4d
 
 
 

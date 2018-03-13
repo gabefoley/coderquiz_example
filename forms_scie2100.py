@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
-    CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, CheckSCIE2100Practical2ProbabilityCode
+    CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty
 
 class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
@@ -46,8 +46,8 @@ class SCIE2100Practical1(FlaskForm):
         filters=[lambda v: None if v == '' else v])
 
     q4_code = FileField(
-        'Question 4 Code: Submit the code you wrote to answer Question 4A and 4B.',
-        validators=[DataRequired("Please attach your code for Question 4A and 4B.")],
+        'Question 4 Code: Submit the code you wrote to answer Question 4B.',
+        validators=[DataRequired("Please attach your code for Question 4B.")],
         filters=[lambda v: None if v == '' else v])
 
     q5 = StringField(
@@ -151,12 +151,17 @@ class SCIE2100Practical2(FlaskForm):
                         validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                         filters = [lambda v: None if v == '' else v])
 
-    q4b = TextAreaField("Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
+    q4b = StringField("Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
+                        validators = [CheckGapPenalty(), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                        filters = [lambda v: None if v == '' else v])
+
+    q4c = TextAreaField("Question 4C: What steps did you take to determine 4B?",
                         validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                         filters = [lambda v: None if v == '' else v])
 
-    q4c = TextAreaField("Question 4C: Where does the protein start (in each gene)?",
-                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+    q4d = StringField("Question 4D: Given the original DNA substitution matrix and a gap penalty of -5, at what position"
+                      " is the first ATG codon in reading frame +2 of seqB (JX416721.1)?",
+                        validators = [CorrectAnswer("92"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                         filters = [lambda v: None if v == '' else v])
 
 
@@ -164,7 +169,7 @@ class SCIE2100Practical2(FlaskForm):
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c']
+    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c', 'q4d']
 
 class PracticalAssessmentForm(FlaskForm):
     q1 = StringField(
