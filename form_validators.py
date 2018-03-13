@@ -303,9 +303,10 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
             else:
                 p = {"A": 0.14, "L": 0.22}
 
+            if "=" not in field.data or "eab" not in field.data:
+                raise ValidationError("The format of your answer is incorrect. It should start with eab = ")
 
-
-            if "[" not in field.data:
+            elif "[" not in field.data:
                 raise ValidationError("Are you indexing correctly?")
             elif "p" not in field.data or "b" not in field.data or "a" not in field.data:
                 raise ValidationError("Make sure you're using the correct variable names")
