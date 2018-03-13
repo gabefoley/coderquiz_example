@@ -141,7 +141,7 @@ class SCIE2100Practical2(FlaskForm):
         filters=[lambda v: None if v == '' else v])
 
     q3c = StringField(
-        "Question 3B: Submit the alignment if the gap penalty is set to -4 . To differentiate the two rows of the "
+        "Question 3C: Submit the alignment if the gap penalty is set to -4 . To differentiate the two rows of the "
         "alignment separate them by a comma e.g. MADMAN,MAD-AM.",
         validators=[CheckList('THIS-LI-NE-,--ISALIGNED'),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
