@@ -88,15 +88,15 @@ class SCIE2100Practical1(FlaskForm):
 
 class SCIE2100Practical2(FlaskForm):
 
-    q1a = StringField("Question 1A: Provide the calculation of eaa",
+    q1a = StringField("Question 1A: Provide the calculation of e<sub>aa</sub>",
                      validators=[CheckNumberRange(0.0195, 0.0197), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
-    q1b = StringField("Question 1B: Provide the calculation of eab",
+    q1b = StringField("Question 1B: Provide the calculation of e<sub>ab</sub>",
                      validators=[CheckNumberRange(0.0615, 0.0617), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
-    q1c = StringField("Question 1C: Provide the calculation of sab",
+    q1c = StringField("Question 1C: Provide the calculation of s<sub>ab</sub>",
                      validators=[CheckNumberRange(-0.0907, -0.0905), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
@@ -116,13 +116,13 @@ class SCIE2100Practical2(FlaskForm):
                      filters=[lambda v: None if v == '' else v])
 
     q2c = StringField(
-        "Question 2C: Enter your Python code for calculating eab  where a == b . This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
+        "Question 2C: Enter your Python code for calculating e<sub>ab</sub>  where a == b . This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
         validators=[CheckSCIE2100Practical2ProbabilityCode(0.019600000000000003, identical=True),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q2d = StringField(
-        "Question 2D: Enter your Python code for calculating eab where a!= b. This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
+        "Question 2D: Enter your Python code for calculating e<sub>ab</sub> where a!= b. This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
         validators=[CheckSCIE2100Practical2ProbabilityCode(0.06160000000000001, identical=False),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
