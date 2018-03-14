@@ -301,28 +301,39 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
     def __call__(self, form, field):
         if field.data is not None:
             a = "A"
-            b = "L"
+            b = "N"
+
+            # Check if a == b
             if self.identical:
-                p = {"A": 0.14, "L": 0.14}
-            else:
-                p = {"A": 0.14, "L": 0.22}
+                s1 = Sequence('APGNER', Protein_Alphabet)
+                s2 = Sequence('APGNER', Protein_Alphabet)
+            else: # a != b
+                s1 = Sequence('AAPG', Protein_Alphabet)
+                s2 = Sequence('ANLP', Protein_Alphabet)
+
+            # Create a background Distribution
+            b62 = readSubstMatrix('static/python/blosum62.matrix', Protein_Alphabet)
+            glob = alignGlobal(s1, s2, b62, -8)
+            p = glob.calcBackground()
+
 
             if "=" not in field.data or "eab" not in field.data:
                 raise ValidationError("The format of your answer is incorrect. It should start with eab = ")
 
-            elif "[" not in field.data:
+            elif "[" not in field.data and ".prob" not in field.data:
                 raise ValidationError("Are you indexing correctly?")
             elif "p" not in field.data or "b" not in field.data or "a" not in field.data:
                 raise ValidationError("Make sure you're using the correct variable names")
 
             try:
                 check = eval(field.data.split("=")[1])
+                print (check)
                 if check != self.answer:
                     raise ValidationError("This answer is incorrect.")
             except ValidationError:
                 raise ValidationError("This answer is incorrect.")
-            except NameError:
-                raise ValidationError("Make sure you have named your variables correctly")
+            # except NameError:
+            #     raise ValidationError("Make sure you have named your variables correctly")
             except (ValueError, SyntaxError, TypeError) as e:
                 raise ValidationError( "There was an error in your code - " + repr(e))
 
