@@ -327,7 +327,6 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
 
             try:
                 check = eval(field.data.split("=")[1])
-                print (check)
                 if check != self.answer:
                     raise ValidationError("This answer is incorrect.")
             except ValidationError:
