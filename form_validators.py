@@ -106,15 +106,19 @@ class CorrectAnswer(object):
 
 
 class CheckNumberRange(object):
-    def __init__(self, lower, upper):
+    def __init__(self, lower, upper, hint=""):
         self.lower = lower
         self.upper = upper
+        self.hint = hint
 
     def __call__(self, form, field):
 
         if field.data is not None:
             if not (self.lower <= float(field.data) <= self.upper):
-                raise ValidationError("Not in correct range")
+                if self.hint:
+                    raise ValidationError(self.hint)
+                else:
+                    raise ValidationError("Not in correct range")
 
 
 class CheckAlphabet(object):
