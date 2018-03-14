@@ -97,7 +97,7 @@ class SCIE2100Practical2(FlaskForm):
                      filters=[lambda v: None if v == '' else v])
 
     q1c = StringField("Question 1C: Provide the calculation of s<sub>ab</sub>",
-                     validators=[CheckNumberRange(-0.0603, -0.0601, hint="Make sure you're calculating 2 x log base 2"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+                     validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
 
