@@ -204,7 +204,7 @@ class SCIE2100PracticalAssessment1(FlaskForm):
             'EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE'),
                     Optional()], filters=[lambda v: None if v == '' else v])
 
-    q4_code = FileField('Question 4C: Upload your alignLocal function')
+    q4_code = FileField('Question 4C: Upload your alignLocal function', validators=[DataRequired("Please attach your code for Question 4.")])
 
     check = SubmitField("Check  answers")
 

@@ -391,9 +391,8 @@ def scie2100_practicalassessment1():
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("casualfrog.html", questions = questions, form=form)
-        elif form.submit.data:
-
-            # elif form.submit.data and form.validate() == True:
+        # elif form.submit.data:
+        elif form.submit.data and form.validate() == True:
 
             correct = form.validate()
             incomplete = False
@@ -403,12 +402,15 @@ def scie2100_practicalassessment1():
             else:
                 q1 = "INCORRECT"
                 incomplete = True
+                correct = False
 
             if form.q2a.data:
                 q2a = form.q2a.data
             else:
                 q2a = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
 
             if form.q2b.data:
@@ -416,6 +418,8 @@ def scie2100_practicalassessment1():
             else:
                 q2b = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
 
             if form.q2c.data:
@@ -423,6 +427,8 @@ def scie2100_practicalassessment1():
             else:
                 q2c = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
 
             if form.q3.data:
@@ -430,6 +436,8 @@ def scie2100_practicalassessment1():
             else:
                 q3 = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
 
             if form.q4a.data:
@@ -437,6 +445,8 @@ def scie2100_practicalassessment1():
             else:
                 q4a = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
 
             if form.q4b.data:
@@ -444,6 +454,8 @@ def scie2100_practicalassessment1():
             else:
                 q4b = "INCORRECT"
                 incomplete = True
+                correct = False
+
 
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
@@ -452,6 +464,8 @@ def scie2100_practicalassessment1():
             else:
                 q4_code = FileStorage()
                 incomplete = True
+                correct = False
+
 
 
             dt = datetime.now(pytz.timezone('Australia/Brisbane'))
@@ -461,7 +475,7 @@ def scie2100_practicalassessment1():
             db.session.add(form_submission)
             db.session.commit()
 
-            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete, inclass = True)
 
         else:
             return render_template("casualfrog.html", questions=questions, form=form)
@@ -682,6 +696,8 @@ def query():
         studentno = form.studentno.data
         item = form.assessment_item.data
         request_name = item[10:]
+        inclass = True if "Assessment" in request_name else False
+
         questions = eval(request_name + '.questions')
         if form.records.data == 'Latest':
             results = eval(
