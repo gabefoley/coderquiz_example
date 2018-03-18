@@ -801,6 +801,8 @@ def marking():
             else:
                 generated_results["Missing"].append([student.studentno, student.firstname, student.lastname])
 
+            return render_template("marking.html", form=form, generated_results=generated_results)
+
             print (generated_results)
 
 
@@ -842,6 +844,9 @@ def marking():
         return redirect(url_for('login'))
     else:
         return render_template("marking.html", form=form)
+
+@application.route(local('/marking/<token>'))
+def indvidual_marking_page(token):
 
 
 
