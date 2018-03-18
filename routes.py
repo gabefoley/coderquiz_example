@@ -845,8 +845,8 @@ def marking():
     else:
         return render_template("marking.html", form=form)
 
-@application.route(local('/marking/<token>'))
-def indvidual_marking_page(token):
+# @application.route(local('/marking/<token>'))
+# def indvidual_marking_page(token):
 
 
 
