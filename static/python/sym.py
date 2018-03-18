@@ -121,27 +121,32 @@ this module is imported """
 Bool_Alphabet = Alphabet('TF')
 DNA_Alphabet = Alphabet('ACGT')
 DNA_Alphabet_wN = Alphabet('ACGTN')
+RNA_Alphabet_wN = Alphabet('ACGUN')
 RNA_Alphabet = Alphabet('ACGU')
 Protein_Alphabet = Alphabet('ACDEFGHIKLMNPQRSTVWY')
 Protein_Alphabet_wX = Protein_wX = Alphabet('ACDEFGHIKLMNPQRSTVWYX')
-Protein_Alphabet_wSTOP = Alphabet('ACDEFGHIKLMNPQRSTVWY*')
+Protein_Alphabet_wSTOP = Protein_wSTOP = Alphabet('ACDEFGHIKLMNPQRSTVWY*')
 DSSP_Alphabet = Alphabet('GHITEBSC')
 DSSP3_Alphabet = Alphabet('HEC')
 
-predefAlphabets = {'DNA': DNA_Alphabet,
+predefAlphabets = {'Bool_Alphabet': Bool_Alphabet,
+                   'DNA': DNA_Alphabet,
                    'RNA': RNA_Alphabet,
-                   'DNAwN': Alphabet('ACGTN'),
-                   'RNAwN': Alphabet('ACGUN'),
+                   'DNAwN': RNA_Alphabet_wN,
+                   'RNAwN': DNA_Alphabet_wN,
                    'Protein': Protein_Alphabet,
-                   'ProteinwX': Protein_wX}
+                   'ProteinwX': Protein_wX,
+                   'ProteinwSTOP' : Protein_wSTOP,
+                   'DSSP_Alphabet' : DSSP_Alphabet,
+                   'DSSP3_Alphabet' : DSSP3_Alphabet}
 # The preferred order in which a predefined alphabet is assigned to a sequence
 # (e.g., we'd want to assign DNA to 'AGCT', even though Protein is also valid)
-preferredOrder = ['DNA', 'RNA', 'DNAwN', 'RNAwN', 'Protein', 'ProteinwX']
+preferredOrder = ['Bool_Alphabet', 'DNA', 'RNA', 'DNAwN', 'RNAwN', 'Protein', 'ProteinwX', 'ProteinwSTOP', 'DSSP_Alphabet', 'DSSP3_Alphabet']
+
 # Useful annotations
 DNA_Alphabet.annotateAll('html-color', {'A':'green','C':'orange','G':'red','T':'#66bbff'})
 RNA_Alphabet.annotateAll('html-color', {'A':'green','C':'orange','G':'red','U':'#66bbff'})
 Protein_Alphabet.annotateAll('html-color', {'G':'orange','P':'orange','S':'orange','T':'orange','H':'red','K':'red','R':'red','F':'#66bbff','Y':'#66bbff','W':'#66bbff','I':'green','L':'green','M':'green','V':'green'})
-
 # ------------------ Substitution Matrix ------------------
 
 class TupleStore(dict):

@@ -128,15 +128,15 @@ class CheckAlphabet(object):
 
             valid = False
 
-            invalids = ['B', 'J' 'O', 'Z']
+            invalids = ['J', 'O', 'Z']
 
-            valids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            valids = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
                       'W', 'X', 'Y', '-']
 
             if any(x in field.data for x in invalids):
-                raise ValidationError("Incorrect: Your answer shouldn't contain a B, J, O, or Z")
+                raise ValidationError("Incorrect: Your answer shouldn't contain a J, O, or Z")
 
-            if any(x for x in field.data if x not in valids):
+            elif any(x for x in field.data if x not in valids):
                 raise ValidationError(
                     "Incorrect: Your answer should only contain uppercase alphabetic characters or a gap symbol")
 

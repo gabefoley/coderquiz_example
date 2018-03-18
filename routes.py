@@ -1,14 +1,15 @@
 from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
-from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2
-from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm
-from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2
+from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2, SubmissionSCIE2100PracticalAssessment1
+from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
+from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100PracticalAssessment1
 from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError, DataError
 from os.path import join
 from io import BytesIO
 import datetime
+from due_dates import *
 import pytz
 import os
 from pygments import highlight
@@ -223,7 +224,7 @@ def practice():
                 incomplete = True
 
 
-            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
 
             form_submission = SubmissionPracticeQuiz(session['studentno'], dt, correct, incomplete, q1, q2, q3)
@@ -354,6 +355,7 @@ def scie2100_practical1():
                 try:
                     q6c_filename = images.save(form.q6c_image.data)
                     q6c_url = images.url(q6c_filename)
+                    q6c_url = images.url(q6c_filename)
                 except UploadNotAllowed:
                     return render_template("scie2100practical1.html", questions=questions, form=form, error= "Your image upload is not an accepted image file")
 
@@ -363,7 +365,7 @@ def scie2100_practical1():
                 incomplete = True
 
 
-            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
 
             form_submission = SubmissionSCIE2100Practical1(session['studentno'], dt, correct, incomplete, q1, q2a, q2b, q3a, q3b, q4a, q4b, q4_code.read(), q5, q5_code.read(), q6a, q6b, q6c_url, q6d)
@@ -378,6 +380,94 @@ def scie2100_practical1():
 
     elif request.method == "GET":
         return render_template("scie2100practical1.html", questions=questions, form=form)
+
+
+@application.route(local("/casualfrog"), methods=["GET", "POST"])
+def scie2100_practicalassessment1():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100PracticalAssessment1()
+    questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4_code"]
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("casualfrog.html", questions = questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q1.data:
+                q1 = form.q1.data
+            else:
+                q1 = "INCORRECT"
+                incomplete = True
+
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+                incomplete = True
+
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+                incomplete = True
+
+
+            if form.q2c.data:
+                q2c = form.q2c.data
+            else:
+                q2c = "INCORRECT"
+                incomplete = True
+
+
+            if form.q3.data:
+                q3 = form.q3.data
+            else:
+                q3 = "INCORRECT"
+                incomplete = True
+
+
+            if form.q4a.data:
+                q4a = form.q4a.data
+            else:
+                q4a = "INCORRECT"
+                incomplete = True
+
+
+            if form.q4b.data:
+                q4b = form.q4b.data
+            else:
+                q4b = "INCORRECT"
+                incomplete = True
+
+            if form.q4_code.data:
+                q4_code = request.files['q4_code']
+                if not "." in q4_code.filename or q4_code.filename.split(".")[1] != 'py':
+                    return render_template("casualfrog.html", questions=questions, form=form, error="Your code upload should be a Python file ending in .py")
+            else:
+                q4_code = FileStorage()
+                incomplete = True
+
+
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
+
+
+            form_submission = SubmissionSCIE2100PracticalAssessment1(session['studentno'], dt, correct, incomplete, q1, q2a, q2b, q2c, q3, q4a, q4b, q4_code.read())
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+
+        else:
+            return render_template("casualfrog.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("casualfrog.html", questions=questions, form=form)
 
 @application.route(local("/scie2100_practical2"), methods=["GET", "POST"])
 def scie2100_practical2():
@@ -488,7 +578,7 @@ def scie2100_practical2():
                 incomplete = True
 
 
-            dt = datetime.datetime.now(pytz.timezone('Australia/Brisbane'))
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
             form_submission = SubmissionSCIE2100Practical2(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q1d, q2a, q2b, q2c, q2d, q3_code.read(), q3b, q3c, q4a, q4b, q4c, q4d )
             # form.populate_obj(form_submission)
@@ -638,6 +728,106 @@ def query():
     else:
         return render_template("query.html", form=form)
 
+@application.route(local("/marking"), methods=["GET", "POST"])
+def marking():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+
+    if str(session['studentno']) not in admin:
+        return redirect(url_for('landing'))
+    form = MarkingForm()
+
+    if request.method == "POST" and form.submit.data:
+        item = form.assessment_item.data
+        request_name = item[10:]
+        questions = eval(request_name + '.questions')
+        generated_results = {"Correct": [], "Complete" : [], "Incomplete" : [], "Missing": [], "Late" : []}
+
+        students = User.query.order_by(User.studentno).all()
+
+
+
+        for student in students:
+            print (student.studentno)
+            print (student.firstname, student.lastname)
+
+
+            # Check to see if the student submitted anything
+            exists = eval('db.session.query(' + item + ').filter_by(studentno=student.studentno).first()') is not None
+            if exists:
+                correct = complete = incomplete = late = False
+                due_date = (scie2100duedates[request_name])
+
+                results = eval(item + '.query.filter_by(studentno=student.studentno).order_by("submissiontime")')
+                if (results[0] != None):
+                    for result in results:
+                        if result.submissiontime < due_date:
+                            if result.correct:
+                                correct = True
+                                break
+                            elif not result.incomplete:
+                                complete = True
+                            elif result.incomplete:
+                                incomplete = True
+
+                        elif result.submissiontime >= due_date:
+                            late = True
+
+                if correct:
+                    generated_results["Correct"].append([student.studentno, student.firstname, student.lastname])
+                elif complete:
+                    generated_results["Complete"].append([student.studentno, student.firstname, student.lastname])
+                elif incomplete:
+                    generated_results["Incomplete"].append([student.studentno, student.firstname, student.lastname])
+                elif late:
+                    generated_results["Late"].append([student.studentno, student.firstname, student.lastname])
+
+            else:
+                generated_results["Missing"].append([student.studentno, student.firstname, student.lastname])
+
+            print (generated_results)
+
+
+        #     print (item + '.query.filter(studentno=' + str(student.studentno) + ', studentno' + str(student.studentno) + ' != None).order_by(desc("submissiontime")).limit(1).first')
+        #     result = eval(
+        #         item + '.query.filter(studentno=' + str(student.studentno) + ', studentno' + str(student.studentno) + ' != None).order_by(desc("submissiontime")).limit(1).first')
+        #     print (result.submissiontime)
+        #     print (result.correct)
+        #     print (result.incomplete)
+        #
+        # if form.records.data == 'Latest':
+        #     results = eval(
+        #         '[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
+        #     if (results[0] == None):
+        #         return render_template("query.html", form=form,
+        #                                errors="This student hasn't submitted this assessment item")
+        #
+        #     edited_results = build_results(results, questions)
+        #
+        #     return render_template("query.html", form=form, studentno=studentno, results=edited_results)
+        #
+        # elif form.records.data == 'All':
+        #     results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
+        #     if not results.count():
+        #         return render_template("query.html", form=form,
+        #                                errors="This student hasn't submitted this assessment item")
+        #
+        #     edited_results = build_results(results, questions)
+        #
+        #     return render_template("query.html", form=form, studentno=studentno, results=edited_results)
+        #
+        #
+        # else:
+        #     return render_template("query.html", form=form)
+        #
+
+
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    else:
+        return render_template("marking.html", form=form)
+
+
 
 def send_confirmation_email(user_email):
     confirm_serializer = URLSafeTimedSerializer(application.config['SECRET_KEY'])
@@ -675,7 +865,7 @@ def confirm_email(token):
         return render_template("confirmation.html", registration_message='Account already confirmed.')
     else:
         user.email_confirmed = True
-        user.email_confirmed_on = datetime.datetime.now()
+        user.email_confirmed_on = datetime.now()
         db.session.add(user)
         db.session.commit()
 

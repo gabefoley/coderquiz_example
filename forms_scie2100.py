@@ -171,9 +171,9 @@ class SCIE2100Practical2(FlaskForm):
 
     questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c', 'q4d']
 
-class PracticalAssessmentForm(FlaskForm):
+class SCIE2100PracticalAssessment1(FlaskForm):
     q1 = StringField(
-        'Question 1: Give one example of a sequence which is composed of uppercase letters and does not contain B,J,Z, or O for which the Sequence class could not work out what the alphabet is.',
+        'Question 1: Give one example of a sequence composed of uppercase letters, that does not contain J, Z, or O, for which the Sequence class could not automatically assign a predefined alphabet.',
         validators=[CheckAlphabet(), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q2a = StringField(
@@ -204,11 +204,13 @@ class PracticalAssessmentForm(FlaskForm):
             'EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE'),
                     Optional()], filters=[lambda v: None if v == '' else v])
 
-    # q4c = FileField('Question 4C: Upload your alignLocal function')
+    q4_code = FileField('Question 4C: Upload your alignLocal function')
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
+
+    questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4_code"]
 
 
 class PracticalAssessment2Form(FlaskForm):

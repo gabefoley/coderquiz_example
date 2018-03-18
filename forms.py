@@ -104,6 +104,7 @@ class QueryForm(FlaskForm):
     assessment_item = SelectField('Which assessment item do you want?',
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
+                                             ('SubmissionSCIE2100PracticalAssessment1', ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
     records = RadioField('Do you want the latest submission or all submissions?',
@@ -111,6 +112,15 @@ class QueryForm(FlaskForm):
     submit = SubmitField("Get student's submission")
     # download = SubmitField("Download Question 2 code")
     # download2 = SubmitField("Download Question 3 code")
+
+class MarkingForm(FlaskForm):
+    assessment_item = SelectField('Which assessment item do you want?',
+                                  choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
+                                             ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
+                                             ('SubmissionPracticeQuiz', 'Practice Quiz')],
+                                  validators = [DataRequired()])
+
+    submit = SubmitField("Generate marking summary")
 
 
 class SubmissionForm(FlaskForm):

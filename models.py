@@ -120,7 +120,7 @@ class SubmissionSCIE2100Practical2(db.Model):
         self.q3b = q3b
         self.q3c = q3c
         self.q4a = q4a
-        self.q4b =q4b
+        self.q4b = q4b
         self.q4c = q4c
         self.q4d = q4d
 
@@ -149,38 +149,40 @@ class SubmissionPracticeQuiz(db.Model):
         self.q2 = q2
         self.q3 = q3
 
-class Submission(db.Model):
+class SubmissionSCIE2100PracticalAssessment1(db.Model):
 
-  __tablename__ = "submissions"
+  __tablename__ = "scie2100practicalassessment1"
 
   submissionid = db.Column(db.Integer, primary_key = True)
   studentno = db.Column(db.Integer)
   submissiontime = db.Column(db.DateTime(timezone=True))
-  q1a = db.Column(db.String())
-  q1b = db.Column(db.String())
-  q1c = db.Column(db.String())
+  correct = db.Column(db.Boolean)
+  incomplete = db.Column(db.Boolean)
+  q1 = db.Column(db.String())
   q2a = db.Column(db.String())
   q2b = db.Column(db.String())
   q2c = db.Column(db.String())
-  q3a = db.Column(db.String())
-  q3b = db.Column(db.String())
-  q3c = db.Column(db.String())
+  q3 = db.Column(db.String())
+  q4a = db.Column(db.String())
+  q4b = db.Column(db.String())
+  q4_code = db.Column(db.LargeBinary)
 
 
+  questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4c"]
 
-
-  def __init__(self, studentno, submissiontime, q1a, q1b, q1c, q2a, q2b, q2c, q3a, q3b, q3c):
+  def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q2c, q3, q4a, q4b, q4_code):
     self.studentno = studentno
     self.submissiontime = submissiontime
-    self.q1a = q1a
-    self.q1b = q1b
-    self.q1c = q1c
+    self.correct = correct
+    self.incomplete = incomplete
+    self.q1 = q1
     self.q2a = q2a
     self.q2b = q2b
     self.q2c = q2c
-    self.q3a = q3a
-    self.q3b = q3b
-    self.q3c = q3c
+    self.q3 = q3
+    self.q4a = q4a
+    self.q4b = q4b
+    self.q4_code = q4_code
 
 class SubmissionBIOL3014_2 (db.Model):
 	__tablename__ = "submissions2"
