@@ -801,9 +801,10 @@ def marking():
             else:
                 generated_results["Missing"].append([student.studentno, student.firstname, student.lastname])
 
-            return render_template("marking.html", form=form, generated_results=generated_results)
+        print (generated_results)
 
-            print (generated_results)
+        return render_template("marking.html", form=form, item=item, generated_results=generated_results)
+
 
 
         #     print (item + '.query.filter(studentno=' + str(student.studentno) + ', studentno' + str(student.studentno) + ' != None).order_by(desc("submissiontime")).limit(1).first')
@@ -847,6 +848,27 @@ def marking():
 
 # @application.route(local('/marking/<token>'))
 # def indvidual_marking_page(token):
+
+@application.route(local('/marking/<item>/<token>'), methods=["GET", "POST"])
+def marking_with_token(token, item):
+
+    print (token, item)
+    studentno = token
+    request_name = item[10:]
+    inclass = True if "Assessment" in request_name else False
+
+    questions = eval(request_name + '.questions')
+
+
+    results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
+    if not results.count():
+        return render_template("marking_result.html",
+                                   errors="This student hasn't submitted this assessment item")
+
+    edited_results = build_results(results, questions)
+
+    return render_template("marking_result.html", studentno=studentno, results=edited_results)
+
 
 
 
