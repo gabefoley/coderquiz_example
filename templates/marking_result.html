@@ -9,6 +9,9 @@
 
         {% for result in results %} <br>
             {{ result.submission_time }}
+            {% if result.late == true  %}
+                <p class="error-message">This response is late .</p>
+            {% endif %}
             {% if result.correct == false %}
                 {% if result.incomplete == true %}
                     <p class="error-message">This response is missing answers.</p>
