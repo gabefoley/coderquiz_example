@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
+    <div class="query-group" >
 <form method="POST" >
     {{ form.hidden_tag() }}
-    <div class="query-group"><br><br>
         {{ form.assessment_item.label }}
         {{ form.assessment_item() }}<br><br>
         {{ form.submit(class="btn-primary") }}
         <p class="error-message">{{ errors }}</p>
-    </div>
 
     {%  if generated_results %}
             {%  if generated_results["Correct"] %}
@@ -48,4 +47,5 @@
     {%  endif %}
 
 </form>
+    </div>
 {% endblock %}

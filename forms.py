@@ -117,6 +117,9 @@ class MarkingForm(FlaskForm):
     assessment_item = SelectField('Which assessment item do you want?',
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
+                                             ('SubmissionSCIE2100PracticalAssessment1',
+                                              ' SCIE2100 Practical Assessment 1'),
+
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
 
@@ -127,7 +130,10 @@ class SubmissionForm(FlaskForm):
     assessment_item = SelectField('Which assessment item do you want?',
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
-                                  ('SubmissionPracticeQuiz', 'Practice Quiz')],
+                                             ('SubmissionSCIE2100PracticalAssessment1',
+                                              ' SCIE2100 Practical Assessment 1'),
+
+                                             ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
     records = RadioField('Do you want your latest submission or all submissions?',
                          choices=[('Latest', 'Latest'), ('All', 'All')], default='Latest', validators = [DataRequired()])

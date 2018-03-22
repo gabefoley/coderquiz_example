@@ -48,7 +48,7 @@ application.secret_key = 'development-key'
 
 BASE_ROUTE = '/coderquiz'
 
-admin = ['40880084', '43558898', '123456789']
+admin = ['40880084', '43558898', '42369305', '43925865', '44104630', '43312214', '44250416', '29162320']
 
 class SCIE2100_Exception(Exception):
     pass
@@ -80,7 +80,7 @@ def local_redirect(*args, **kwargs) -> Any:
 @application.route(local("/"))
 def index():
     if 'studentno' in session:
-        return render_template('landing.html', studentno=session['studentno'], url_for=url_for)
+        return render_template('landing.html', studentno=session['studentno'], admin=str(session['studentno']) in admin, url_for=url_for)
     else:
         return render_template("index.html", url_for=url_for)
 
@@ -111,10 +111,12 @@ def signup():
         session['studentno'] = newuser.studentno
 
         print ('here')
-        return render_template("landing.html", studentno=session['studentno'], url_for=url_for, first_time=True)
+        return render_template("landing.html", studentno=session['studentno'], admin=str(session['studentno']) in admin,
+                               url_for=url_for, first_time=True)
 
     elif request.method == 'GET':
         return render_template("signup.html", form=form, url_for=url_for, errors=[])
+
 
 @application.route(local("/login"), methods=["GET", "POST"])
 def login():
@@ -139,7 +141,8 @@ def login():
                     check_pass = user.check_password(password)
                     if check_pass == True:
                         session['studentno'] = form.studentno.data
-                        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
+                        return render_template("landing.html", studentno=session['studentno'], admin=str(session['studentno']) in admin,
+                                               url_for=url_for)
 
                     else:
                         return render_template('login.html', form=form, passworderror="Password is incorrect")
@@ -181,11 +184,15 @@ def logout():
     session.pop('studentno', None)
     return render_template('index.html')
 
+
 @application.route(local("/landing"))
 def landing():
     if 'studentno' in session:
 
-        return render_template("landing.html", studentno=session['studentno'], url_for=url_for)
+
+        return render_template("landing.html", studentno=session['studentno'], admin=str(session['studentno']) in admin,
+                               url_for=url_for)
+
 
 @application.route(local("/practice"), methods=["GET", "POST"])
 def practice():
@@ -223,12 +230,9 @@ def practice():
                 q3 = "INCORRECT"
                 incomplete = True
 
-
             dt = datetime.now(pytz.timezone('Australia/Brisbane'))
-
-
             form_submission = SubmissionPracticeQuiz(session['studentno'], dt, correct, incomplete, q1, q2, q3)
-            # form.populate_obj(form_submission)
+
             db.session.add(form_submission)
             db.session.commit()
 
@@ -239,6 +243,7 @@ def practice():
 
     elif request.method == "GET":
         return render_template("practice.html", questions=questions, form=form)
+
 
 @application.route(local("/scie2100_practical1"), methods=["GET", "POST"])
 def scie2100_practical1():
@@ -268,13 +273,11 @@ def scie2100_practical1():
                 q2a = "INCORRECT"
                 incomplete = True
 
-
             if form.q2b.data:
                 q2b = form.q2b.data
             else:
                 q2b = "INCORRECT"
                 incomplete = True
-
 
             if form.q3a.data:
                 q3a = form.q3a.data
@@ -282,13 +285,11 @@ def scie2100_practical1():
                 q3a = "INCORRECT"
                 incomplete = True
 
-
             if form.q3b.data:
                 q3b = form.q3b.data
             else:
                 q3b = "INCORRECT"
                 incomplete = True
-
 
             if form.q4a.data:
                 q4a = form.q4a.data
@@ -296,13 +297,11 @@ def scie2100_practical1():
                 q4a = "INCORRECT"
                 incomplete = True
 
-
             if form.q4b.data:
                 q4b = form.q4b.data
             else:
                 q4b = "INCORRECT"
                 incomplete = True
-
 
             if form.q5.data:
                 q5 = form.q5.data
@@ -310,13 +309,11 @@ def scie2100_practical1():
                 q5 = "INCORRECT"
                 incomplete = True
 
-
             if form.q6a.data:
                 q6a = form.q6a.data
             else:
                 q6a = "INCORRECT"
                 incomplete = True
-
 
             if form.q6b.data:
                 q6b = form.q6b.data
@@ -324,13 +321,11 @@ def scie2100_practical1():
                 q6b = "INCORRECT"
                 incomplete = True
 
-
             if form.q6d.data:
                 q6d = form.q6d.data
             else:
                 q6d = "INCORRECT"
                 incomplete = True
-
 
             if form.q4_code.data:
                 q4_code = request.files['q4_code']
@@ -382,7 +377,7 @@ def scie2100_practical1():
         return render_template("scie2100practical1.html", questions=questions, form=form)
 
 
-@application.route(local("/casualfrog"), methods=["GET", "POST"])
+@application.route(local("/scie2100_practicalassessment1"), methods=["GET", "POST"])
 def scie2100_practicalassessment1():
     if 'studentno' not in session:
         return redirect(url_for('login'))
@@ -611,18 +606,19 @@ def scie2100_practical2():
 def submissiondynamic():
     form = SubmissionForm()
     if request.method == "POST":
-        studentno = str(session['studentno'])
-        item = form.assessment_item.data
+        studentno = str(session['studentno']) # Student numbber
+        item = form.assessment_item.data # Submission form data
         request_name = item[10:]
         questions = eval(request_name + '.questions')
+        due_date = (scie2100duedates[request_name]) # Due date
+
         if form.records.data == 'Latest':
             results = eval('[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
-            if (results[0] == None):
-                return render_template("submissiondynamic.html", form=form,
+            if results[0] == None:
+                return render_template("submissiondynamic.html", due_date=due_date, form=form,
                                        errors="You haven't submitted this assessment item")
 
             edited_results = build_results(results, questions)
-
 
             return render_template("submissiondynamic.html", form=form, studentno=studentno, results=edited_results)
 
@@ -648,6 +644,7 @@ def submissiondynamic():
     else:
         return render_template("submissiondynamic.html", form=form)
 
+
 def build_results(results, questions):
     """
     Take a list of submissions and return an edited list of dictionaries that seperates the different information
@@ -666,7 +663,7 @@ def build_results(results, questions):
             answer = eval('result.' + question)
             if 'image' in question:
                 filepath = "/uploads/" + answer.split("/")[-1]
-                print (filepath)
+                print(filepath)
                 image_list.append([question, filepath])
             elif type(answer) == str:
                 joined_list.append([question, answer])
