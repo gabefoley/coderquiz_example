@@ -660,10 +660,6 @@ def build_results(results, form_name):
         correct = result.correct
         incomplete = result.incomplete
         late = result.submissiontime > due_date
-        print (result.submissiontime)
-        print (due_date)
-        print ('late is ')
-        print (late)
         submission_time = str(result.submissiontime).split(".")[0]
         joined_list = []
         code_list = []
