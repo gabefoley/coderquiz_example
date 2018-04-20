@@ -88,15 +88,15 @@ class SCIE2100Practical1(FlaskForm):
 
 class SCIE2100Practical2(FlaskForm):
 
-    q1a = StringField("Question 1A: Provide the calculation of e<sub>aa</sub>",
+    q1a = StringField("Question 1A: Provide the answer to your calculation of e<sub>aa</sub>",
                      validators=[CheckNumberRange(0.0195, 0.0197), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
-    q1b = StringField("Question 1B: Provide the calculation of e<sub>ab</sub>",
+    q1b = StringField("Question 1B: Provide the answer to your calculation of e<sub>ab</sub>",
                      validators=[CheckNumberRange(0.0615, 0.0617), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
-    q1c = StringField("Question 1C: Provide the calculation of s<sub>ab</sub>",
+    q1c = StringField("Question 1C: Provide the answer to your calculation of s<sub>ab</sub>",
                      validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
                      filters=[lambda v: None if v == '' else v])
 
