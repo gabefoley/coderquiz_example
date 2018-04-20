@@ -209,7 +209,7 @@ def practice():
     if 'studentno' not in session:
         return redirect(url_for('login'))
     form = PracticeQuiz()
-    questions = ['q1', 'q2', 'q3']
+    questions = form.questions
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("practice.html", questions=questions, form=form)
@@ -220,6 +220,11 @@ def practice():
             correct = form.validate()
 
             incomplete = False
+            print ('we are here')
+
+            for question in form.questions:
+                print ("here is the question")
+                print (question)
 
             if form.q1.data:
                 q1 = form.q1.data
@@ -259,8 +264,7 @@ def scie2100_practical1():
     if 'studentno' not in session:
         return redirect(url_for('login'))
     form = SCIE2100Practical1()
-    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image',
-                 'q6d']
+    questions = form.questions
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions=questions, form=form)
@@ -394,7 +398,7 @@ def scie2100_practicalassessment1():
     if 'studentno' not in session:
         return redirect(url_for('login'))
     form = SCIE2100PracticalAssessment1()
-    questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4_code"]
+    questions = form.questions
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("casualfrog.html", questions=questions, form=form)
@@ -485,8 +489,7 @@ def scie2100_practical2():
     if 'studentno' not in session:
         return redirect(url_for('login'))
     form = SCIE2100Practical2()
-    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c',
-                 'q4d']
+    questions = form.questions
     if request.method == "POST":
         if form.check.data and form.validate() == True:
             return render_template("scie2100practical1.html", questions=questions, form=form)

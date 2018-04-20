@@ -172,6 +172,7 @@ class SCIE2100Practical2(FlaskForm):
     questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c', 'q4d']
 
 class SCIE2100PracticalAssessment1(FlaskForm):
+
     q1 = StringField(
         'Question 1: Give one example of a sequence composed of uppercase letters, that does not contain J, Z, or O, for which the Sequence class could not automatically assign a predefined alphabet.',
         validators=[CheckAlphabet(), Optional("Not completed")], filters=[lambda v: None if v == '' else v])

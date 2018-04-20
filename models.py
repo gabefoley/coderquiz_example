@@ -168,7 +168,7 @@ class SubmissionSCIE2100PracticalAssessment1(db.Model):
   q4_code = db.Column(db.LargeBinary)
 
 
-  questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4c"]
+  questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4_code"]
 
   def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q2c, q3, q4a, q4b, q4_code):
     self.studentno = studentno
