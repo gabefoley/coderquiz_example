@@ -83,8 +83,8 @@ class CorrectAnswer(object):
     if the correct answer was submitted
     """
 
-    def __init__(self, answer):
-        self.answer = answer
+    def __init__(self, answers):
+        self.answers = answers
 
     def __call__(self, form, field):
         # List of error messages that are selected by random
@@ -100,9 +100,11 @@ class CorrectAnswer(object):
         message = error_messages[num]
 
         if field.data is not None:
+            for answer in self.answers:
+                if answer.strip().upper() == field.data.strip().upper():
+                    return
 
-            if field.data.strip().upper() != self.answer.strip().upper():
-                raise ValidationError(message)
+        raise ValidationError(message)
 
 
 class CheckNumberRange(object):
@@ -401,24 +403,92 @@ class CheckGapPenalty(object):
 
                 raise ValidationError("A score this low will force a high number of mismatches in the alignment which is not ideal")
 
+
 class CompareNumbers(object):
+
+
+    def __init__(self, greater):
+        self.greater = True if greater == "greater" else False
 
     def __call__(self, form, field):
 
-        def __init__(self, greater):
-            self.greater = True if greater == "greater" else False
+        # print ((field.data.split(",")[0]).isdigit())
 
         if field.data is not None:
             if "," not in field.data:
                 raise ValidationError("Make sure you seperate your two values with a comma")
+
+            try:
+                first = float(field.data.split(",")[0])
+                second = float(field.data.split(",")[1])
+            except:
+                raise ValidationError("Make sure you only enter numbers as your values")
+
             else:
-                correct = field.data.split(",")[0] > field.data.split(",")[1] if self.greater else field.data.split(",")[0] < field.data.split(",")[1]
+                correct = first > second if self.greater else first < second
 
             if correct:
                 return
             else:
                 raise ValidationError("tripletAlignGlobal shouldn't take longer than alignGlobal")
 
+
+class CheckTripletAlignGlobal(object):
+
+
+    def __init__(self, answer, length):
+        self.answer = answer
+        self.length = length
+
+    def __call__(self, form, field):
+        if field.data is not None:
+
+            N = self.length
+
+            if "=" not in field.data or "matrix_size" not in field.data:
+                raise ValidationError("The format of your answer is incorrect. It should start with matrix_size = ")
+
+            elif "N" not in field.data:
+                raise ValidationError("You should be using a variable named N")
+
+            try:
+                check = eval(field.data.split("=")[1])
+                if check != self.answer:
+                    raise ValidationError("This answer is incorrect.")
+            except ValidationError:
+                raise ValidationError("This answer is incorrect.")
+
+            except (AttributeError, ValueError, SyntaxError, TypeError) as e:
+                raise ValidationError( "There was an error in your code - " + repr(e))
+
+
+class CheckPoissonDistance(object):
+
+
+    def __init__(self, answer, fraction_of_positions):
+        self.answer = answer
+        self.fraction_of_positions = fraction_of_positions
+
+    def __call__(self, form, field):
+        if field.data is not None:
+
+            p = self.fraction_of_positions
+
+            if "=" not in field.data or "dist" not in field.data:
+                raise ValidationError("The format of your answer is incorrect. It should start with dist = ")
+
+            elif "p" not in field.data:
+                raise ValidationError("You should be using a variable named p")
+
+            try:
+                check = eval(field.data.split("=")[1])
+                if check != self.answer:
+                    raise ValidationError("This answer is incorrect.")
+            except ValidationError:
+                raise ValidationError("This answer is incorrect.")
+
+            except (AttributeError, ValueError, SyntaxError, TypeError) as e:
+                raise ValidationError( "There was an error in your code - " + repr(e))
 
 
 class Unique(object):

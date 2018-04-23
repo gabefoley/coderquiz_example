@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField, SelectField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
     CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
-    CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers
+    CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, CheckPoissonDistance
+import math
 
 
 class SCIE2100Practical1(FlaskForm):
@@ -177,7 +178,7 @@ class SCIE2100Practical2(FlaskForm):
     q4d = StringField(
         "Question 4D: Given the original DNA substitution matrix and a gap penalty of -5, at what position"
         " is the first ATG codon in reading frame +2 of seqB (JX416721.1)?",
-        validators=[CorrectAnswer("92"),
+        validators=[CorrectAnswer(["92"]),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
@@ -190,32 +191,43 @@ class SCIE2100Practical2(FlaskForm):
 
 
 class SCIE2100Practical3(FlaskForm):
-    q1 = TextAreaField(
-        "Question 1: Report the time it took to run the tripletAlignGlobal function, and the time to run global alignment? Enter them seperated by a comma, for example 5, 10",
-        validators=[CompareNumbers("greater"),
+    q1 = StringField(
+        "Question 1: Report the time it took to run the tripletAlignGlobal function, and the time to run global "
+        "alignment? Enter the times with tripletAlignGlobal first, followed by global alignment and seperated by a "
+        "comma, for example 5, 10",
+        validators=[CompareNumbers("lesser"),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
-    q2a = StringField("Question 2A: What is the difference in the time it takes to complete the alignment after doubling the size "
-                      "of the sequences?",
-                      validators=[DataRequired(
+    q2a = SelectField("Question 2A: What is the difference in the time it takes to complete the alignment after doubling the size "
+                      "of the sequences?", choices=[('Time did not change considerably', 'Time did not change considerably'),
+                                                    ('Time increases by roughly a factor of two (doubled)', 'Time increases by roughly a factor of two (doubled)'),
+                                                    ('Time increases by roughly a factor of five', 'Time increases by roughly a factor of five'),
+                                                    ('Time increases by roughly a factor of eight', 'Time increases by roughly a factor of eight'),
+                                                    ], validators=[DataRequired(
                           "You must supply an answer to each question or you will not pass this Practical")],
                       filters=[lambda v: None if v == '' else v])
 
     q2b = StringField(
-        "Question 2B:  Describe, with a mathematical expression, the number of steps involved in completing the score matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  NN  be the length of each sequence) (Your answer should follow this format: matrix_size = my_formula",
-        validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"),
+        "Question 2B:  Describe, with a mathematical expression, the number of steps involved in completing the score "
+        "matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  NN  be the length of each sequence) "
+        "(Your answer should follow this format: matrix_size = my_formula",
+
+        validators=[CheckTripletAlignGlobal(9261, 20),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
-    q2c = TextAreaField("Question 2C: Assuming three sequences of length  N=30N=30  took 1 second to align and three sequences of length  N=60N=60  OR  2N2N  took 8 seconds to align, how many seconds would it take to align three sequences if you double the lengths again, i.e.  N=120N=120  OR  4N4N  base pairs long?",
-                        validators=[DataRequired(
+    q2c = StringField("Question 2C: Assuming three sequences of length  N=30 took 1 second to align and three "
+                        "sequences of length  N=60  OR  2N took 8 seconds to align, how many seconds would it "
+                        "take to align three sequences if you double the lengths again, i.e.  N=120  OR  4N base "
+                        "pairs long?",
+                        validators=[CorrectAnswer(["64", "64 seconds"]),DataRequired(
                             "You must supply an answer to each question or you will not pass this Practical")],
                         filters=[lambda v: None if v == '' else v])
 
     q3a = StringField(
         "Question 3A: Use your getConsensus to provide the consensus sequence for the five sequences above.",
-        validators=[CorrectAnswer("AGFDTVT-AISWSLMYLVTNPRVQRKIQ"),
+        validators=[CorrectAnswer(["AGFDTVT-AISWSLMYLVTNPRVQRKIQ"]),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
@@ -228,13 +240,13 @@ class SCIE2100Practical3(FlaskForm):
 
     q3c = StringField(
         "Question 3C: Report the first 3 columns where multiple symbols might have been included in the consensus sequence of the Epoxide Hydrolase alignment .",
-        validators=[CheckList(19000),
+        validators=[CheckList('1, 2, 9'),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q4a = StringField(
         "Question 4A: Submit the formula for calculating the Poisson distance in the format dist = my_formula.",
-        validators=[CheckSCIE2100Practical2ProbabilityCode(0.027777777777777776, identical=True),
+        validators=[CheckPoissonDistance(0.35667494393873245, 0.3),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
@@ -243,17 +255,16 @@ class SCIE2100Practical3(FlaskForm):
         validators=[DataRequired("Please attach your code for Question 4B.")],
         filters=[lambda v: None if v == '' else v])
 
-    q5 = StringField(
-        "Question 2D: Enter your Python code for calculating e<sub>ab</sub> where a!= b. This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
-        validators=[CheckSCIE2100Practical2ProbabilityCode(0.09375, identical=False),
-                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+    q5_image = FileField(
+        "Question 5: Upload an image of your heatmap",
+        validators=[DataRequired("Please attach an image of your heatmap")],
         filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5' ]
+    questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5_image' ]
 
 
 class SCIE2100PracticalAssessment1(FlaskForm):
@@ -263,30 +274,30 @@ class SCIE2100PracticalAssessment1(FlaskForm):
 
     q2a = StringField(
         'Question 2A: Which sequence has the greater number of valines? Type either P53_EQUAS or P53_HUMAN.',
-        validators=[CorrectAnswer('P53_HUMAN'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+        validators=[CorrectAnswer(['P53_HUMAN']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q2b = StringField(
         'Question 2B: Which sequence has the greater number of valines as a proportion of the total protein length? Type either P53_EQUAS or P53_HUMAN.',
-        validators=[CorrectAnswer('P53_EQUAS'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+        validators=[CorrectAnswer(['P53_EQUAS']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q2c = StringField(
         'Question 2C: What percentage of the P53_EQUAS was valine? Enter a percentage to three decimal places (do not include the % sign)',
-        validators=[CorrectAnswer('5.797'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+        validators=[CorrectAnswer(['5.797']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q3 = StringField('Question 3: How many of the sequences in Staphylococcus.fasta have the RAFKPS target sequence?',
-                     validators=[CorrectAnswer('17'), Optional("Not completed")],
+                     validators=[CorrectAnswer(['17']), Optional("Not completed")],
                      filters=[lambda v: None if v == '' else v])
 
     q4a = StringField(
         "Question 4A: Paste the aligned mystery_seq1 here (Include only protein symbols and gap characters)",
         validators=[CorrectAnswer(
-            'KFLKVSSLFVATLT-TATLVSSPAANALSSKAMDNHPQQ-SQS-SKQ-QTPKIQKGGNLKPLEQREHAN-V-ILPNNDRHQITDTTNGHY-A--P-VT-YI-Q--VE---APTGTFIASGVVVG-KDTLLTNKHVVDATHG-DPHAL-K---A--F--PS-AINQDNY-PNGGFTAEQ-ITKYSGEGDLAIVKFSPNEQ-NKHIGEVVKPATMSNNAETQV-N-QN-ITVTGYPGDKPVATMWESKGKITY-L-KGEAMQY-DLSTTGGNS-GSPVFNEKNEVIGIHWGGVPNEFNGAVFINE'),
+            ['KFLKVSSLFVATLT-TATLVSSPAANALSSKAMDNHPQQ-SQS-SKQ-QTPKIQKGGNLKPLEQREHAN-V-ILPNNDRHQITDTTNGHY-A--P-VT-YI-Q--VE---APTGTFIASGVVVG-KDTLLTNKHVVDATHG-DPHAL-K---A--F--PS-AINQDNY-PNGGFTAEQ-ITKYSGEGDLAIVKFSPNEQ-NKHIGEVVKPATMSNNAETQV-N-QN-ITVTGYPGDKPVATMWESKGKITY-L-KGEAMQY-DLSTTGGNS-GSPVFNEKNEVIGIHWGGVPNEFNGAVFINE']),
             Optional()], filters=[lambda v: None if v == '' else v])
 
     q4b = StringField(
         "Question 4B: Paste the aligned mystery_seq2 here (Include only protein symbols and gap characters)",
         validators=[CorrectAnswer(
-            'EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE'),
+            ['EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE']),
             Optional()], filters=[lambda v: None if v == '' else v])
 
     q4_code = FileField('Question 4C: Upload your alignLocal function',
@@ -307,11 +318,11 @@ class PracticalAssessment2Form(FlaskForm):
 
     q2 = StringField(
         'Question 2 [3 Marks]: What is the Gamma distance between the two sequences in eh.aln? Your submitted answer should be rounded to three decimal places, e.g. 1.241525 would be 1.242',
-        validators=[CorrectAnswer('1.507'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+        validators=[CorrectAnswer(['1.507']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q3 = StringField(
         'Question 3 [5 Marks]: What is the node label for the closest common ancestor for nodes A0A1A8AU08 and G3PS36?',
-        validators=[CorrectAnswer('N_6X5OCZ'), Optional("Not completed")],
+        validators=[CorrectAnswer(['N_6X5OCZ']), Optional("Not completed")],
         filters=[lambda v: None if v == '' else v])
 
     file_upload = FileField('Upload the code for the extended version of calcDistances that you wrote for Question 2',
@@ -327,15 +338,15 @@ class PracticalAssessment2Form(FlaskForm):
 
 class PracticalAssessment3Form(FlaskForm):
     q1 = StringField('Question 1 [4 Marks]: Submit your predicted secondary structure.', validators=[
-        CorrectAnswer('CCCEEEEEHCHEEEEHCEHCECEEECEEEHCHHEHCECCCECEECHEECECCCHHHEEHCHHHEEHCECHHECEEECHHEHEHECE')],
+        CorrectAnswer(['CCCEEEEEHCHEEEEHCEHCECEEECEEEHCHHEHCECCCECEECHEECECCCHHHEEHCHHHEEHCECHHECEEECHHEHEHECE'])],
                      filters=[lambda v: None if v == '' else v])
 
     q2a = StringField('Question 2A [1 Marks]: Submit the sensitivity of class E to two decimal places.', validators=[
-        CorrectAnswer('0.58')],
+        CorrectAnswer(['0.58'])],
                       filters=[lambda v: None if v == '' else v])
 
     q2b = StringField('Question 2B [1 Marks]: Submit the specificity of class E to two decimal places.', validators=[
-        CorrectAnswer('0.64')],
+        CorrectAnswer(['0.64'])],
                       filters=[lambda v: None if v == '' else v])
 
     q2_code = FileField(
