@@ -2,13 +2,16 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, RadioField, FileField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
-    CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty
+    CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
+    CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers
+
 
 class SCIE2100Practical1(FlaskForm):
     q1 = StringField(
         'Question 1: List the standard alphabets defined in sym.py (e.g. Bool_Alphabet). Please ensure your spelling is correct and your answers are separated by a comma (,). ',
         validators=[CheckList(
-            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet, Protein_Alphabet_wSTOP, RNA_Alphabet_wN'), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+            'Bool_Alphabet, DNA_Alphabet, DNA_Alphabet_wN, RNA_Alphabet, Protein_Alphabet, Protein_Alphabet_wX, DSSP_Alphabet, DSSP3_Alphabet, Protein_Alphabet_wSTOP, RNA_Alphabet_wN'),
+            DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     q2a = StringField(
@@ -77,43 +80,51 @@ class SCIE2100Practical1(FlaskForm):
 
     q6d = StringField(
         "Question 6D: Provide the rough boundaries of the fifth transmembrane domain. Enter your boundaries in the following format : 10 - 30",
-        validators=[CheckDomainBoundaries(280,320), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        validators=[CheckDomainBoundaries(280, 320),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image', 'q6d']
+    questions = ['q1', 'q2a', 'q2b', 'q3a', 'q3b', 'q4a', 'q4b', 'q4_code', 'q5', 'q5_code', 'q6a', 'q6b', 'q6c_image',
+                 'q6d']
+
 
 class SCIE2100Practical2(FlaskForm):
-
     q1a = StringField("Question 1A: Provide the answer to your calculation of e<sub>aa</sub>",
-                     validators=[CheckNumberRange(0.0195, 0.0197), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                     filters=[lambda v: None if v == '' else v])
+                      validators=[CheckNumberRange(0.0195, 0.0197), DataRequired(
+                          "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
 
     q1b = StringField("Question 1B: Provide the answer to your calculation of e<sub>ab</sub>",
-                     validators=[CheckNumberRange(0.0615, 0.0617), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                     filters=[lambda v: None if v == '' else v])
+                      validators=[CheckNumberRange(0.0615, 0.0617), DataRequired(
+                          "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
 
     q1c = StringField("Question 1C: Provide the answer to your calculation of s<sub>ab</sub>",
-                     validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                     filters=[lambda v: None if v == '' else v])
-
-
+                      validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"),
+                                  DataRequired(
+                                      "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
 
     q1d = TextAreaField("Question 1D: Provide an explanation for how the calculation of substitution scores works",
-                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                        filters = [lambda v: None if v == '' else v])
+                        validators=[DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
 
+    q2a = StringField(
+        "Question 2A: Enter your Python code for calculating seqPairs. This should be submitted to Coder Quiz in the format seqPairs = MY_ANSWER",
+        validators=[CheckSCIE2100Practical2SeqPairsCode(190),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
 
-    q2a = StringField("Question 2A: Enter your Python code for calculating seqPairs. This should be submitted to Coder Quiz in the format seqPairs = MY_ANSWER",
-                     validators=[CheckSCIE2100Practical2SeqPairsCode(190), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                     filters=[lambda v: None if v == '' else v])
-
-    q2b = StringField("Question 2B: Enter your Python code for calculating aaPairs. This should be submitted to Coder Quiz in the format aaPairs = MY_ANSWER",
-                     validators=[CheckSCIE2100Practical2AAPairsCode(19000), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                     filters=[lambda v: None if v == '' else v])
+    q2b = StringField(
+        "Question 2B: Enter your Python code for calculating aaPairs. This should be submitted to Coder Quiz in the format aaPairs = MY_ANSWER",
+        validators=[CheckSCIE2100Practical2AAPairsCode(19000),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
 
     q2c = StringField(
         "Question 2C: Enter your Python code for calculating e<sub>ab</sub>  where a == b . This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
@@ -135,7 +146,7 @@ class SCIE2100Practical2(FlaskForm):
 
     q3b = StringField(
         "Question 3B: Submit the alignment if the gap penalty is set to -8 . To differentiate the two rows of the "
-        "alignment separate them by a comma e.g. MADMAN,MAD-AM." ,
+        "alignment separate them by a comma e.g. MADMAN,MAD-AM.",
         validators=[CheckList('THISLINE-,ISALIGNED'),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
@@ -148,31 +159,104 @@ class SCIE2100Practical2(FlaskForm):
         filters=[lambda v: None if v == '' else v])
 
     q4a = TextAreaField("Question 4A: Explain why it took so long for the alignment to be computed",
-                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                        filters = [lambda v: None if v == '' else v])
+                        validators=[DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
 
-    q4b = StringField("Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
-                        validators = [CheckGapPenalty(), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                        filters = [lambda v: None if v == '' else v])
+    q4b = StringField(
+        "Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
+        validators=[CheckGapPenalty(),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
 
     q4c = TextAreaField("Question 4C: What steps did you take to determine 4B?",
-                        validators = [DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                        filters = [lambda v: None if v == '' else v])
+                        validators=[DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
 
-    q4d = StringField("Question 4D: Given the original DNA substitution matrix and a gap penalty of -5, at what position"
-                      " is the first ATG codon in reading frame +2 of seqB (JX416721.1)?",
-                        validators = [CorrectAnswer("92"), DataRequired("You must supply an answer to each question or you will not pass this Practical")],
-                        filters = [lambda v: None if v == '' else v])
-
+    q4d = StringField(
+        "Question 4D: Given the original DNA substitution matrix and a gap penalty of -5, at what position"
+        " is the first ATG codon in reading frame +2 of seqB (JX416721.1)?",
+        validators=[CorrectAnswer("92"),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c', 'q4d']
+    questions = ['q1a', 'q1b', 'q1c', 'q1d', 'q2a', 'q2b', 'q2c', 'q2d', 'q3_code', 'q3b', 'q3c', 'q4a', 'q4b', 'q4c',
+                 'q4d']
+
+
+class SCIE2100Practical3(FlaskForm):
+    q1 = TextAreaField(
+        "Question 1: Report the time it took to run the tripletAlignGlobal function, and the time to run global alignment? Enter them seperated by a comma, for example 5, 10",
+        validators=[CompareNumbers("greater"),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q2a = StringField("Question 2A: What is the difference in the time it takes to complete the alignment after doubling the size "
+                      "of the sequences?",
+                      validators=[DataRequired(
+                          "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
+
+    q2b = StringField(
+        "Question 2B:  Describe, with a mathematical expression, the number of steps involved in completing the score matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  NN  be the length of each sequence) (Your answer should follow this format: matrix_size = my_formula",
+        validators=[CheckNumberRange(-0.603, -0.601, hint="Make sure you're calculating 2 x log base 2"),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q2c = TextAreaField("Question 2C: Assuming three sequences of length  N=30N=30  took 1 second to align and three sequences of length  N=60N=60  OR  2N2N  took 8 seconds to align, how many seconds would it take to align three sequences if you double the lengths again, i.e.  N=120N=120  OR  4N4N  base pairs long?",
+                        validators=[DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q3a = StringField(
+        "Question 3A: Use your getConsensus to provide the consensus sequence for the five sequences above.",
+        validators=[CorrectAnswer("AGFDTVT-AISWSLMYLVTNPRVQRKIQ"),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q3b_code = FileField(
+        'Question 3B Code: Submit the code for your implementation of getConsensus.(Copy your getConsensus function to a new file and submit it)',
+        validators=[DataRequired("Please attach your code for Question 3B.")],
+        filters=[lambda v: None if v == '' else v])
+
+
+
+    q3c = StringField(
+        "Question 3C: Report the first 3 columns where multiple symbols might have been included in the consensus sequence of the Epoxide Hydrolase alignment .",
+        validators=[CheckList(19000),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q4a = StringField(
+        "Question 4A: Submit the formula for calculating the Poisson distance in the format dist = my_formula.",
+        validators=[CheckSCIE2100Practical2ProbabilityCode(0.027777777777777776, identical=True),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    q4b_code = FileField(
+        'Question 4B Code: Submit the calcDistances method with your comments, including code for calculating the Poisson distance.',
+        validators=[DataRequired("Please attach your code for Question 4B.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q5 = StringField(
+        "Question 2D: Enter your Python code for calculating e<sub>ab</sub> where a!= b. This should be submitted to Coder Quiz in the format eab = MY_ANSWER",
+        validators=[CheckSCIE2100Practical2ProbabilityCode(0.09375, identical=False),
+                    DataRequired("You must supply an answer to each question or you will not pass this Practical")],
+        filters=[lambda v: None if v == '' else v])
+
+    check = SubmitField("Check  answers")
+
+    submit = SubmitField("Submit answers")
+
+    questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5' ]
+
 
 class SCIE2100PracticalAssessment1(FlaskForm):
-
     q1 = StringField(
         'Question 1: Give one example of a sequence composed of uppercase letters, that does not contain J, Z, or O, for which the Sequence class could not automatically assign a predefined alphabet.',
         validators=[CheckAlphabet(), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
@@ -197,15 +281,16 @@ class SCIE2100PracticalAssessment1(FlaskForm):
         "Question 4A: Paste the aligned mystery_seq1 here (Include only protein symbols and gap characters)",
         validators=[CorrectAnswer(
             'KFLKVSSLFVATLT-TATLVSSPAANALSSKAMDNHPQQ-SQS-SKQ-QTPKIQKGGNLKPLEQREHAN-V-ILPNNDRHQITDTTNGHY-A--P-VT-YI-Q--VE---APTGTFIASGVVVG-KDTLLTNKHVVDATHG-DPHAL-K---A--F--PS-AINQDNY-PNGGFTAEQ-ITKYSGEGDLAIVKFSPNEQ-NKHIGEVVKPATMSNNAETQV-N-QN-ITVTGYPGDKPVATMWESKGKITY-L-KGEAMQY-DLSTTGGNS-GSPVFNEKNEVIGIHWGGVPNEFNGAVFINE'),
-                    Optional()], filters=[lambda v: None if v == '' else v])
+            Optional()], filters=[lambda v: None if v == '' else v])
 
     q4b = StringField(
         "Question 4B: Paste the aligned mystery_seq2 here (Include only protein symbols and gap characters)",
         validators=[CorrectAnswer(
             'EFKKAPKVNVSNLTDNKNFVASE--DKLK-KISD--PSAASKIVDKNFVVPE-SKLGNIVP-EYKEINNRVNVATNNPASQQVD--K-HFVAKGPEVNRFITQNKVNHHFITTQTHYKK-VITSYKSTHV-HKHVNHATDSINKHFIVKPSEAPRYTHPSQSLMINHYFAVPGYHAHKFVTP--GHASIKINHFCVVPQINS-F-KVIPPYG-HNSHRMHVPSFQNNTTAT-HQNAK-VNKAYDYKYFYSYKVVKG-VKKYFSFSQSNGYKIGKPSLNIKN-V-NYQYA-VPS-YSPTNYVPE'),
-                    Optional()], filters=[lambda v: None if v == '' else v])
+            Optional()], filters=[lambda v: None if v == '' else v])
 
-    q4_code = FileField('Question 4C: Upload your alignLocal function', validators=[DataRequired("Please attach your code for Question 4.")])
+    q4_code = FileField('Question 4C: Upload your alignLocal function',
+                        validators=[DataRequired("Please attach your code for Question 4.")])
 
     check = SubmitField("Check  answers")
 

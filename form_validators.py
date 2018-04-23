@@ -398,7 +398,27 @@ class CheckGapPenalty(object):
             if check == -1 or check == -2:
                 raise ValidationError("A score this high would lead to an unusually high number of gaps")
             if check <= -8:
+
                 raise ValidationError("A score this low will force a high number of mismatches in the alignment which is not ideal")
+
+class CompareNumbers(object):
+
+    def __call__(self, form, field):
+
+        def __init__(self, greater):
+            self.greater = True if greater == "greater" else False
+
+        if field.data is not None:
+            if "," not in field.data:
+                raise ValidationError("Make sure you seperate your two values with a comma")
+            else:
+                correct = field.data.split(",")[0] > field.data.split(",")[1] if self.greater else field.data.split(",")[0] < field.data.split(",")[1]
+
+            if correct:
+                return
+            else:
+                raise ValidationError("tripletAlignGlobal shouldn't take longer than alignGlobal")
+
 
 
 class Unique(object):
