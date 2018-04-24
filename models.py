@@ -142,11 +142,11 @@ class SubmissionSCIE2100Practical3(db.Model):
     q3c = db.Column(db.String())
     q4a = db.Column(db.String())
     q4b_code = db.Column(db.LargeBinary)
-    q5_image = db.Column(db.String())
+    q5 = db.Column(db.String())
 
 
 
-    def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q2c, q3a, q3b_code, q3c, q4a, q4b_code, q5_image):
+    def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q2c, q3a, q3b_code, q3c, q4a, q4b_code, q5):
         self.studentno = studentno
         self.submissiontime = submissiontime
         self.correct = correct
@@ -160,7 +160,7 @@ class SubmissionSCIE2100Practical3(db.Model):
         self.q3c = q3c
         self.q4a = q4a
         self.q4b_code = q4b_code
-        self.q5_image = q5_image
+        self.q5 = q5
 
 class SubmissionPracticeQuiz(db.Model):
 

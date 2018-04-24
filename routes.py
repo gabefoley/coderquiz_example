@@ -668,6 +668,12 @@ def scie2100_practical3():
                 q4a = "INCORRECT"
                 incomplete = True
 
+            if form.q5.data:
+                q5 = form.q5.data
+            else:
+                q5 = "INCORRECT"
+                incomplete = True
+
             if form.q3b_code.data:
                 q3b_code = request.files['q3b_code']
                 if not "." in q3b_code.filename or q3b_code.filename.split(".")[1] != 'py':
@@ -686,22 +692,11 @@ def scie2100_practical3():
                 q4b_code = FileStorage()
                 incomplete = True
 
-            if form.q5_image.data:
-                try:
-                    q5_filename = images.save(form.q5_image.data)
-                    q5_url = images.url(q5_filename)
-                except UploadNotAllowed:
-                    return render_template("scie2100practical3.html", questions=questions, form=form,
-                                           error="Your image upload is not an accepted image file")
-
-            else:
-                q5_url = ""
-                incomplete = True
 
             dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
             form_submission = SubmissionSCIE2100Practical3(session['studentno'], dt, correct, incomplete, q1, q2a, q2b,
-                                                           q2c, q3a, q3b_code.read(), q3c, q4a, q4b_code.read(), q5_url)
+                                                           q2c, q3a, q3b_code.read(), q3c, q4a, q4b_code.read(), q5)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()

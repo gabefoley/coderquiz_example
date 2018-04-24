@@ -335,7 +335,7 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
                 raise ValidationError("This answer is incorrect.")
             # except NameError:
             #     raise ValidationError("Make sure you have named your variables correctly")
-            except (ValueError, SyntaxError, TypeError) as e:
+            except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
                 raise ValidationError( "There was an error in your code - " + repr(e))
 
 
@@ -425,12 +425,12 @@ class CompareNumbers(object):
                 raise ValidationError("Make sure you only enter numbers as your values")
 
             else:
-                correct = first > second if self.greater else first < second
+                correct = (first > second) if self.greater else (first < second)
 
             if correct:
                 return
             else:
-                raise ValidationError("tripletAlignGlobal shouldn't take longer than alignGlobal")
+                raise ValidationError("tripletAlignGlobal should take longer than alignGlobal")
 
 
 class CheckTripletAlignGlobal(object):
@@ -458,8 +458,21 @@ class CheckTripletAlignGlobal(object):
             except ValidationError:
                 raise ValidationError("This answer is incorrect.")
 
-            except (AttributeError, ValueError, SyntaxError, TypeError) as e:
+            except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
+
                 raise ValidationError( "There was an error in your code - " + repr(e))
+
+class CheckSelectField(object):
+
+    def __init__(self, answer):
+        self.answer = answer
+
+    def __call__(self, form, field):
+        if field.data is not None:
+            if field.data == self.answer:
+                return
+            else:
+                raise ValidationError("This isn't the correct response")
 
 
 class CheckPoissonDistance(object):
@@ -487,7 +500,7 @@ class CheckPoissonDistance(object):
             except ValidationError:
                 raise ValidationError("This answer is incorrect.")
 
-            except (AttributeError, ValueError, SyntaxError, TypeError) as e:
+            except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
                 raise ValidationError( "There was an error in your code - " + repr(e))
 
 

@@ -3,7 +3,8 @@ from wtforms import StringField, PasswordField, SubmitField, RadioField, FileFie
 from wtforms.validators import DataRequired, Email, Length, ValidationError, Optional
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
     CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
-    CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, CheckPoissonDistance
+    CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, \
+    CheckPoissonDistance, CheckSelectField
 import math
 
 
@@ -194,8 +195,8 @@ class SCIE2100Practical3(FlaskForm):
     q1 = StringField(
         "Question 1: Report the time it took to run the tripletAlignGlobal function, and the time to run global "
         "alignment? Enter the times with tripletAlignGlobal first, followed by global alignment and seperated by a "
-        "comma, for example 5, 10",
-        validators=[CompareNumbers("lesser"),
+        "comma, for example 1.04, 2.01",
+        validators=[CompareNumbers("greater"),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
@@ -204,13 +205,13 @@ class SCIE2100Practical3(FlaskForm):
                                                     ('Time increases by roughly a factor of two (doubled)', 'Time increases by roughly a factor of two (doubled)'),
                                                     ('Time increases by roughly a factor of five', 'Time increases by roughly a factor of five'),
                                                     ('Time increases by roughly a factor of eight', 'Time increases by roughly a factor of eight'),
-                                                    ], validators=[DataRequired(
+                                                    ], validators=[CheckSelectField('Time increases by roughly a factor of eight'), DataRequired(
                           "You must supply an answer to each question or you will not pass this Practical")],
                       filters=[lambda v: None if v == '' else v])
 
     q2b = StringField(
         "Question 2B:  Describe, with a mathematical expression, the number of steps involved in completing the score "
-        "matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  NN  be the length of each sequence) "
+        "matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  N  be the length of each sequence) "
         "(Your answer should follow this format: matrix_size = my_formula",
 
         validators=[CheckTripletAlignGlobal(9261, 20),
@@ -255,16 +256,16 @@ class SCIE2100Practical3(FlaskForm):
         validators=[DataRequired("Please attach your code for Question 4B.")],
         filters=[lambda v: None if v == '' else v])
 
-    q5_image = FileField(
-        "Question 5: Upload an image of your heatmap",
-        validators=[DataRequired("Please attach an image of your heatmap")],
-        filters=[lambda v: None if v == '' else v])
+    q5 = TextAreaField("Question 5: Describe the two groups you saw in your heatmap",
+                        validators=[DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
 
     check = SubmitField("Check  answers")
 
     submit = SubmitField("Submit answers")
 
-    questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5_image' ]
+    questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5' ]
 
 
 class SCIE2100PracticalAssessment1(FlaskForm):
