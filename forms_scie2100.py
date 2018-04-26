@@ -5,7 +5,7 @@ from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick
     CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
     CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, \
     CheckPoissonDistance, CheckSelectField
-import math
+import math, numpy
 
 
 class SCIE2100Practical1(FlaskForm):
