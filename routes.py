@@ -2,7 +2,7 @@ from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2,\
-SubmissionSCIE2100Practical3, SubmissionSCIE2100PracticalAssessment1
+SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100PracticalAssessment1
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
 from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100Practical4, SCIE2100PracticalAssessment1
 from sqlalchemy.exc import IntegrityError, DataError
@@ -774,14 +774,14 @@ def scie2100_practical4():
                 q2a_code = FileStorage()
                 incomplete = True
 
-                if form.q3b_code.data:
-                    q3b_code = request.files['q3b_code']
-                    if not "." in q3b_code.filename or q3b_code.filename.split(".")[1] != 'py':
-                        return render_template("scie2100practical4.html", questions=questions, form=form,
-                                               error="Your code upload should be a Python file ending in .py")
-                else:
-                    q3b_code = FileStorage()
-                    incomplete = True
+            if form.q3b_code.data:
+                q3b_code = request.files['q3b_code']
+                if not "." in q3b_code.filename or q3b_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical4.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q3b_code = FileStorage()
+                incomplete = True
 
 
 
@@ -801,8 +801,8 @@ def scie2100_practical4():
 
             dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
-            form_submission = SubmissionSCIE2100Practical3(session['studentno'], dt, correct, incomplete, q1a_code.read(), q1b, q1c,
-                                                           q2a_code.read(), q2b, q3a_url, q3b_code, q4a, q4b)
+            form_submission = SubmissionSCIE2100Practical4(session['studentno'], dt, correct, incomplete, q1a_code.read(), q1b, q1c,
+                                                           q2a_code.read(), q2b, q3a_url, q3b_code.read(), q4a, q4b)
             # form.populate_obj(form_submission)
             db.session.add(form_submission)
             db.session.commit()
