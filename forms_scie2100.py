@@ -268,6 +268,64 @@ class SCIE2100Practical3(FlaskForm):
     questions = ['q1', 'q2a', 'q2b', 'q2c', 'q3a', 'q3b_code', 'q3c', 'q4a', 'q4b_code', 'q5' ]
 
 
+class SCIE2100Practical4(FlaskForm):
+    q1a_code = FileField(
+        'Question 1A Code: Submit your code with comments included',
+        validators=[DataRequired("Please attach your code for Question 1A.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q1b = StringField("Question 1B: The consensus sequence for mammals",
+                        validators=[CorrectAnswer(["AGFDTVTTAISWSLMYLVTNPRVQRKIQEELDAFILETFRHSSFILFGLGKRKCCIGETIGRLEVF"]
+                                                  ),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q1c = StringField("Question 1C: The consensus sequence for fish",
+                      validators=[CorrectAnswer(["AGFDTISTALSWSVMYLVAYPEIQERLYQEIKAFILEIFRHSSFMVFGMGKRRCCIGEVIARNEVF",
+                                                 "AGFDTVSTALSWSVMYLVAYPEIQERLYQEIKAFILEIFRHSSFMVFGMGKRRCCIGEVIARNEVF"]),
+                                  DataRequired("You must supply an answer to each question or you will not pass this "
+                                               "Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q2a_code = FileField(
+        'Question 2A Code: Submit your code with comments included',
+        validators=[DataRequired("Please attach your code for Question 2A.")],
+        filters=[lambda v: None if v == '' else v])
+
+
+    q2b = StringField("Question 2B: The number of sequences selected",
+                        validators=[CorrectAnswer(["31"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q3a_image = FileField(
+        "Question 3A: Upload an image of the MalS tree with tips labeled with the names of the sequences",
+        validators=[DataRequired("Please attach an image of your MalS tree")],
+        filters=[lambda v: None if v == '' else v])
+
+    q3b_code = FileField(
+        'Question 3B Code: Submit the code required to generate a Newick string of the MalS tree where the tips are labeled with the sequence at positions 65-70.',
+        validators=[DataRequired("Please attach your code for Question 3B.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q4a = StringField("Question 4A: The root sequence from the targeted_reconstruction",
+                        validators=[CorrectAnswer(["FTAGLVGDE"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q4b = TextAreaField("Question 4B: A few sentences describing any similarities or differences between the "
+                        "reconstructions of the key columns, why it has or hasn't changed and the significance of your "
+                        "observations.", validators=[DataRequired("You must supply an answer to each question or you "
+                                                                  "will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+
+    check = SubmitField("Check  answers")
+
+    submit = SubmitField("Submit answers")
+
+    questions = ['q1a_code', 'q1b', 'q1c', 'q2a_code', 'q2b', 'q3a_image', 'q3b_code', 'q4a', 'q4b']
+
 class SCIE2100PracticalAssessment1(FlaskForm):
     q1 = StringField(
         'Question 1: Give one example of a sequence composed of uppercase letters, that does not contain J, Z, or O, for which the Sequence class could not automatically assign a predefined alphabet.',

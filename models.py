@@ -162,6 +162,44 @@ class SubmissionSCIE2100Practical3(db.Model):
         self.q4b_code = q4b_code
         self.q5 = q5
 
+class SubmissionSCIE2100Practical4(db.Model):
+    __tablename__ = "scie2100practical4"
+
+    submissionid = db.Column(db.Integer, primary_key=True)
+    studentno = db.Column(db.Integer)
+    submissiontime = db.Column(db.DateTime(timezone=True))
+    correct = db.Column(db.Boolean)
+    incomplete = db.Column(db.Boolean)
+
+    q1a_code = db.Column(db.LargeBinary)
+    q1b = db.Column(db.String())
+    q1c = db.Column(db.String())
+    q2a_code = db.Column(db.LargeBinary)
+    q2b = db.Column(db.String())
+    q3a_image = db.Column(db.String())
+    q3b_code = db.Column(db.LargeBinary)
+    q4a = db.Column(db.String())
+    q4b = db.Column(db.String())
+
+
+
+    def __init__(self, studentno, submissiontime, correct, incomplete, q1a_code, q1b, q1c, q2a_code, q2b, q3a_image, q3b_code, q4a, q4b):
+        self.studentno = studentno
+        self.submissiontime = submissiontime
+        self.correct = correct
+        self.incomplete = incomplete
+        self.q1a_code = q1a_code
+        self.q1b = q1b
+        self.q1c = q1c
+        self.q2a_code = q2a_code
+        self.q2b = q2b
+        self.q3a_image = q3a_image
+        self.q3b_code = q3b_code
+        self.q4a = q4a
+        self.q4b = q4b
+
+
+
 class SubmissionPracticeQuiz(db.Model):
 
     __tablename__ = "practice"

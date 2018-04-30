@@ -105,6 +105,7 @@ class QueryForm(FlaskForm):
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
+                                             ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1', ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
@@ -120,6 +121,7 @@ class MarkingForm(FlaskForm):
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
+                                             ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1',
                                               ' SCIE2100 Practical Assessment 1'),
@@ -135,6 +137,7 @@ class SubmissionForm(FlaskForm):
                                   choices = [('SubmissionSCIE2100Practical1', 'SCIE2100 Practical 1'),
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
+                                             ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1',
                                               ' SCIE2100 Practical Assessment 1'),

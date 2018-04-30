@@ -4,7 +4,7 @@ from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_cl
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2,\
 SubmissionSCIE2100Practical3, SubmissionSCIE2100PracticalAssessment1
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
-from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100PracticalAssessment1
+from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100Practical4, SCIE2100PracticalAssessment1
 from sqlalchemy.exc import IntegrityError, DataError
 from sqlalchemy import desc
 from os.path import join
@@ -708,6 +708,112 @@ def scie2100_practical3():
 
     elif request.method == "GET":
         return render_template("scie2100practical2.html", questions=questions, form=form)
+
+@application.route(local("/scie2100_practical4"), methods=["GET", "POST"])
+def scie2100_practical4():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100Practical4()
+    questions = form.questions
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("scie2100practical4.html", questions=questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q1b.data:
+                q1b = form.q1b.data
+            else:
+                q1b = "INCORRECT"
+                incomplete = True
+
+            if form.q1c.data:
+                q1c = form.q1c.data
+            else:
+                q1c = "INCORRECT"
+                incomplete = True
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+                incomplete = True
+
+            if form.q4a.data:
+                q4a = form.q4a.data
+            else:
+                q4a = "INCORRECT"
+                incomplete = True
+
+            if form.q4b.data:
+                q4b = form.q4b.data
+            else:
+                q4b = "INCORRECT"
+                incomplete = True
+
+            if form.q1a_code.data:
+                q1a_code = request.files['q1a_code']
+                if not "." in q1a_code.filename or q1a_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical4.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q1a_code = FileStorage()
+                incomplete = True
+
+            if form.q2a_code.data:
+                q2a_code = request.files['q2a_code']
+                if not "." in q2a_code.filename or q2a_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical4.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q2a_code = FileStorage()
+                incomplete = True
+
+                if form.q3b_code.data:
+                    q3b_code = request.files['q3b_code']
+                    if not "." in q3b_code.filename or q3b_code.filename.split(".")[1] != 'py':
+                        return render_template("scie2100practical4.html", questions=questions, form=form,
+                                               error="Your code upload should be a Python file ending in .py")
+                else:
+                    q3b_code = FileStorage()
+                    incomplete = True
+
+
+
+            if form.q3a_image.data:
+                try:
+                    q3a_filename = images.save(form.q3a_image.data)
+                    q3a_url = images.url(q3a_filename)
+                except UploadNotAllowed:
+                    return render_template("scie2100practical4.html", questions=questions, form=form,
+                                           error="Your image upload is not an accepted image file")
+
+
+            else:
+                q3a_url = ""
+                incomplete = True
+
+
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
+
+            form_submission = SubmissionSCIE2100Practical3(session['studentno'], dt, correct, incomplete, q1a_code.read(), q1b, q1c,
+                                                           q2a_code.read(), q2b, q3a_url, q3b_code, q4a, q4b)
+            # form.populate_obj(form_submission)
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+
+        else:
+            return render_template("scie2100practical4.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("scie2100practical4.html", questions=questions, form=form)
 
 
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
