@@ -210,7 +210,7 @@ class SCIE2100Practical3(FlaskForm):
                       filters=[lambda v: None if v == '' else v])
 
     q2b = StringField(
-        "Question 2B:  Describe, with a mathematical expression, the number of steps involved in completing the score "
+        "Question 2B:  Describe, with code that is runnable in Python, the number of steps involved in completing the score "
         "matrix of tripletAlignGlobal, in terms of the sequence lengths. (Let  N  be the length of each sequence) "
         "(Your answer should follow this format: matrix_size = my_formula",
 
@@ -246,7 +246,7 @@ class SCIE2100Practical3(FlaskForm):
         filters=[lambda v: None if v == '' else v])
 
     q4a = StringField(
-        "Question 4A: Submit the formula for calculating the Poisson distance in the format dist = my_formula.",
+        "Question 4A: Submit the formula for calculating the Poisson distance in the format dist = my_formula. Your code should be runnable in Python",
         validators=[CheckPoissonDistance(0.35667494393873245, 0.3),
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
