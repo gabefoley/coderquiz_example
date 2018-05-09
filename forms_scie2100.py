@@ -369,7 +369,7 @@ class SCIE2100PracticalAssessment1(FlaskForm):
     questions = ["q1", "q2a", "q2b", "q2c", "q3", "q4a", "q4b", "q4_code"]
 
 
-class PracticalAssessment2Form(FlaskForm):
+class SCIE2100PracticalAssessment2(FlaskForm):
     q1 = StringField(
         'Question 1 [2 Marks]: What is the Newick string that would represent the above phylogenetic tree, including distances?',
         validators=[CheckNewick('(((A:0.1,B:0.2):0.2,C:0.1):0.2,(D:0.3,(E:0.2,F:0.1):0.4):0.3)'),
@@ -384,15 +384,17 @@ class PracticalAssessment2Form(FlaskForm):
         validators=[CorrectAnswer(['N_6X5OCZ']), Optional("Not completed")],
         filters=[lambda v: None if v == '' else v])
 
-    file_upload = FileField('Upload the code for the extended version of calcDistances that you wrote for Question 2',
+    q2_code = FileField('Upload the code for the extended version of calcDistances that you wrote for Question 2',
                             validators=[DataRequired("Please attach your code for Question 2.")])
 
-    file_upload2 = FileField('Upload the code for identifying the common ancestor that you wrote for Question 3',
+    q3_code = FileField('Upload the code for identifying the common ancestor that you wrote for Question 3',
                              validators=[DataRequired("Please attach your code for Question 3.")])
 
     check = SubmitField("Check answers")
 
     submit = SubmitField("Submit answers")
+
+    questions = ["q1", "q2", "q3", "q2_code", "q3_code"]
 
 
 class PracticalAssessment3Form(FlaskForm):
