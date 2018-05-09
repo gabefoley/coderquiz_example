@@ -858,7 +858,7 @@ def scie2100_practicalassessment2():
                     return render_template("scie2100practicalassessment2.html", questions=questions, form=form,
                                            error="Your code upload should be a Python file ending in .py")
             else:
-                q4_code = FileStorage()
+                q2_code = FileStorage()
                 incomplete = True
                 correct = False
 
