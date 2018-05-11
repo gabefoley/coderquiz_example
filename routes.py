@@ -1119,7 +1119,7 @@ def marking():
     else:
         return render_template("marking.html", form=form)
 
-@application.route(local("/marking_result"), methods=["GET", "POST"], studentno=None, results=None, errors=None)
+@application.route(local("/marking_result"), methods=["GET", "POST"])
 def marking_result(studentno=None, results=None, errors=None):
     return render_template("marking_result.html", studentno=studentno, results=results, errors=errors)
 
