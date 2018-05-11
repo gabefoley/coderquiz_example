@@ -371,16 +371,16 @@ class SCIE2100PracticalAssessment1(FlaskForm):
 
 class SCIE2100PracticalAssessment2(FlaskForm):
     q1 = StringField(
-        'Question 1 [2 Marks]: What is the Newick string that would represent the above phylogenetic tree, including distances?',
+        'Question 1: What is the Newick string that would represent the phylogenetic tree, including distances?',
         validators=[CheckNewick('(((A:0.1,B:0.2):0.2,C:0.1):0.2,(D:0.3,(E:0.2,F:0.1):0.4):0.3)'),
                     Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q2 = StringField(
-        'Question 2 [3 Marks]: What is the Gamma distance between the two sequences in eh.aln? Your submitted answer should be rounded to three decimal places, e.g. 1.241525 would be 1.242',
+        'Question 2: What is the Gamma distance between the two sequences in eh.aln? Your submitted answer should be rounded to three decimal places, e.g. 1.241525 would be 1.242',
         validators=[CorrectAnswer(['1.507']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q3 = StringField(
-        'Question 3 [5 Marks]: What is the node label for the closest common ancestor for nodes A0A1A8AU08 and G3PS36?',
+        'Question 3: What is the node label for the closest common ancestor for nodes A0A1A8AU08 and G3PS36?',
         validators=[CorrectAnswer(['N_6X5OCZ']), Optional("Not completed")],
         filters=[lambda v: None if v == '' else v])
 
