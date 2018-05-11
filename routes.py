@@ -1135,12 +1135,12 @@ def marking_with_token(token, item):
     if not results.count():
         # return render_template("marking_result.html",
         #                        errors="This student hasn't submitted this assessment item")
-        return redirect(url_for('marking_result'), errors="This student hasn't submitted this assessment item")
+        return redirect(url_for('marking_result', errors="This student hasn't submitted this assessment item"))
 
     edited_results = build_results(results, form_name)
 
     # return render_template("marking_result.html", studentno=studentno, results=edited_results)
-    return redirect(url_for('marking_result'), studentno=studentno, results=edited_results)
+    return redirect(url_for('marking_result', studentno=studentno, results=edited_results))
 
 
 def send_confirmation_email(user_email):
