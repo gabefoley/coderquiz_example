@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
-    <link href="static/css/main.css" rel="stylesheet">
-      <link href="static/css/syntax.css" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1 class="title">SCIE2100 Practical Assessment</h1>
-
-        <div class=homepage><a href="{{ url_for('index') }}">Home page </a>
-
-            {% if session['studentno'] %}
-        <a href="{{ url_for('logout') }}">| Sign out</a>
-            {%  endif %}
-
-        </div>
-      </div>
-    </header>
+{% extends "layout.html" %}
+{% block content %}
 
     {%  if studentno %}
         <div class="query-group">
@@ -58,7 +39,7 @@
                 {% if result.image_list %}
 
 
-                    Here are the submitted images -
+                    Here are the submitted images
                 {%  endif %}
 
                 {% for item in result.image_list %}
@@ -72,5 +53,3 @@
 
 
 {% endblock %}
-  </body>
-</html>
