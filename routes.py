@@ -1119,9 +1119,10 @@ def marking():
     else:
         return render_template("marking.html", form=form)
 
+@application.route(local("/marking_result"), methods=["GET", "POST"], studentno=None, results=None, errors=None)
+def marking_result(studentno=None, results=None, errors=None):
+    return render_template("marking_result.html", studentno=studentno, results=results, errors=errors)
 
-# @application.route(local('/marking/<token>'))
-# def indvidual_marking_page(token):
 
 @application.route(local('/marking/<item>/<token>'), methods=["GET", "POST"])
 def marking_with_token(token, item):
@@ -1132,12 +1133,14 @@ def marking_with_token(token, item):
 
     results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
     if not results.count():
-        return render_template("marking_result.html",
-                               errors="This student hasn't submitted this assessment item")
+        # return render_template("marking_result.html",
+        #                        errors="This student hasn't submitted this assessment item")
+        return redirect(url_for('marking_result'), errors="This student hasn't submitted this assessment item")
 
     edited_results = build_results(results, form_name)
 
-    return render_template("marking_result.html", studentno=studentno, results=edited_results)
+    # return render_template("marking_result.html", studentno=studentno, results=edited_results)
+    return redirect(url_for('marking_result'), studentno=studentno, results=edited_results)
 
 
 def send_confirmation_email(user_email):
