@@ -65,7 +65,7 @@
                 {% for item in result.image_list %}
 
                     <li>{{ item[0] + ":"   }}</li>
-                    <img src="{{ item[1] }}" alt="{{ item[0] + "_image" }}">
+                    <img src="static/{{ item[1] }}" alt="{{ item[0] + "_image" }}">
                 {% endfor %}
         {%  endfor %}
         </div>
