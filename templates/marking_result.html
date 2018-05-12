@@ -1,4 +1,25 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet'>
+    <link href="../../static/css/main.css" rel="stylesheet">
+      <link href="../../static/css/syntax.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="title">SCIE2100 Practical Assessment</h1>
+
+        <div class=homepage><a href="{{ url_for('index') }}">Home page </a>
+
+            {% if session['studentno'] %}
+        <a href="{{ url_for('logout') }}">| Sign out</a>
+            {%  endif %}
+
+        </div>
+      </div>
+    </header>
+
 {% block content %}
 
     {%  if studentno %}
@@ -45,7 +66,8 @@
                 {% for item in result.image_list %}
 
                     <li>{{ item[0] + ":"   }}</li>
-                    <img src="static{{ item[1] }}" alt="{{ item[0] + "_image" }}">
+
+                    <img src="../../static{{ item[1] }}" alt="{{ item[0] + "_image" }}">
                 {% endfor %}
         {%  endfor %}
         </div>
@@ -53,3 +75,6 @@
 
 
 {% endblock %}
+
+  </body>
+</html>

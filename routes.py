@@ -55,6 +55,8 @@ class SCIE2100_Exception(Exception):
 
 
 def local(route: str) -> str:
+    print ('here is route')
+    print (route)
     if BASE_ROUTE == '/':
         return route
     else:
