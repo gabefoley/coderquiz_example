@@ -1121,11 +1121,13 @@ def marking():
 
 @application.route(local("/marking_result"), methods=["GET", "POST"])
 def marking_result(studentno=None, results=None, errors=None):
+    print ('and now we got here')
     return render_template("marking_result.html", studentno=studentno, results=results, errors=errors)
 
 
 @application.route(local('/marking/<item>/<token>'), methods=["GET", "POST"])
 def marking_with_token(token, item):
+    print ('got here')
     studentno = token
     form_name = item[10:]
     inclass = True if "Assessment" in form_name else False
@@ -1133,14 +1135,14 @@ def marking_with_token(token, item):
 
     results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
     if not results.count():
-        # return render_template("marking_result.html",
-        #                        errors="This student hasn't submitted this assessment item")
-        return redirect(url_for('marking_result', errors="This student hasn't submitted this assessment item"))
+        return render_template("marking_result.html",
+                               errors="This student hasn't submitted this assessment item")
+        # return redirect(url_for('marking_result', errors="This student hasn't submitted this assessment item"))
 
     edited_results = build_results(results, form_name)
 
-    # return render_template("marking_result.html", studentno=studentno, results=edited_results)
-    return redirect(url_for('marking_result', studentno=studentno, results=edited_results))
+    return render_template("marking_result.html", studentno=studentno, results=edited_results)
+    # return redirect(url_for('marking_result', studentno=studentno, results=edited_results))
 
 
 def send_confirmation_email(user_email):
