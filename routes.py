@@ -976,8 +976,7 @@ def scie2100_practical5():
 
             dt = datetime.now(pytz.timezone('Australia/Brisbane'))
 
-            form_submission = SubmissionSCIE2100Practical5(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q2a, q2b, q2c, q2d, q3a, q3b, q4a, q4b,
-                                                           q4c, q4d)
+            form_submission = SubmissionSCIE2100Practical5(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q2a, q2b, q2c, q2d, q3a, q3b, q4a, q4b)
             db.session.add(form_submission)
             db.session.commit()
 
