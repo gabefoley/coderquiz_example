@@ -2,10 +2,10 @@ from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2,\
-SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2
+SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100Practical5, SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
 from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100Practical4, \
-    SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2
+    SCIE2100Practical5, SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2
 from sqlalchemy.exc import IntegrityError, DataError
 from sqlalchemy import desc
 from os.path import join
@@ -55,8 +55,6 @@ class SCIE2100_Exception(Exception):
 
 
 def local(route: str) -> str:
-    print ('here is route')
-    print (route)
     if BASE_ROUTE == '/':
         return route
     else:
@@ -889,6 +887,108 @@ def scie2100_practicalassessment2():
 
     elif request.method == "GET":
         return render_template("scie2100practicalassessment2.html", questions=questions, form=form)
+
+    questions = ['q1a', 'q1b', 'q1c', 'q2a', 'q2b', 'q2c', 'q2d', 'q3a', 'q3b', 'q4a', 'q4b']
+
+
+@application.route(local("/scie2100_practical5"), methods=["GET", "POST"])
+def scie2100_practical5():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100Practical5()
+    questions = form.questions
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("scie2100practical5.html", questions=questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q1a.data:
+                q1a = form.q1a.data
+            else:
+                q1a = "INCORRECT"
+                incomplete = True
+
+            if form.q1b.data:
+                q1b = form.q1b.data
+            else:
+                q1b = "INCORRECT"
+                incomplete = True
+
+            if form.q1c.data:
+                q1c = form.q1c.data
+            else:
+                q1c = "INCORRECT"
+                incomplete = True
+
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+                incomplete = True
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+                incomplete = True
+
+            if form.q2c.data:
+                q2c = form.q2c.data
+            else:
+                q2c = "INCORRECT"
+                incomplete = True
+
+            if form.q2d.data:
+                q2d = form.q2d.data
+            else:
+                q2d = "INCORRECT"
+                incomplete = True
+
+            if form.q3a.data:
+                q3a = form.q3a.data
+            else:
+                q3a = "INCORRECT"
+                incomplete = True
+
+            if form.q3b.data:
+                q3b = form.q3b.data
+            else:
+                q3b = "INCORRECT"
+                incomplete = True
+
+            if form.q4a.data:
+                q4a = form.q4a.data
+            else:
+                q4a = "INCORRECT"
+                incomplete = True
+
+            if form.q4b.data:
+                q4b = form.q4b.data
+            else:
+                q4b = "INCORRECT"
+                incomplete = True
+
+
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
+
+            form_submission = SubmissionSCIE2100Practical5(session['studentno'], dt, correct, incomplete, q1a, q1b, q1c, q2a, q2b, q2c, q2d, q3a, q3b, q4a, q4b,
+                                                           q4c, q4d)
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+
+        else:
+            return render_template("scie2100practical5.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("scie2100practical5.html", questions=questions, form=form)
+
 
 
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])

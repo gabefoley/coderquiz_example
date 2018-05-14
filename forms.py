@@ -106,6 +106,7 @@ class QueryForm(FlaskForm):
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
                                              ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
+                                             ('SubmissionSCIE2100Practical5', 'SCIE2100 Practical 5'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1', ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionSCIE2100PracticalAssessment2',
@@ -124,6 +125,7 @@ class MarkingForm(FlaskForm):
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
                                              ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
+                                             ('SubmissionSCIE2100Practical5', 'SCIE2100 Practical 5'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1',
                                               ' SCIE2100 Practical Assessment 1'),
@@ -142,6 +144,7 @@ class SubmissionForm(FlaskForm):
                                              ('SubmissionSCIE2100Practical2', 'SCIE2100 Practical 2'),
                                              ('SubmissionSCIE2100Practical3', 'SCIE2100 Practical 3'),
                                              ('SubmissionSCIE2100Practical4', 'SCIE2100 Practical 4'),
+                                             ('SubmissionSCIE2100Practical5', 'SCIE2100 Practical 5'),
 
                                              ('SubmissionSCIE2100PracticalAssessment1',
                                               ' SCIE2100 Practical Assessment 1'),

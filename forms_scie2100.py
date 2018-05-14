@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Email, Length, ValidationError, Opt
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
     CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
     CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, \
-    CheckPoissonDistance, CheckSelectField
+    CheckPoissonDistance, CheckSelectField, CheckSCIE2100Practical5Threshold, CheckSCIE2100Practical5GoTerms
 import math, numpy
 
 
@@ -325,6 +325,76 @@ class SCIE2100Practical4(FlaskForm):
     submit = SubmitField("Submit answers")
 
     questions = ['q1a_code', 'q1b', 'q1c', 'q2a_code', 'q2b', 'q3a_image', 'q3b_code', 'q4a', 'q4b']
+
+class SCIE2100Practical5(FlaskForm):
+
+    q1a = StringField("Question 1A: How many columns did the Abf1 PWM contain?",
+                        validators=[CorrectAnswer(["16"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q1b = TextAreaField("Question 1B: What is stored in the instance variable m? (Your response must be more detailed "
+                        "than just 'a matrix')", validators=[DataRequired("You must supply an answer to each question "
+                                                                          "or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q1c = StringField("Question 1C: What is the log likelihood of seeing the symbol G at position 7?",
+                        validators=[CorrectAnswer(["0.11", "+0.11", "+ 0.11"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q2a = StringField("Question 2A: The number of promoter sequences in yeast_promoters.fa.",
+                        validators=[CorrectAnswer(["5880"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q2b = StringField("Question 2B: The length of the shortest promoter sequence in yeast_promoters.fa.",
+                        validators=[CorrectAnswer(["0", "zero"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q2c = StringField("Question 2C: Report the number of yeast promoter sequences that have length equal to the Abf1 motif or greater.",
+                        validators=[CorrectAnswer(["5839"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q2d = TextAreaField("Question 2D: Cite a source that reports the number of expected genes in yeast and whether it matches the number of promoters in the provided file."
+                        , validators=[DataRequired("You must supply an answer to each question or you "
+                                                                  "will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q3a = StringField("Question 3A: The threshold you have chosen",
+                        validators=[CheckSCIE2100Practical5Threshold(8.10, 8.5), DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q3b = TextAreaField("Question 3B: A brief description of how you selected this threshold."
+                        , validators=[DataRequired("You must supply an answer to each question or you "
+                                                                  "will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q4a = StringField("Question 4A: A list of GO terms that have an E-value smaller than 50.0. Submit only the "
+                      "identifier (e.g. GO:1234567) and not the full description in a list like this - GO:1234567, GO:7654321",
+                        validators=[CheckSCIE2100Practical5GoTerms(['GO:0008152', 'GO:0003674', 'GO:0016021',
+                                                                    'GO:0055085', 'GO:0008150', 'GO:0006414',
+                                                                    'GO:0055114', 'GO:0016491', 'GO:0006310',
+                                                                    'GO:0007059', 'GO:0016779', 'GO:0003887',
+                                                                    'GO:0004540', 'GO:0004190', 'GO:0004523',
+                                                                    'GO:0015074', 'GO:0003964', 'GO:0006278',
+                                                                    'GO:0000943', 'GO:0032196', 'GO:0032197', 'GO:0090501']),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q4b = TextAreaField("Question 4B: Do any of your enriched GO terms support a known role you've discovered Abf1 to "
+                        "play in Saccharomyces cerevisiae?", validators=[DataRequired("You must supply an answer to each question or you "
+                                                                  "will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    check = SubmitField("Check  answers")
+
+    submit = SubmitField("Submit answers")
+
+    questions = ['q1a', 'q1b', 'q1c', 'q2a', 'q2b', 'q2c', 'q2d', 'q3a', 'q3b', 'q4a', 'q4b']
 
 class SCIE2100PracticalAssessment1(FlaskForm):
     q1 = StringField(

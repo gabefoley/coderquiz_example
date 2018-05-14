@@ -514,3 +514,46 @@ class Unique(object):
         check = self.model.query.filter(self.field == field.data).first()
         if check:
             raise ValidationError(self.message)
+
+
+class CheckSCIE2100Practical5Threshold(object):
+
+    def __init__(self, lower, upper):
+        self.lower = lower
+        self.upper = upper
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            try:
+                threshold = float(field.data)
+                if threshold < self.lower:
+                    raise ValidationError("This threshold is too low and gives too many genes")
+
+                if threshold > self.upper:
+                    raise ValidationError("This threshold is too high and gives too few genes")
+
+            except ValueError as e:
+                if str(e).startswith("could not convert string to float"):
+                    raise ValidationError("Make sure you're only entering numbers")
+                else:
+                    raise ValidationError(e)
+
+
+class CheckSCIE2100Practical5GoTerms(object):
+    def __init__(self, correct_go_terms):
+        self.correct_go_terms = correct_go_terms
+
+    def __call__(self, form, field):
+
+        if field.data is not None:
+            try:
+                count = 0
+                user_go_terms = field.data.split(",")
+                for term in user_go_terms:
+                    if term.strip() in self.correct_go_terms:
+                        count +=1
+                if count < 3:
+                    raise ValidationError("You are not generating the appropriate GO terms")
+            except:
+                raise ValidationError("You are not generating the appropriate GO terms")
