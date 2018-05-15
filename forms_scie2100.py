@@ -339,7 +339,7 @@ class SCIE2100Practical5(FlaskForm):
                         filters=[lambda v: None if v == '' else v])
 
     q1c = StringField("Question 1C: What is the log likelihood of seeing the symbol G at position 7?",
-                        validators=[CorrectAnswer(["0.11", "+0.11", "+ 0.11"]),DataRequired(
+                        validators=[CorrectAnswer(["0.11", "+0.11", "+ 0.11", ".11", "+.11", "+ .11"]),DataRequired(
                             "You must supply an answer to each question or you will not pass this Practical")],
                         filters=[lambda v: None if v == '' else v])
 
@@ -363,7 +363,7 @@ class SCIE2100Practical5(FlaskForm):
                                                                   "will not pass this Practical")],
                         filters=[lambda v: None if v == '' else v])
 
-    q3a = StringField("Question 3A: The threshold you have chosen",
+    q3a = StringField("Question 3A: The threshold you have chosen, entered to at least one decimal place",
                         validators=[CheckSCIE2100Practical5Threshold(8.10, 8.5), DataRequired(
                             "You must supply an answer to each question or you will not pass this Practical")],
                         filters=[lambda v: None if v == '' else v])
