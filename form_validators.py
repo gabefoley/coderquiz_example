@@ -557,3 +557,22 @@ class CheckSCIE2100Practical5GoTerms(object):
                     raise ValidationError("You are not generating the appropriate GO terms")
             except:
                 raise ValidationError("You are not generating the appropriate GO terms")
+
+
+class CheckBasedOnDropDown(object):
+
+    def __init__(self, drop_down_name, answers):
+        self.drop_down_name = drop_down_name
+        self.answers = answers
+
+
+    def __call__(self, form, field):
+        drop_down_choice = int(form.data[self.drop_down_name])
+        if field.data is not None:
+            # try:
+
+                if field.data.strip() != self.answers[drop_down_choice]:
+                    raise ValidationError("This is not the correct answer")
+            # except:
+            #     raise ValidationError("This is not the correct answer")
+            #

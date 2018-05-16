@@ -239,6 +239,85 @@ class SubmissionSCIE2100Practical5(db.Model):
         self.q4b = q4b
 
 
+
+class SubmissionSCIE2100Practical6(db.Model):
+    __tablename__ = "scie2100practical6"
+
+    submissionid = db.Column(db.Integer, primary_key=True)
+    studentno = db.Column(db.Integer)
+    submissiontime = db.Column(db.DateTime(timezone=True))
+    correct = db.Column(db.Boolean)
+    incomplete = db.Column(db.Boolean)
+
+    q1_code = db.Column(db.LargeBinary)
+    q2 = db.Column(db.String())
+    q3 = db.Column(db.String())
+    q4 = db.Column(db.String())
+    q5a1 = db.Column(db.String())
+    q5a2 = db.Column(db.String())
+    q5a3 = db.Column(db.String())
+    q5a4 = db.Column(db.String())
+    q5b = db.Column(db.String())
+    q5c = db.Column(db.String())
+    q5d = db.Column(db.String())
+    q5e_code = db.Column(db.LargeBinary)
+    q6a1 = db.Column(db.String())
+    q6a2 = db.Column(db.String())
+    q6a3 = db.Column(db.String())
+    q6a4 = db.Column(db.String())
+    q6a5 = db.Column(db.String())
+    q6b1 = db.Column(db.String())
+    q6b2 = db.Column(db.String())
+    q6b3 = db.Column(db.String())
+    q6b4 = db.Column(db.String())
+    q6b5 = db.Column(db.String())
+    q6c1 = db.Column(db.String())
+    q6c2 = db.Column(db.String())
+    q6c3 = db.Column(db.String())
+    q6c4 = db.Column(db.String())
+    q6c5 = db.Column(db.String())
+    q6d_code = db.Column(db.LargeBinary)
+
+
+
+
+    def __init__(self, studentno, submissiontime, correct, incomplete, q1_code, q2, q3, q4, q5a1, q5a2, q5a3, q5a4, q5b,
+                  q5c, q5d, q5e_code, q6a1, q6a2, q6a3, q6a4, q6a5, q6b1, q6b2,
+                 q6b3, q6b4, q6b5, q6c1, q6c2, q6c3, q6c4, q6c5, q6d_code):
+        self.studentno = studentno
+        self.submissiontime = submissiontime
+        self.correct = correct
+        self.incomplete = incomplete
+        self.q1_code = q1_code
+        self.q2 = q2
+        self.q3 = q3
+        self.q4 = q4
+        self.q5a1 = q5a1
+        self.q5a2 = q5a2
+        self.q5a3 = q5a3
+        self.q5a4 = q5a4
+        self.q5b = q5b
+        self.q5c = q5c
+        self.q5d = q5d
+        self.q5e_code = q5e_code
+        self.q6a1 = q6a1
+        self.q6a2 = q6a2
+        self.q6a3 = q6a3
+        self.q6a4 = q6a4
+        self.q6a5 = q6a5
+        self.q6b1 = q6b1
+        self.q6b2 = q6b2
+        self.q6b3 = q6b3
+        self.q6b4 = q6b4
+        self.q6b5 = q6b5
+        self.q6c1 = q6c1
+        self.q6c2 = q6c2
+        self.q6c3 = q6c3
+        self.q6c4 = q6c4
+        self.q6c5 = q6c5
+        self.q6d_code = q6d_code
+
+
 class SubmissionPracticeQuiz(db.Model):
 
     __tablename__ = "practice"

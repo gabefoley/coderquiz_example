@@ -225,6 +225,94 @@ header {
   border-bottom: 2px solid #db4437;
 }
 
+.joined-group {
+  margin: 20px;
+  padding: 5px;
+  border: 2px solid darkslateblue;
+  outline: 200px;
+  outline-color: blue;
+}
+
+.joined-group label {
+  color: #3a3a3a;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.joined-group input {
+  /*border: 2px solid black;*/
+  /*border-bottom: 2px solid black;*/
+  background-color: white;
+  color: #3a3a3a;
+  font-size: 18px;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.joined-group input:focus {
+  outline: 0;
+}
+
+.joined-group .error-message {
+  margin: 10px 0;
+  color: #db4437;
+}
+
+.joined-group .error-message + input {
+  border-bottom: 2px solid #db4437;
+}
+
+.tight-joined-group {
+  margin: 20px;
+  padding: 5px;
+  border: 2px solid darkslateblue;
+  outline: 200px;
+  outline-color: blue;
+}
+
+.tight-joined-group label {
+  color: #3a3a3a;
+  display: grid;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.tight-joined-group input {
+  /*border: 2px solid black;*/
+  /*border-bottom: 2px solid black;*/
+  background-color: white;
+  color: #3a3a3a;
+  font-size: 18px;
+  padding: 5px 0;
+  width: 50%;
+}
+
+.tight-joined-group input:focus {
+  outline: 0;
+}
+
+.tight-joined-group .error-message {
+  margin: 10px 0;
+  color: #db4437;
+}
+
+.tight-joined-group .error-message + input {
+  border-bottom: 2px solid #db4437;
+}
+
+form-title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
 .error-message {
   color: #db4437;
 }

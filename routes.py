@@ -2,10 +2,11 @@ from typing import Any
 from flask import Flask, render_template, request, session, redirect, url_for, send_file
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2,\
-SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100Practical5, SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2
+SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100Practical5, SubmissionSCIE2100Practical6,\
+    SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
 from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100Practical4, \
-    SCIE2100Practical5, SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2
+    SCIE2100Practical5, SCIE2100Practical6, SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2
 from sqlalchemy.exc import IntegrityError, DataError
 from sqlalchemy import desc
 from os.path import join
@@ -988,6 +989,218 @@ def scie2100_practical5():
     elif request.method == "GET":
         return render_template("scie2100practical5.html", questions=questions, form=form)
 
+
+@application.route(local("/scie2100_practical6"), methods=["GET", "POST"])
+def scie2100_practical6():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100Practical6()
+    questions = form.questions
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("scie2100practical6.html", questions=questions, form=form)
+        elif form.submit.data:
+
+            # elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q2.data:
+                q2 = form.q2.data
+            else:
+                q2 = "INCORRECT"
+                incomplete = True
+
+            if form.q3.data:
+                q3 = form.q3.data
+            else:
+                q3 = "INCORRECT"
+                incomplete = True
+
+            if form.q4.data:
+                q4 = form.q4.data
+            else:
+                q4 = "INCORRECT"
+                incomplete = True
+
+            if form.q5a1.data:
+                q5a1 = form.q5a1.data
+            else:
+                q5a1 = "INCORRECT"
+                incomplete = True
+
+            if form.q5a2.data:
+                q5a2 = form.q5a2.data
+            else:
+                q5a2 = "INCORRECT"
+                incomplete = True
+
+            if form.q5a3.data:
+                q5a3 = form.q5a3.data
+            else:
+                q5a3 = "INCORRECT"
+                incomplete = True
+
+            if form.q5a4.data:
+                q5a4 = form.q5a4.data
+            else:
+                q5a4 = "INCORRECT"
+                incomplete = True
+
+            if form.q5b.data:
+                q5b = form.q5b.data
+            else:
+                q5b = "INCORRECT"
+                incomplete = True
+
+            if form.q5c.data:
+                q5c = form.q5c.data
+            else:
+                q5c = "INCORRECT"
+                incomplete = True
+
+            if form.q5d.data:
+                q5d = form.q5d.data
+            else:
+                q5d = "INCORRECT"
+                incomplete = True
+
+
+            if form.q6a1.data:
+                q6a1 = form.q6a1.data
+            else:
+                q6a1 = "INCORRECT"
+                incomplete = True
+
+            if form.q6a2.data:
+                q6a2 = form.q6a2.data
+            else:
+                q6a2 = "INCORRECT"
+                incomplete = True
+
+            if form.q6a3.data:
+                q6a3 = form.q6a3.data
+            else:
+                q6a3 = "INCORRECT"
+                incomplete = True
+
+            if form.q6a4.data:
+                q6a4 = form.q6a4.data
+            else:
+                q6a4 = "INCORRECT"
+                incomplete = True
+
+            if form.q6a5.data:
+                q6a5 = form.q6a5.data
+            else:
+                q6a5 = "INCORRECT"
+                incomplete = True
+
+            if form.q6b1.data:
+                q6b1 = form.q6b1.data
+            else:
+                q6b1 = "INCORRECT"
+                incomplete = True
+
+            if form.q6b2.data:
+                q6b2 = form.q6b2.data
+            else:
+                q6b2 = "INCORRECT"
+                incomplete = True
+
+            if form.q6b3.data:
+                q6b3 = form.q6b3.data
+            else:
+                q6b3 = "INCORRECT"
+                incomplete = True
+
+            if form.q6b4.data:
+                q6b4 = form.q6b4.data
+            else:
+                q6b4 = "INCORRECT"
+                incomplete = True
+
+            if form.q6b5.data:
+                q6b5 = form.q6b5.data
+            else:
+                q6b5 = "INCORRECT"
+                incomplete = True
+
+            if form.q6c1.data:
+                q6c1 = form.q6c1.data
+            else:
+                q6c1 = "INCORRECT"
+                incomplete = True
+
+            if form.q6c2.data:
+                q6c2 = form.q6c2.data
+            else:
+                q6c2 = "INCORRECT"
+                incomplete = True
+
+            if form.q6c3.data:
+                q6c3 = form.q6c3.data
+            else:
+                q6c3 = "INCORRECT"
+                incomplete = True
+
+            if form.q6c4.data:
+                q6c4 = form.q6c4.data
+            else:
+                q6c4 = "INCORRECT"
+                incomplete = True
+
+            if form.q6c5.data:
+                q6c5 = form.q6c5.data
+            else:
+                q6c5 = "INCORRECT"
+                incomplete = True
+
+
+            if form.q1_code.data:
+                q1_code = request.files['q1_code']
+                if not "." in q1_code.filename or q1_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical6.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q1_code = FileStorage()
+                incomplete = True
+
+            if form.q5e_code.data:
+                q5e_code = request.files['q5e_code']
+                if not "." in q5e_code.filename or q5e_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical6.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q5e_code = FileStorage()
+                incomplete = True
+
+            if form.q6d_code.data:
+                q6d_code = request.files['q6d_code']
+                if not "." in q6d_code.filename or q6d_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practical6.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q6d_code = FileStorage()
+                incomplete = True
+
+
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
+
+            form_submission = SubmissionSCIE2100Practical6(session['studentno'], dt, correct, incomplete, q1_code.read(), q2, q3, q4, q5a1, q5a2, q5a3, q5a4, q5b, q5c,
+                 q5d, q5e_code.read(), q6a1, q6a2, q6a3, q6a4, q6a5, q6b1, q6b2,
+                 q6b3, q6b4, q6b5, q6c1, q6c2, q6c3, q6c4, q6c5, q6d_code.read())
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete)
+
+        else:
+            return render_template("scie2100practical6.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("scie2100practical6.html", questions=questions, form=form)
 
 
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])

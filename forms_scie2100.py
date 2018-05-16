@@ -4,7 +4,8 @@ from wtforms.validators import DataRequired, Email, Length, ValidationError, Opt
 from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick, CheckRegex, CheckNumberRange, \
     CheckDomainBoundaries, CheckSCIE2100Practical2SeqPairsCode, CheckSCIE2100Practical2AAPairsCode, \
     CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, \
-    CheckPoissonDistance, CheckSelectField, CheckSCIE2100Practical5Threshold, CheckSCIE2100Practical5GoTerms
+    CheckPoissonDistance, CheckSelectField, CheckSCIE2100Practical5Threshold, CheckSCIE2100Practical5GoTerms, \
+    CheckBasedOnDropDown
 import math, numpy
 
 
@@ -395,6 +396,176 @@ class SCIE2100Practical5(FlaskForm):
     submit = SubmitField("Submit answers")
 
     questions = ['q1a', 'q1b', 'q1c', 'q2a', 'q2b', 'q2c', 'q2d', 'q3a', 'q3b', 'q4a', 'q4b']
+
+class SCIE2100Practical6(FlaskForm):
+
+    q1_code = FileField(
+        'Question 1 Code: Submit your code for your function getScoresWithForLoop',
+        validators=[DataRequired("Please attach your code for Question 1.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q2 = SelectField("Question 2: True or false: the PDB structure corresponding to the provided protein sequence is helical", choices=[('True', 'True'),
+                                                    ('False', 'False'),
+                                                    ], validators=[CheckSelectField('True'), DataRequired(
+                          "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
+
+    q3 = TextAreaField("Question 3: Describe, in your own words, the process of applying the Chou-Fasman prediction "
+                       "rules for alpha-helices and beta-strands"
+                        , validators=[DataRequired("You must supply an answer to each question or you "
+                                                                  "will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q4 = StringField("Question 4: Give your base-line accuracy calculations.",
+                        validators=[CorrectAnswer(["0.33", "1/3", "33%", "33", "one third"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q5a1 = SelectField("Question 5A: Select your chosen protein", choices=[('0', '1EVH'),
+                                                    ('1', '1WN2'), ('2', '2EEI')
+                                                    ], validators=[DataRequired(
+                          "You must supply an answer to each question or you will not pass this Practical")],
+                      filters=[lambda v: None if v == '' else v])
+
+    q5a2 = StringField("Question 5A: Enter the amino acid sequence for your protein.",
+                        validators=[CheckBasedOnDropDown("q5a1", ["SEQSICQARAAVMVYDDANKKWVPAGGSTGFSRVHIYHHTGNNTFRVVGRKIQDHQVVINCAIPKGLKYNQATQTFHQWRDARQVYGLNFGSKEDANVFASAMMHALEVLN", "MFKYKQVIVARADLKLSKGKLAAQVAHGAVTAAFEAYKKKREWFEAWFREGQKKVVVKVESEEELFKLKAEAEKLGLPNALIRDAGLTEIPPGTVTVLAVGPAPEEIVDKVTGNLKLL", "GSSGSSGQPRLCYLVKEGGSYGFSLKTVQGKKGVYMTDITPQGVAMRAGVLADDHLIEVNGENVEDASHEEVVEKVKKSGSRVMFLLVDKETDKRHVEQKSGPSSG"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q5a3 = StringField("Question 5A: Enter the DSSP secondary structure for your protein",
+                        validators=[CheckBasedOnDropDown("q5a1", ["CEEEEEEEEEEEEEEECCCCEEEEHHHCCCCEEEEEEEECCCCEEEEEEEECCCCCEEEEEEECCCCCCECCCCCEEEEECCCCEEEEEECCHHHHHHHHHHHHHHHHHHC", "CCCEEEEEEEECCCCCCHHHHHHHHHHHHHHHHHHHHHHCHHHHHHHHHCCCCEEEEEECCHHHHHHHHHHHHHCCCCEEEEECCCCCCCCCCCEEEEEEEEEEHHHHHHHHCCCEEC", "CCCCCCCCCEEEEEECCCCCCCCCEECCCCCCCCEECCCCCCCHHHHHCCCCCEEEEEECCEECCCCCHHHHHHHHHHHCCEEEEEECCCCCCCCCCCCCCCCCCC"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q5a4 = StringField("Question 5A: Enter the predicted secondary structure using the Chou-Fasman algorithm for your protein.",
+                        validators=[CheckBasedOnDropDown("q5a1", ["HEEEEEEEEEEEEEEEEEHHHHHHHHCCCCEEEEEEEEEECHEEEEEEEEEEEEEEEEEEEEEEHEEEEEEEEEEEEEEEEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHH", "EEEEEEEEEEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEHHHEEEEEEEEEEEEEE", "CCCCCCCEEEEEEEEEEHHEEEEEEEEEEEEEEEEEEEEEEEEEEEEHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHEEEEEEEEEEEHHHHHHHHHHHHCCCC"]),DataRequired(
+                            "You must supply an answer to each question or you will not pass this Practical")],
+                        filters=[lambda v: None if v == '' else v])
+
+    q5b = StringField("Question 5B: Enter the percent accuracy for alpha-helix predictions for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
+                      validators=[CheckBasedOnDropDown("q5a1", [
+                          "50%",
+                          "55%",
+                          "24%"]),
+                                  DataRequired(
+                                      "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+
+    q5c = StringField("Question 5C: Enter the percent accuracy for beta-strand predictions for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
+                      validators=[CheckBasedOnDropDown("q5a1", [
+                          "57.14%",
+                          "42.59%",
+                          "28.07%"]),
+                                  DataRequired(
+                                      "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+
+
+    q5d = StringField("Question 5D: Enter the percent accuracy for both alpha-helix and beta-strand predictions together for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
+                      validators=[CheckBasedOnDropDown("q5a1", [
+                          "61.26%",
+                          "56.78%",
+                          "36.79%"]),
+                                  DataRequired(
+                                      "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q5e_code = FileField(
+        'Question 5E Code: Submit the code you wrote for the percent accuracy calculation.',
+        validators=[DataRequired("Please attach your code for Question 1A.")],
+        filters=[lambda v: None if v == '' else v])
+
+    q6a1 = StringField("Question 6A: True positives for alpha-helices",
+                       validators=[CorrectAnswer(["126459"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6a2 = StringField("Question 6A: True negatives for alpha-helices",
+                       validators=[CorrectAnswer(["261152"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6a3 = StringField("Question 6A: False positives for alpha-helices",
+                       validators=[CorrectAnswer(["105063"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6a4 = StringField("Question 6A: False negatives for alpha-helices",
+                       validators=[CorrectAnswer(["152226"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6a5 = StringField("Question 6A: Accuracy for alpha-helices. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
+                       validators=[CorrectAnswer(["60.1%", "60.10", "60.10%", "60.1"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6b1 = StringField("Question 6B: True positives for beta-strands",
+                       validators=[CorrectAnswer(["98670"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6b2 = StringField("Question 6B: True negatives for beta-strands",
+                       validators=[CorrectAnswer(["277492"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6b3 = StringField("Question 6B: False positives for beta-strands",
+                       validators=[CorrectAnswer(["47225"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6b4 = StringField("Question 6B: False negatives for beta-strands. ",
+                       validators=[CorrectAnswer(["221513"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6b5 = StringField("Question 6B: Accuracy for beta-strands. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39% ",
+                       validators=[CorrectAnswer(["58.33%", "58.33", "58.33%", "58.33"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6c1 = StringField("Question 6C: True positives for combined (alpha-helices and beta-strands)",
+                       validators=[CorrectAnswer(["225129"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6c2 = StringField("Question 6C: False positives for combined (alpha-helices and beta-strands)",
+                       validators=[CorrectAnswer(["538644"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6c3 = StringField("Question 6C: True negatives for combined (alpha-helices and beta-strands)",
+                       validators=[CorrectAnswer(["152288"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6c4 = StringField("Question 6C: False negatives for combined (alpha-helices and beta-strands)",
+                       validators=[CorrectAnswer(["373739"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6c5 = StringField("Question 6C: Accuracy for combined (alpha-helices and beta-strands together). Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
+                       validators=[CorrectAnswer(["59.22%", "59.22", "59.22%", "59.22"]), DataRequired(
+                           "You must supply an answer to each question or you will not pass this Practical")],
+                       filters=[lambda v: None if v == '' else v])
+
+    q6d_code = FileField(
+        'Question 6D Code: Submit the code you wrote (inner/new loops only).',
+        validators=[DataRequired("Please attach your code for Question 6D.")],
+        filters=[lambda v: None if v == '' else v])
+
+
+    check = SubmitField("Check  answers")
+
+    submit = SubmitField("Submit answers")
+
+    questions = ['q1_code', 'q2', 'q3', 'q4', 'q5a1', 'q5a2', 'q5a3', 'q5a4', 'q5b', 'q5c',
+                  'q5d', 'q5e_code', 'q6a1', 'q6a2', 'q6a3', 'q6a4', 'q6a5', 'q6b1', 'q6b2',
+                 'q6b3', 'q6b4', 'q6b5', 'q6c1', 'q6c2', 'q6c3', 'q6c4', 'q6c5', 'q6d_code']
+
 
 class SCIE2100PracticalAssessment1(FlaskForm):
     q1 = StringField(
