@@ -161,10 +161,9 @@ class SCIE2100Practical2(FlaskForm):
                     DataRequired("You must supply an answer to each question or you will not pass this Practical")],
         filters=[lambda v: None if v == '' else v])
 
-    q4a = TextAreaField("Question 4A: Explain why it took so long for the alignment to be computed",
-                        validators=[DataRequired(
-                            "You must supply an answer to each question or you will not pass this Practical")],
-                        filters=[lambda v: None if v == '' else v])
+    q4a = StringField(
+        'Question 4A: How many cells would the S matrix (in the alignGlobal function) contain when aligning HQ659871.1 and JX416721.1? ',
+        validators=[CorrectAnswer(['2,345,868', '2345868']), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
 
     q4b = StringField(
         "Question 4B: If you leave the DNA substitution matrix untouched, what is a biologically sensible gap penalty? ",
