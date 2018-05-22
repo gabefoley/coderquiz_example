@@ -11,8 +11,6 @@ from models import User
 from form_validators import CorrectAnswer, Unique, CheckList, CheckPalindrome
 
 
-
-
 class SignupForm(FlaskForm):
     first_name = StringField('First name', validators=[DataRequired("Please enter your first name.")])
     last_name = StringField('Last name', validators=[DataRequired("Please enter your last name.")])
@@ -25,10 +23,6 @@ class SignupForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired("Please enter a password."),
                                                      Length(min=6, message="Passwords must be 6 characters or more.")])
     submit = SubmitField('Sign up')
-
-
-
-
 
 
 class PracticeQuiz(FlaskForm):
@@ -112,6 +106,8 @@ class QueryForm(FlaskForm):
                                              ('SubmissionSCIE2100PracticalAssessment1', ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionSCIE2100PracticalAssessment2',
                                               ' SCIE2100 Practical Assessment 2'),
+                                             ('SubmissionSCIE2100PracticalAssessment3',
+                                              ' SCIE2100 Practical Assessment 3'),
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
     records = RadioField('Do you want the latest submission or all submissions?',
@@ -119,6 +115,7 @@ class QueryForm(FlaskForm):
     submit = SubmitField("Get student's submission")
     # download = SubmitField("Download Question 2 code")
     # download2 = SubmitField("Download Question 3 code")
+
 
 class MarkingForm(FlaskForm):
     assessment_item = SelectField('Which assessment item do you want?',
@@ -133,6 +130,8 @@ class MarkingForm(FlaskForm):
                                               ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionSCIE2100PracticalAssessment2',
                                               ' SCIE2100 Practical Assessment 2'),
+                                             ('SubmissionSCIE2100PracticalAssessment3',
+                                              ' SCIE2100 Practical Assessment 3'),
 
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
@@ -153,6 +152,8 @@ class SubmissionForm(FlaskForm):
                                               ' SCIE2100 Practical Assessment 1'),
                                              ('SubmissionSCIE2100PracticalAssessment2',
                                               ' SCIE2100 Practical Assessment 2'),
+                                             ('SubmissionSCIE2100PracticalAssessment3',
+                                              ' SCIE2100 Practical Assessment 3'),
 
                                              ('SubmissionPracticeQuiz', 'Practice Quiz')],
                                   validators = [DataRequired()])
@@ -163,6 +164,7 @@ class SubmissionForm(FlaskForm):
 
 class EmailForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
+
 
 class PasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])

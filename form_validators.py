@@ -12,26 +12,34 @@ import string
 
 class CheckRegex(object):
 
+    def __init__(self, correct_list, sequence_list, search_type):
+        self.correct_set = set(correct_list)
+
+        self.sequence_list = sequence_list
+        self.search_type = search_type
+
 
     def __call__(self, form, field):
 
         if field.data is not None:
 
-            correct_seqs = {'chr7:130602946-130603045', 'chr15:5089967-5090066', 'chr19:23226975-23227074'}
             user_seqs = set()
 
             regex = field.data
 
             try:
                 tf = re.compile(regex)
-                seqs = readFastaFile('chipseq.fa', DNA_Alphabet)
+                seqs = readFastaFile(self.sequence_list, DNA_Alphabet)
                 for seq in seqs:
                     seqstr = ''.join(seq.sequence)
-                    m = tf.match(seqstr)
+                    if self.search_type == "search":
+                        m = tf.search(seqstr)
+                    elif self.search_type == "match":
+                        m = tf.match(seqstr)
                     if m:
                         user_seqs.add(seq.name)
 
-                if correct_seqs == user_seqs:
+                if self.correct_set == user_seqs:
                     return
                 else:
 
@@ -74,7 +82,8 @@ class CheckList(object):
                     if item.upper().strip() in check_set - correct_set:
                         incorrect_responses.append(item.strip())
 
-                raise ValidationError('The following responses are not correct - {}'.format(', '.join([x for x in incorrect_responses])))
+                raise ValidationError(
+                    'The following responses are not correct - {}'.format(', '.join([x for x in incorrect_responses])))
 
 
 class CorrectAnswer(object):
@@ -132,7 +141,8 @@ class CheckAlphabet(object):
 
             invalids = ['J', 'O', 'Z']
 
-            valids = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            valids = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U',
+                      'V',
                       'W', 'X', 'Y', '-']
 
             if any(x in field.data for x in invalids):
@@ -237,7 +247,9 @@ class CheckAccuracyScore(object):
                         return
                     else:
                         raise ValidationError(
-                            'You need to provide the {} score but you have provided the {} score'.format(self.wanted,self.scores_dict[field.data]))
+                            'You need to provide the {} score but you have provided the {} score'.format(self.wanted,
+                                                                                                         self.scores_dict[
+                                                                                                             field.data]))
 
                 else:
                     continue
@@ -245,7 +257,6 @@ class CheckAccuracyScore(object):
 
 
 class CheckSCIE2100Practical2SeqPairsCode(object):
-
     def __init__(self, answer):
         self.answer = answer
 
@@ -264,15 +275,10 @@ class CheckSCIE2100Practical2SeqPairsCode(object):
             except NameError:
                 raise ValidationError("Make sure you have named your variables correctly")
             except (ValueError, SyntaxError, TypeError) as e:
-                raise ValidationError( "There was an error in your code - " + repr(e))
-
-
-
-
+                raise ValidationError("There was an error in your code - " + repr(e))
 
 
 class CheckSCIE2100Practical2AAPairsCode(object):
-
     def __init__(self, answer):
         self.answer = answer
 
@@ -292,10 +298,10 @@ class CheckSCIE2100Practical2AAPairsCode(object):
             except NameError:
                 raise ValidationError("Make sure you have named your variables correctly")
             except (ValueError, SyntaxError, TypeError) as e:
-                raise ValidationError( "There was an error in your code - " + repr(e))
+                raise ValidationError("There was an error in your code - " + repr(e))
+
 
 class CheckSCIE2100Practical2ProbabilityCode(object):
-
     def __init__(self, answer, identical):
         self.answer = answer
         self.identical = identical
@@ -309,7 +315,7 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
             if self.identical:
                 s1 = Sequence('APGNER', Protein_Alphabet)
                 s2 = Sequence('APGNER', Protein_Alphabet)
-            else: # a != b
+            else:  # a != b
                 s1 = Sequence('AAPG', Protein_Alphabet)
                 s2 = Sequence('ANLP', Protein_Alphabet)
 
@@ -317,7 +323,6 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
             b62 = readSubstMatrix('static/python/blosum62.matrix', Protein_Alphabet)
             glob = alignGlobal(s1, s2, b62, -8)
             p = glob.calcBackground()
-
 
             if "=" not in field.data or "eab" not in field.data:
                 raise ValidationError("The format of your answer is incorrect. It should start with eab = ")
@@ -336,9 +341,7 @@ class CheckSCIE2100Practical2ProbabilityCode(object):
             # except NameError:
             #     raise ValidationError("Make sure you have named your variables correctly")
             except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
-                raise ValidationError( "There was an error in your code - " + repr(e))
-
-
+                raise ValidationError("There was an error in your code - " + repr(e))
 
 
 class CheckPalindrome(object):
@@ -354,7 +357,6 @@ class CheckPalindrome(object):
 
 
 class CheckDomainBoundaries(object):
-
     def __init__(self, lower, upper):
         self.lower = lower
         self.upper = upper
@@ -387,8 +389,8 @@ class CheckDomainBoundaries(object):
             if not (self.lower <= check_lower < check_upper <= self.upper):
                 raise ValidationError("These are not the correct domain boundaries")
 
-class CheckGapPenalty(object):
 
+class CheckGapPenalty(object):
     def __call__(self, form, field):
 
         if field.data is not None:
@@ -400,13 +402,11 @@ class CheckGapPenalty(object):
             if check == -1 or check == -2:
                 raise ValidationError("A score this high would lead to an unusually high number of gaps")
             if check <= -8:
-
-                raise ValidationError("A score this low will force a high number of mismatches in the alignment which is not ideal")
+                raise ValidationError(
+                    "A score this low will force a high number of mismatches in the alignment which is not ideal")
 
 
 class CompareNumbers(object):
-
-
     def __init__(self, greater):
         self.greater = True if greater == "greater" else False
 
@@ -434,8 +434,6 @@ class CompareNumbers(object):
 
 
 class CheckTripletAlignGlobal(object):
-
-
     def __init__(self, answer, length):
         self.answer = answer
         self.length = length
@@ -460,10 +458,10 @@ class CheckTripletAlignGlobal(object):
 
             except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
 
-                raise ValidationError( "There was an error in your code - " + repr(e))
+                raise ValidationError("There was an error in your code - " + repr(e))
+
 
 class CheckSelectField(object):
-
     def __init__(self, answer):
         self.answer = answer
 
@@ -476,8 +474,6 @@ class CheckSelectField(object):
 
 
 class CheckPoissonDistance(object):
-
-
     def __init__(self, answer, fraction_of_positions):
         self.answer = answer
         self.fraction_of_positions = fraction_of_positions
@@ -501,7 +497,7 @@ class CheckPoissonDistance(object):
                 raise ValidationError("This answer is incorrect.")
 
             except (AttributeError, ValueError, SyntaxError, TypeError, NameError) as e:
-                raise ValidationError( "There was an error in your code - " + repr(e))
+                raise ValidationError("There was an error in your code - " + repr(e))
 
 
 class Unique(object):
@@ -517,7 +513,6 @@ class Unique(object):
 
 
 class CheckSCIE2100Practical5Threshold(object):
-
     def __init__(self, lower, upper):
         self.lower = lower
         self.upper = upper
@@ -552,7 +547,7 @@ class CheckSCIE2100Practical5GoTerms(object):
                 user_go_terms = field.data.split(",")
                 for term in user_go_terms:
                     if term.strip() in self.correct_go_terms:
-                        count +=1
+                        count += 1
                 if count < 3:
                     raise ValidationError("You are not generating the appropriate GO terms")
             except:
@@ -560,19 +555,17 @@ class CheckSCIE2100Practical5GoTerms(object):
 
 
 class CheckBasedOnDropDown(object):
-
     def __init__(self, drop_down_name, answers):
         self.drop_down_name = drop_down_name
         self.answers = answers
-
 
     def __call__(self, form, field):
         drop_down_choice = int(form.data[self.drop_down_name])
         if field.data is not None:
             # try:
 
-                if field.data.strip() != self.answers[drop_down_choice]:
-                    raise ValidationError("This is not the correct answer")
-            # except:
-            #     raise ValidationError("This is not the correct answer")
-            #
+            if field.data.strip() != self.answers[drop_down_choice]:
+                raise ValidationError("This is not the correct answer")
+                # except:
+                #     raise ValidationError("This is not the correct answer")
+                #

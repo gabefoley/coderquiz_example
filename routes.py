@@ -3,10 +3,10 @@ from flask import Flask, render_template, request, session, redirect, url_for, s
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class, UploadNotAllowed
 from models import db, User, SubmissionPracticeQuiz, SubmissionSCIE2100Practical1, SubmissionSCIE2100Practical2,\
 SubmissionSCIE2100Practical3, SubmissionSCIE2100Practical4, SubmissionSCIE2100Practical5, SubmissionSCIE2100Practical6,\
-    SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2
+    SubmissionSCIE2100PracticalAssessment1, SubmissionSCIE2100PracticalAssessment2, SubmissionSCIE2100PracticalAssessment3
 from forms import SignupForm, LoginForm, QueryForm, SubmissionForm, PracticeQuiz, EmailForm, PasswordForm, MarkingForm
 from forms_scie2100 import SCIE2100Practical1, SCIE2100Practical2, SCIE2100Practical3, SCIE2100Practical4, \
-    SCIE2100Practical5, SCIE2100Practical6, SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2
+    SCIE2100Practical5, SCIE2100Practical6, SCIE2100PracticalAssessment1, SCIE2100PracticalAssessment2, SCIE2100PracticalAssessment3
 from sqlalchemy.exc import IntegrityError, DataError
 from sqlalchemy import desc
 from os.path import join
@@ -191,6 +191,11 @@ def login():
         #             return render_template('login.html', form=form, passworderror=["Password is incorrect"])
         # elif request.method == "GET":
         #     return render_template('login.html', form=form)
+
+@application.route(local("/temp_inclass3"))
+def temp_inclass3():
+    return render_template('temp_inclass3.html')
+
 
 
 @application.route(local("/logout"))
@@ -1203,6 +1208,93 @@ def scie2100_practical6():
         return render_template("scie2100practical6.html", questions=questions, form=form)
 
 
+@application.route(local("/scie2100_practicalassessment3"), methods=["GET", "POST"])
+def scie2100_practicalassessment3():
+    if 'studentno' not in session:
+        return redirect(url_for('login'))
+    form = SCIE2100PracticalAssessment3()
+    questions = form.questions
+    if request.method == "POST":
+        if form.check.data and form.validate() == True:
+            return render_template("scie2100practicalassessment3.html", questions=questions, form=form)
+        # elif form.submit.data:
+        elif form.submit.data and form.validate() == True:
+
+            correct = form.validate()
+            incomplete = False
+
+            if form.q1.data:
+                q1 = form.q1.data
+            else:
+                q1 = "INCORRECT"
+                incomplete = True
+                correct = False
+
+            if form.q2a.data:
+                q2a = form.q2a.data
+            else:
+                q2a = "INCORRECT"
+                incomplete = True
+                correct = False
+
+            if form.q2b.data:
+                q2b = form.q2b.data
+            else:
+                q2b = "INCORRECT"
+                incomplete = True
+                correct = False
+
+            if form.q3.data:
+                q3 = form.q3.data
+            else:
+                q3 = "INCORRECT"
+                incomplete = True
+                correct = False
+
+            if form.q4.data:
+                q4 = form.q4.data
+            else:
+                q4 = "INCORRECT"
+                incomplete = True
+                correct = False
+
+            if form.q2_code.data:
+                q2_code = request.files['q2_code']
+                if not "." in q2_code.filename or q2_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practicalassessment3.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q2_code = FileStorage()
+                incomplete = True
+                correct = False
+
+            if form.q4_code.data:
+                q4_code = request.files['q4_code']
+                if not "." in q4_code.filename or q4_code.filename.split(".")[1] != 'py':
+                    return render_template("scie2100practicalassessment3.html", questions=questions, form=form,
+                                           error="Your code upload should be a Python file ending in .py")
+            else:
+                q4_code = FileStorage()
+                incomplete = True
+                correct = False
+
+            dt = datetime.now(pytz.timezone('Australia/Brisbane'))
+
+            form_submission = SubmissionSCIE2100PracticalAssessment3(session['studentno'], dt, correct, incomplete, q1,
+                                                                     q2a, q2b, q2_code.read(), q3, q4, q4_code.read())
+            db.session.add(form_submission)
+            db.session.commit()
+
+            return render_template('success.html', url_for=url_for, correct=correct, incomplete=incomplete,
+                                   inclass=True)
+
+        else:
+            return render_template("scie2100practicalassessment3.html", questions=questions, form=form)
+
+    elif request.method == "GET":
+        return render_template("scie2100practicalassessment3.html", questions=questions, form=form)
+
+
 @application.route(local("/submissiondynamic"), methods=["GET", "POST"])
 def submissiondynamic():
     form = SubmissionForm()
@@ -1565,3 +1657,7 @@ def reset_with_token(token):
 
 if __name__ == "__main__":
     application.run(debug=True)
+
+import os
+cwd = os.getcwd()
+print (cwd)

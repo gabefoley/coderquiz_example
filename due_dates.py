@@ -10,4 +10,6 @@ scie2100duedates = {"SCIE2100Practical1": datetime.strptime("16/3/18 11:20", "%d
 
                     "SCIE2100PracticalAssessment1": datetime.strptime("23/3/18 14:00", "%d/%m/%y %H:%M"),
                     "SCIE2100PracticalAssessment2": datetime.strptime("11/5/18 14:00", "%d/%m/%y %H:%M"),
+                    "SCIE2100PracticalAssessment3": datetime.strptime("1/6/18 14:00", "%d/%m/%y %H:%M"),
+
                     "PracticeQuiz": datetime.strptime("18/3/18 20:24", "%d/%m/%y %H:%M")}

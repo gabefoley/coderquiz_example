@@ -6,7 +6,7 @@ from form_validators import CheckList, CheckAlphabet, CorrectAnswer, CheckNewick
     CheckSCIE2100Practical2ProbabilityCode, CheckGapPenalty, CompareNumbers, CheckTripletAlignGlobal, \
     CheckPoissonDistance, CheckSelectField, CheckSCIE2100Practical5Threshold, CheckSCIE2100Practical5GoTerms, \
     CheckBasedOnDropDown
-import math, numpy
+import os
 
 
 class SCIE2100Practical1(FlaskForm):
@@ -637,27 +637,38 @@ class SCIE2100PracticalAssessment2(FlaskForm):
     questions = ["q1", "q2", "q3", "q2_code", "q3_code"]
 
 
-class PracticalAssessment3Form(FlaskForm):
-    q1 = StringField('Question 1 [4 Marks]: Submit your predicted secondary structure.', validators=[
-        CorrectAnswer(['CCCEEEEEHCHEEEEHCEHCECEEECEEEHCHHEHCECCCECEECHEECECCCHHHEEHCHHHEEHCECHHECEEECHHEHEHECE'])],
+class SCIE2100PracticalAssessment3(FlaskForm):
+    q1 = StringField('Question 1: Submit your predicted secondary structure.', validators=[
+        CorrectAnswer(['CCCEEEEEHCHEEEEHCEHCECEEECEEEHCHHEHCECCCECEECHEECECCCHHHEEHCHHHEEHCECHHECEEECHHEHEHECE']), Optional("Not completed")],
                      filters=[lambda v: None if v == '' else v])
 
-    q2a = StringField('Question 2A [1 Marks]: Submit the sensitivity of class E to two decimal places.', validators=[
-        CorrectAnswer(['0.58'])],
+    q2a = StringField('Question 2A: Submit the sensitivity of class E to two decimal places.', validators=[
+        CorrectAnswer(['0.58']), Optional("Not completed")],
                       filters=[lambda v: None if v == '' else v])
 
-    q2b = StringField('Question 2B [1 Marks]: Submit the specificity of class E to two decimal places.', validators=[
-        CorrectAnswer(['0.64'])],
+    q2b = StringField('Question 2B: Submit the specificity of class E to two decimal places.', validators=[
+        CorrectAnswer(['0.64']), Optional("Not completed")],
                       filters=[lambda v: None if v == '' else v])
 
     q2_code = FileField(
-        'Question 2 Code [2 Marks]: Submit the code you wrote to calculate sensitivity and specificity.',
+        'Question 2 Code: Submit the code you wrote to calculate sensitivity and specificity.',
         validators=[DataRequired("Please attach your code for Question 2.")],
         filters=[lambda v: None if v == '' else v])
 
     q3 = StringField(
-        'Question 3 [2 Marks]: Please submit your regular expression. You only need to provide your regular expression, e.g. only paste in something in this format - [AC]C[AT]AT.[AT] ',
-        validators=[CheckRegex()], filters=[lambda v: None if v == '' else v])
+        'Question 3: Please submit your regular expression. You only need to provide your regular expression, e.g. only paste in something in this format - [AC]C[AT]AT.[AT] ',
+        validators=[CheckRegex(['chr7:130602946-130603045,', 'chr15:5089967-5090066,', 'chr19:23226975-23227074,'], os.getcwd() + "/static/python/files/chipseq.fa", "match"), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+
+    q4 = StringField(
+        'Question 4: Please submit your regular expression. You only need to provide your regular expression, e.g. only paste in something in this format - [AC]C[AT]AT.[AT] ',
+        validators=[CheckRegex(['RPL6B', 'SRM1', 'TAF2', 'GAT2', 'YER064C', 'SUB1', 'SNO4', 'RPL28', 'MUB1', 'DOT1'], os.getcwd() + "/static/python/files/yeast_promoters.fa", 'search'), Optional("Not completed")], filters=[lambda v: None if v == '' else v])
+
+    q4_code = FileField(
+        'Question 4 Code: Submit the code you wrote to load the files and extract the sequences to build the regular expression',
+        validators=[DataRequired("Please attach your code for Question 2.")],
+        filters=[lambda v: None if v == '' else v])
+
+    questions = ["q1", "q2a", "q2b", "q2_code", "q3", "q4", "q4_code"]
 
     check = SubmitField("Check answers")
 

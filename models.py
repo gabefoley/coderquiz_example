@@ -416,3 +416,35 @@ class SubmissionSCIE2100PracticalAssessment2(db.Model):
     self.q3 = q3
     self.q2_code = q2_code
     self.q3_code = q3_code
+
+
+class SubmissionSCIE2100PracticalAssessment3(db.Model):
+
+  __tablename__ = "scie2100practicalassessment3"
+
+  submissionid = db.Column(db.Integer, primary_key = True)
+  studentno = db.Column(db.Integer)
+  submissiontime = db.Column(db.DateTime(timezone=True))
+  correct = db.Column(db.Boolean)
+  incomplete = db.Column(db.Boolean)
+  q1 = db.Column(db.String())
+  q2a = db.Column(db.String())
+  q2b = db.Column(db.String())
+  q2_code = db.Column(db.LargeBinary)
+  q3 = db.Column(db.String())
+  q4 = db.Column(db.String())
+  q4_code = db.Column(db.LargeBinary)
+
+  def __init__(self, studentno, submissiontime, correct, incomplete, q1, q2a, q2b, q2_code, q3, q4, q4_code):
+    self.studentno = studentno
+    self.submissiontime = submissiontime
+    self.correct = correct
+    self.incomplete = incomplete
+    self.q1 = q1
+    self.q2a = q2a
+    self.q2b = q2b
+    self.q2_code = q2_code
+    self.q3 = q3
+    self.q4 = q4
+    self.q4_code = q4_code
+
