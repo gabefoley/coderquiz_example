@@ -443,9 +443,9 @@ class SCIE2100Practical6(FlaskForm):
 
     q5b = StringField("Question 5B: Enter the percent accuracy for alpha-helix predictions for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
                       validators=[CheckBasedOnDropDown("q5a1", [
-                          "50%",
-                          "55%",
-                          "24%"]),
+                          "81.98%",
+                          "69.49%",
+                          "64.15%"]),
                                   DataRequired(
                                       "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
@@ -453,9 +453,9 @@ class SCIE2100Practical6(FlaskForm):
 
     q5c = StringField("Question 5C: Enter the percent accuracy for beta-strand predictions for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
                       validators=[CheckBasedOnDropDown("q5a1", [
-                          "57.14%",
-                          "42.59%",
-                          "28.07%"]),
+                          "70.27%",
+                          "73.73%",
+                          "61.32%"]),
                                   DataRequired(
                                       "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
@@ -464,9 +464,9 @@ class SCIE2100Practical6(FlaskForm):
 
     q5d = StringField("Question 5D: Enter the percent accuracy for both alpha-helix and beta-strand predictions together for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
                       validators=[CheckBasedOnDropDown("q5a1", [
-                          "61.26%",
-                          "56.78%",
-                          "36.79%"]),
+                          "71.91%",
+                          "67.33%",
+                          "56.12%"]),
                                   DataRequired(
                                       "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
@@ -487,12 +487,12 @@ class SCIE2100Practical6(FlaskForm):
                        filters=[lambda v: None if v == '' else v])
 
     q6a3 = StringField("Question 6A: False positives for alpha-helices",
-                       validators=[CorrectAnswer(["105063"]), DataRequired(
+                       validators=[CorrectAnswer(["152226"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
     q6a4 = StringField("Question 6A: False negatives for alpha-helices",
-                       validators=[CorrectAnswer(["152226"]), DataRequired(
+                       validators=[CorrectAnswer(["105063"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
@@ -512,12 +512,12 @@ class SCIE2100Practical6(FlaskForm):
                        filters=[lambda v: None if v == '' else v])
 
     q6b3 = StringField("Question 6B: False positives for beta-strands",
-                       validators=[CorrectAnswer(["47225"]), DataRequired(
+                       validators=[CorrectAnswer(["221513"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
     q6b4 = StringField("Question 6B: False negatives for beta-strands. ",
-                       validators=[CorrectAnswer(["221513"]), DataRequired(
+                       validators=[CorrectAnswer(["47225"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
@@ -537,12 +537,12 @@ class SCIE2100Practical6(FlaskForm):
                        filters=[lambda v: None if v == '' else v])
 
     q6c3 = StringField("Question 6C: True negatives for combined (alpha-helices and beta-strands)",
-                       validators=[CorrectAnswer(["152288"]), DataRequired(
+                       validators=[CorrectAnswer(["373739"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
     q6c4 = StringField("Question 6C: False negatives for combined (alpha-helices and beta-strands)",
-                       validators=[CorrectAnswer(["373739"]), DataRequired(
+                       validators=[CorrectAnswer(["152288"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
