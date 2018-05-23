@@ -1385,14 +1385,11 @@ def query():
         studentno = form.studentno.data
         item = form.assessment_item.data
         form_name = item[10:]
-        print (form_name)
         inclass = True if "Assessment" in form_name else False
 
 
         if inclass:
             interview_questions = scie2100_interview_questions[form_name]
-            print (interview_questions)
-            print (type(interview_questions))
 
 
         if form.records.data == 'Latest':
