@@ -18,8 +18,18 @@
 
         <div class="query-group">
 
-            Interview Question - "Assume that distances that were used to determine the tree are additive. How would you determine the distance
-        between A0A1A8AU08 and G3PS36 now that you know what their closest common ancestor is?" <br> <br>
+                {%  if interview_questions %}
+                    Interview questions <br><br>
+
+                {% for item in interview_questions %}
+                    <li>{{ item }}</li>
+                {% endfor %} <br><br>
+                    {%  endif %}
+
+
+
+
+
 
 
         {{  records }}

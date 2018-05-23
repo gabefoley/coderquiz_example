@@ -670,6 +670,8 @@ class SCIE2100PracticalAssessment3(FlaskForm):
 
     questions = ["q1", "q2a", "q2b", "q2_code", "q3", "q4", "q4_code"]
 
+    interview_questions = ["Test question", "Second question"]
+
     check = SubmitField("Check answers")
 
     submit = SubmitField("Submit answers")

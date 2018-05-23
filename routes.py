@@ -12,6 +12,7 @@ from sqlalchemy import desc
 from os.path import join
 import datetime
 from due_dates import *
+from scie2100_interview_questions import *
 import pytz
 import os
 from pygments import highlight
@@ -1384,7 +1385,16 @@ def query():
         studentno = form.studentno.data
         item = form.assessment_item.data
         form_name = item[10:]
+        print (form_name)
         inclass = True if "Assessment" in form_name else False
+
+
+        if inclass:
+            interview_questions = scie2100_interview_questions[form_name]
+            print (interview_questions)
+            print (type(interview_questions))
+
+
         if form.records.data == 'Latest':
             results = eval(
                 '[' + item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime")).limit(1).first()]')
@@ -1394,7 +1404,7 @@ def query():
 
             edited_results = build_results(results, form_name)
 
-            return render_template("query.html", form=form, studentno=studentno, results=edited_results)
+            return render_template("query.html", form=form, studentno=studentno, results=edited_results, interview_questions=interview_questions)
 
         elif form.records.data == 'All':
             results = eval(item + '.query.filter_by(studentno=studentno).order_by(desc("submissiontime"))')
@@ -1404,7 +1414,7 @@ def query():
 
             edited_results = build_results(results, form_name)
 
-            return render_template("query.html", form=form, studentno=studentno, results=edited_results)
+            return render_template("query.html", form=form, studentno=studentno, results=edited_results, interview_questions=interview_questions)
 
 
         else:
