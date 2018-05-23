@@ -464,9 +464,9 @@ class SCIE2100Practical6(FlaskForm):
 
     q5d = StringField("Question 5D: Enter the percent accuracy for both alpha-helix and beta-strand predictions together for your protein. Enter as a percent to two decimal places, i.e. 0.5438654 would be entered as 54.39%",
                       validators=[CheckBasedOnDropDown("q5a1", [
-                          "71.91%",
-                          "67.33%",
-                          "56.12%"]),
+                          "76.13%",
+                          "71.61%",
+                          "62.74%"]),
                                   DataRequired(
                                       "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
