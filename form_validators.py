@@ -25,7 +25,7 @@ class CheckRegex(object):
 
             user_seqs = set()
 
-            regex = field.data
+            regex = field.data.strip()
 
             try:
                 tf = re.compile(regex)
