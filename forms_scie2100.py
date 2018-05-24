@@ -531,12 +531,12 @@ class SCIE2100Practical6(FlaskForm):
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
-    q6c2 = StringField("Question 6C: False positives for combined (alpha-helices and beta-strands)",
+    q6c2 = StringField("Question 6C: True negatives for combined (alpha-helices and beta-strands)",
                        validators=[CorrectAnswer(["538644"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
 
-    q6c3 = StringField("Question 6C: True negatives for combined (alpha-helices and beta-strands)",
+    q6c3 = StringField("Question 6C: False positives for combined (alpha-helices and beta-strands)",
                        validators=[CorrectAnswer(["373739"]), DataRequired(
                            "You must supply an answer to each question or you will not pass this Practical")],
                        filters=[lambda v: None if v == '' else v])
