@@ -1387,6 +1387,8 @@ def query():
         form_name = item[10:]
         inclass = True if "Assessment" in form_name else False
 
+        interview_questions = None
+
 
         if inclass:
             interview_questions = scie2100_interview_questions[form_name]
