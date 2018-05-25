@@ -438,8 +438,15 @@
                    {% endif %}
                    {% endif %}
 
-                             {{ form.q6d_code.label }}
-       {{ form.q6d_code() }}
+
+
+                         </div>
+                      <div class="form-group">
+                                                   {{ form.q6d_code.label }}
+
+
+
+                 {{ form.q6d_code() }}
 
          {% if form.q6d_code.errors %}
            {% for error in form.q6d_code.errors %}
@@ -450,9 +457,8 @@
                <p class="correct-message"> Accepted </p>
            {% endif %}
 {% endif %}
+                      </div>
 
-
-                         </div>
 
 
             <div class>

@@ -552,7 +552,7 @@ class SCIE2100Practical6(FlaskForm):
                        filters=[lambda v: None if v == '' else v])
 
     q6d_code = FileField(
-        'Question 6D Code: Submit the code you wrote (inner/new loops only).',
+        'Question 6D Code: Submit the code you wrote for Question 6 (inner/new loops only).',
         validators=[DataRequired("Please attach your code for Question 6D.")],
         filters=[lambda v: None if v == '' else v])
 
