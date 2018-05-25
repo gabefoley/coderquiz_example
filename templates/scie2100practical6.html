@@ -438,6 +438,20 @@
                    {% endif %}
                    {% endif %}
 
+                             {{ form.q6d_code.label }}
+       {{ form.q6d_code() }}
+
+         {% if form.q6d_code.errors %}
+           {% for error in form.q6d_code.errors %}
+             <p class="error-message">{{ error }}</p>
+           {% endfor %}
+           {% elif form.check.data  %}
+ {% if form.q6d_code.data is not none %}
+               <p class="correct-message"> Accepted </p>
+           {% endif %}
+{% endif %}
+
+
                          </div>
 
 
