@@ -4,9 +4,9 @@ Bare-bones example of a quiz site implemented in Flask that can be used for in c
 
 Live demo is at  <http://bioinf.scmb.uq.edu.au:81/coderquiz/>
 
-Sign in with the u / password 
+Sign in with the student number / password 
 
-u: lookand
-p: see44
+student no: 12341234
+p: lookandsee44
 
-And try out the example quiz, and how results can be displayed.
+And try out the example quiz, and see how results can be displayed.
